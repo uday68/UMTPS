@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Register New Media - UMPTS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#39FF14",
+                        "neon-green": "#39FF14",
+                        "background-dark": "#000000",
+                        "surface-dark": "#0D0D0D",
+                        "surface-accent": "#1A1A1A",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        body {
+            font-family: "Public Sans", sans-serif;
+            min-height: 100dvh;
+            background-color: #000000;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neon-glow {
+            text-shadow: 0 0 10px rgba(57, 255, 20, 0.5);
+        }
+        .neon-border-glow {
+            box-shadow: 0 0 15px rgba(57, 255, 20, 0.2);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-black text-white antialiased">
+<header class="sticky top-0 z-50 flex items-center bg-black/90 backdrop-blur-xl border-b border-white/10 p-4 justify-between h-14">
+<div class="flex size-10 items-center justify-start text-white/60">
+<span class="material-symbols-outlined cursor-pointer">arrow_back_ios</span>
+</div>
+<h2 class="text-white text-base font-bold leading-tight tracking-tight flex-1 text-center pr-10">Register New Media</h2>
+</header>
+<main class="max-w-md mx-auto pb-32">
+<div class="px-5 pt-8">
+<h1 class="text-white tracking-tight text-3xl font-black leading-tight pb-1">Upload Media</h1>
+<p class="text-white/50 text-sm font-medium leading-normal italic">Enterprise Provenance Protocol v4.2</p>
+</div>
+<div class="p-5">
+<div class="flex flex-col items-center gap-4 rounded-2xl border-2 border-dashed border-white/40 bg-white/5 px-6 py-14 transition-all active:bg-white/10 active:border-white/60">
+<div class="flex size-16 items-center justify-center rounded-full bg-white/10 text-white border border-white/20">
+<span class="material-symbols-outlined text-4xl">cloud_upload</span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<p class="text-white text-xl font-bold leading-tight tracking-tight text-center">Tap to upload</p>
+<p class="text-white/40 text-[11px] font-medium leading-normal text-center uppercase tracking-widest">MP4, MOV, PNG, JPG (Max 500MB)</p>
+</div>
+<button class="mt-4 flex min-w-[160px] cursor-pointer items-center justify-center overflow-hidden rounded-full bg-neon-green text-black text-xs font-black leading-normal tracking-widest h-12 px-8 uppercase shadow-[0_0_20px_rgba(57,255,20,0.3)]">
+                    Select File
+                </button>
+</div>
+</div>
+<div class="px-5 mb-10">
+<div class="flex justify-between items-end mb-3">
+<div>
+<p class="text-[10px] font-black text-neon-green uppercase tracking-[0.2em] neon-glow">Uploading</p>
+<p class="text-sm font-bold text-white">interview_b_roll_01.mp4</p>
+</div>
+<span class="text-xs font-black text-neon-green">68%</span>
+</div>
+<div class="w-full bg-white/10 rounded-full h-1.5 overflow-hidden">
+<div class="bg-neon-green h-full rounded-full shadow-[0_0_10px_rgba(57,255,20,0.6)]" style="width: 68%"></div>
+</div>
+</div>
+<div class="px-5 py-2">
+<h3 class="text-white/40 text-[10px] font-black uppercase tracking-[0.2em] leading-tight pb-4">AI Processing Protocols</h3>
+<div class="space-y-3">
+<div class="flex items-center justify-between p-4 rounded-xl bg-surface-dark border border-white/10">
+<div class="flex items-center gap-3">
+<div class="text-white/60">
+<span class="material-symbols-outlined">water_drop</span>
+</div>
+<div>
+<p class="text-sm font-bold text-white">Watermarking</p>
+<p class="text-xs text-white/40">Invisible digital signature</p>
+</div>
+</div>
+<div class="relative inline-flex h-6 w-11 items-center rounded-full bg-neon-green">
+<span class="inline-block h-4 w-4 translate-x-6 transform rounded-full bg-black transition"></span>
+</div>
+</div>
+<div class="flex items-center justify-between p-4 rounded-xl bg-surface-dark border border-white/10">
+<div class="flex items-center gap-3">
+<div class="text-white/60">
+<span class="material-symbols-outlined">radar</span>
+</div>
+<div>
+<p class="text-sm font-bold text-white">Tracking Active</p>
+<p class="text-xs text-white/40">Real-time monitoring</p>
+</div>
+</div>
+<div class="relative inline-flex h-6 w-11 items-center rounded-full bg-white/20">
+<span class="inline-block h-4 w-4 translate-x-1 transform rounded-full bg-white transition"></span>
+</div>
+</div>
+</div>
+</div>
+<div class="m-5 p-6 rounded-2xl border border-neon-green/50 bg-neon-green/5 flex flex-col gap-6 neon-border-glow">
+<div class="flex items-center gap-4">
+<div class="flex size-12 items-center justify-center rounded-full bg-neon-green text-black shadow-[0_0_15px_rgba(57,255,20,0.4)]">
+<span class="material-symbols-outlined font-black text-2xl" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div>
+<p class="text-neon-green text-xl font-black tracking-tight leading-none uppercase italic neon-glow">Integrity Confirmed</p>
+<p class="text-white/60 text-[10px] font-bold mt-1 uppercase tracking-widest">Blockchain Hash Generated</p>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-[10px] font-black uppercase tracking-[0.2em] text-white/40">Media Asset Identifier</label>
+<div class="flex items-center justify-between bg-black/60 p-4 rounded-xl border border-white/10">
+<code class="text-sm font-mono text-neon-green/90 tracking-tighter">UMPTS-882-9910-X</code>
+<span class="material-symbols-outlined text-white/40 text-lg cursor-pointer hover:text-white transition-colors">content_copy</span>
+</div>
+</div>
+<div class="flex flex-col gap-3">
+<button class="w-full bg-neon-green text-black text-[11px] font-black h-14 rounded-xl uppercase tracking-[0.2em] shadow-[0_0_20px_rgba(57,255,20,0.2)]">
+                    Register Media
+                </button>
+<button class="w-full border border-white/20 text-white text-[10px] font-black h-12 rounded-xl uppercase tracking-[0.2em] hover:bg-white/5 transition-colors">
+                    Add Another
+                </button>
+</div>
+</div>
+</main>
+<nav class="fixed bottom-0 left-0 right-0 bg-black/95 backdrop-blur-2xl border-t border-white/10 h-20 flex items-start justify-around px-6 pt-3 z-50">
+<div class="flex flex-col items-center text-white/40">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] mt-1 font-bold uppercase tracking-tighter">Assets</span>
+</div>
+<div class="flex flex-col items-center text-neon-green">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add_box</span>
+<span class="text-[10px] mt-1 font-black uppercase tracking-tighter">Register</span>
+</div>
+<div class="flex flex-col items-center text-white/40">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-[10px] mt-1 font-bold uppercase tracking-tighter">Tracking</span>
+</div>
+<div class="flex flex-col items-center text-white/40">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] mt-1 font-bold uppercase tracking-tighter">Config</span>
+</div>
+</nav>
+
+</body></html>

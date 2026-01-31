@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Engine Monitor - Dark Mode</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;family=Inter:wght@400;600;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00FF41", // Matrix/Terminal Green
+                        "background-dark": "#000000",
+                        "surface-dark": "#0A0A0A",
+                        "border-dark": "#1A1A1A",
+                    },
+                    fontFamily: {
+                        "mono": ["JetBrains Mono", "monospace"],
+                        "sans": ["Inter", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply bg-background-dark text-white font-mono antialiased;
+                min-height: max(884px, 100dvh);
+            }
+        }
+        .glow-green {
+            text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+        }
+        .status-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: .6; transform: scale(1.1); }
+        }
+        .terminal-grid {
+            background-image: linear-gradient(rgba(0, 255, 65, 0.05) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(0, 255, 65, 0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="terminal-grid">
+<div class="sticky top-0 z-50 flex items-center bg-black/90 backdrop-blur-xl px-4 py-4 justify-between border-b border-white/10">
+<div class="flex items-center gap-3">
+<div class="flex size-10 shrink-0 items-center justify-center rounded border border-primary/30 bg-primary/5 text-primary">
+<span class="material-symbols-outlined text-xl">terminal</span>
+</div>
+<div>
+<h2 class="text-sm font-extrabold leading-none tracking-tighter uppercase">UMPTS_CORE_v2.4</h2>
+<div class="flex items-center gap-2 mt-1.5">
+<span class="size-1.5 rounded-full bg-primary shadow-[0_0_8px_#00FF41] status-pulse"></span>
+<span class="text-[9px] uppercase font-bold text-primary tracking-[0.2em] glow-green">System.Live</span>
+</div>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="flex size-10 items-center justify-center rounded border border-white/10 bg-white/5 text-white active:bg-primary/20">
+<span class="material-symbols-outlined text-xl">settings_input_antenna</span>
+</button>
+</div>
+</div>
+<main class="p-4 space-y-6 pb-28">
+<div class="grid grid-cols-2 gap-3">
+<div class="flex flex-col gap-2 rounded-none border border-white/10 bg-surface-dark p-4 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-primary/20"></div>
+<div class="flex items-center justify-between">
+<p class="text-white/40 text-[10px] font-bold uppercase tracking-widest">Sources</p>
+<span class="material-symbols-outlined text-primary text-sm">hub</span>
+</div>
+<p class="text-3xl font-bold leading-none tracking-tighter text-white glow-green">1,284</p>
+<div class="flex items-center gap-1 text-primary text-[10px] font-bold">
+<span>+12.0%</span>
+<span class="material-symbols-outlined text-[10px]">arrow_upward</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 rounded-none border border-white/10 bg-surface-dark p-4 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-primary/20"></div>
+<div class="flex items-center justify-between">
+<p class="text-white/40 text-[10px] font-bold uppercase tracking-widest">Detections</p>
+<span class="material-symbols-outlined text-primary text-sm">radar</span>
+</div>
+<p class="text-3xl font-bold leading-none tracking-tighter text-white glow-green">42.5k</p>
+<div class="flex items-center gap-1 text-primary text-[10px] font-bold">
+<span>+08.2%</span>
+<span class="material-symbols-outlined text-[10px]">arrow_upward</span>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between px-1">
+<h3 class="text-xs font-bold uppercase tracking-[0.3em] text-white/60">Metric_Analysis</h3>
+<div class="flex gap-2 bg-white/5 border border-white/10 p-1 rounded">
+<button class="px-2 py-0.5 text-[9px] font-bold bg-primary text-black">1H</button>
+<button class="px-2 py-0.5 text-[9px] font-bold text-white/40">6H</button>
+<button class="px-2 py-0.5 text-[9px] font-bold text-white/40">24H</button>
+</div>
+</div>
+<div class="bg-surface-dark rounded-none border border-white/10 p-4 shadow-2xl">
+<div class="flex justify-between items-start mb-6">
+<div>
+<p class="text-white/40 text-[10px] font-bold uppercase tracking-wider mb-1">CPU Load</p>
+<p class="text-3xl font-bold tracking-tighter text-white">34.02<span class="text-primary text-sm ml-1">%</span></p>
+</div>
+<div class="text-right">
+<p class="text-primary text-[10px] font-bold glow-green">OPTIMAL</p>
+<p class="text-white/20 text-[9px] mt-1 font-mono">0.002ms_LAT</p>
+</div>
+</div>
+<div class="relative h-[80px] w-full border-b border-l border-white/5">
+<svg fill="none" height="100%" preserveAspectRatio="none" viewBox="0 0 478 150" width="100%" xmlns="http://www.w3.org/2000/svg">
+<path class="opacity-80" d="M0 109C36 109 36 21 72 21C108 21 108 93 144 93C180 93 180 33 216 33C252 33 252 101 288 101C324 101 324 45 360 45C396 45 396 149 432 149C468 149 468 25 478 25" stroke="#00FF41" stroke-linecap="square" stroke-width="2"></path>
+</svg>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent pointer-events-none"></div>
+</div>
+<div class="flex justify-between mt-3">
+<p class="text-white/20 text-[8px] font-bold uppercase">T-60M</p>
+<p class="text-white/20 text-[8px] font-bold uppercase">T-30M</p>
+<p class="text-primary/40 text-[8px] font-bold uppercase">Now</p>
+</div>
+</div>
+<div class="bg-surface-dark rounded-none border border-white/10 p-4">
+<div class="flex justify-between items-start mb-6">
+<div>
+<p class="text-white/40 text-[10px] font-bold uppercase tracking-wider mb-1">Net_Throughput</p>
+<p class="text-3xl font-bold tracking-tighter text-white">850.4<span class="text-primary text-sm ml-1">MB/s</span></p>
+</div>
+<div class="text-right">
+<p class="text-primary text-[10px] font-bold glow-green">+5.2%</p>
+<p class="text-white/20 text-[9px] mt-1 font-mono">ENCRYPT_ON</p>
+</div>
+</div>
+<div class="relative h-[80px] w-full border-b border-l border-white/5">
+<svg fill="none" height="100%" preserveAspectRatio="none" viewBox="0 0 478 150" width="100%" xmlns="http://www.w3.org/2000/svg">
+<path class="opacity-80" d="M0 50C20 50 40 120 60 120C80 120 100 30 120 30C140 30 160 80 180 80C200 80 220 40 240 40C260 40 280 140 300 140C320 140 340 10 360 10C380 10 400 90 420 90C440 90 460 60 480 60" stroke="#00FF41" stroke-dasharray="4 4" stroke-width="2"></path>
+</svg>
+</div>
+<div class="flex justify-between mt-3">
+<p class="text-white/20 text-[8px] font-bold uppercase">T-60M</p>
+<p class="text-white/20 text-[8px] font-bold uppercase">T-30M</p>
+<p class="text-primary/40 text-[8px] font-bold uppercase">Now</p>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between px-1">
+<h3 class="text-xs font-bold uppercase tracking-[0.3em] text-white/60">Node_Manifest</h3>
+<span class="text-[9px] font-bold px-2 py-0.5 border border-primary text-primary glow-green">12_ACTIVE</span>
+</div>
+<div class="bg-surface-dark border border-white/10 rounded-none overflow-hidden divide-y divide-white/5 shadow-2xl">
+<div class="p-3 flex items-center justify-between bg-black/40 border-l-2 border-primary">
+<div class="flex items-center gap-3">
+<div class="size-1.5 rounded-full bg-primary shadow-[0_0_8px_#00FF41] status-pulse"></div>
+<div>
+<p class="text-[11px] font-bold text-white tracking-widest">CRW-774-ALPHA</p>
+<p class="text-[9px] text-white/40 mt-0.5 font-mono">X.COM // LATENCY: 2.4ms</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-white/20 text-lg">chevron_right</span>
+</div>
+<div class="p-3 flex items-center justify-between bg-black/20 border-l-2 border-primary">
+<div class="flex items-center gap-3">
+<div class="size-1.5 rounded-full bg-primary shadow-[0_0_8px_#00FF41]"></div>
+<div>
+<p class="text-[11px] font-bold text-white tracking-widest">CRW-812-GAMMA</p>
+<p class="text-[9px] text-white/40 mt-0.5 font-mono">YT_ENGINE // LATENCY: 0.8ms</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-white/20 text-lg">chevron_right</span>
+</div>
+<div class="p-3 flex items-center justify-between bg-black/20 border-l-2 border-primary">
+<div class="flex items-center gap-3">
+<div class="size-1.5 rounded-full bg-primary shadow-[0_0_8px_#00FF41]"></div>
+<div>
+<p class="text-[11px] font-bold text-white tracking-widest">CRW-090-SIGMA</p>
+<p class="text-[9px] text-white/40 mt-0.5 font-mono">REUTERS_ST // LATENCY: 5.1ms</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-white/20 text-lg">chevron_right</span>
+</div>
+<div class="p-3 flex items-center justify-between bg-black/20 border-l-2 border-yellow-500">
+<div class="flex items-center gap-3">
+<div class="size-1.5 rounded-full bg-yellow-500 shadow-[0_0_8px_rgba(234,179,8,0.5)]"></div>
+<div>
+<p class="text-[11px] font-bold text-white tracking-widest">CRW-221-BETA</p>
+<p class="text-[9px] text-yellow-500/80 mt-0.5 font-mono">REDDIT_API // RETRY_403</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-white/20 text-lg">chevron_right</span>
+</div>
+</div>
+</div>
+</main>
+<div class="fixed bottom-0 left-0 right-0 bg-black/95 backdrop-blur-2xl border-t border-white/10 px-8 pt-3 pb-8 flex justify-between items-center z-50">
+<div class="flex flex-col items-center gap-1.5 text-primary">
+<span class="material-symbols-outlined text-[26px] glow-green">grid_view</span>
+<span class="text-[9px] font-bold uppercase tracking-tighter">Monitor</span>
+</div>
+<div class="flex flex-col items-center gap-1.5 text-white/40">
+<span class="material-symbols-outlined text-[26px]">show_chart</span>
+<span class="text-[9px] font-bold uppercase tracking-tighter">Stats</span>
+</div>
+<div class="flex flex-col items-center gap-1.5 text-white/40">
+<span class="material-symbols-outlined text-[26px]">dns</span>
+<span class="text-[9px] font-bold uppercase tracking-tighter">Nodes</span>
+</div>
+<div class="flex flex-col items-center gap-1.5 text-white/40">
+<span class="material-symbols-outlined text-[26px]">tune</span>
+<span class="text-[9px] font-bold uppercase tracking-tighter">Config</span>
+</div>
+</div>
+<button class="fixed bottom-28 right-6 size-12 rounded-none border border-primary bg-primary/10 text-primary shadow-[0_0_20px_rgba(0,255,65,0.2)] flex items-center justify-center z-40 active:bg-primary active:text-black transition-all">
+<span class="material-symbols-outlined text-xl">refresh</span>
+</button>
+
+</body></html>

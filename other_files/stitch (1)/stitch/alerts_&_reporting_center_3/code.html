@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Alerts &amp; Reporting Center - Neon Accents</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style type="text/tailwindcss">
+        :root {
+            --primary-color: #39FF14;
+            --background-black: #000000;
+            --surface-dark: #121212;
+            --border-dark: #262626;
+            --severity-high: #FF453A;
+            --severity-medium: #FF9F0A;
+            --severity-low: #64D2FF;
+            --neon-green: #39FF14;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#39FF14",
+                        "background-dark": "#000000",
+                        "surface": "#121212",
+                        "severity-high": "#FF453A",
+                        "severity-medium": "#FF9F0A",
+                        "severity-low": "#64D2FF",
+                        "neon-green": "#39FF14",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            min-height: 100dvh;
+            background-color: var(--background-black);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-dark text-white min-h-screen">
+<div class="h-12 w-full bg-background-dark"></div>
+<div class="sticky top-0 z-50 bg-background-dark/90 backdrop-blur-xl border-b border-[var(--border-dark)]">
+<div class="flex items-center justify-between px-4 py-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-neon-green scale-110">shield_with_heart</span>
+<h1 class="text-xl font-bold tracking-tight">Alerts Center</h1>
+</div>
+<div class="flex items-center gap-1">
+<button class="p-2 rounded-full active:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-white/80">search</span>
+</button>
+<button class="p-2 rounded-full active:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-white/80">tune</span>
+</button>
+</div>
+</div>
+<div class="flex gap-2 px-4 py-3 overflow-x-auto no-scrollbar">
+<div class="flex flex-col min-w-[100px] flex-1 gap-1 rounded-lg p-3 border border-severity-high/30 bg-severity-high/5">
+<p class="text-[10px] font-bold text-severity-high uppercase tracking-widest">High</p>
+<p class="text-2xl font-bold leading-tight text-severity-high">12</p>
+</div>
+<div class="flex flex-col min-w-[100px] flex-1 gap-1 rounded-lg p-3 border border-severity-medium/30 bg-severity-medium/5">
+<p class="text-[10px] font-bold text-severity-medium uppercase tracking-widest">Medium</p>
+<p class="text-2xl font-bold leading-tight text-severity-medium">28</p>
+</div>
+<div class="flex flex-col min-w-[100px] flex-1 gap-1 rounded-lg p-3 border border-severity-low/30 bg-severity-low/5">
+<p class="text-[10px] font-bold text-severity-low uppercase tracking-widest">Low</p>
+<p class="text-2xl font-bold leading-tight text-severity-low">145</p>
+</div>
+</div>
+<div class="px-4 pb-3">
+<div class="flex bg-white/5 p-0.5 rounded-lg border border-white/10">
+<a class="flex-1 py-1.5 text-xs font-bold text-center rounded-md bg-white/15 shadow-sm" href="#">Live</a>
+<a class="flex-1 py-1.5 text-xs font-bold text-center text-white/60" href="#">Priority</a>
+<a class="flex-1 py-1.5 text-xs font-bold text-center text-white/60" href="#">Resolved</a>
+</div>
+</div>
+</div>
+<main class="pb-32">
+<div class="flex items-center justify-between px-4 pt-6 pb-2">
+<h3 class="text-xs font-bold uppercase tracking-widest text-white/40">Real-time Activity</h3>
+<span class="size-2 rounded-full bg-severity-high animate-pulse shadow-[0_0_8px_rgba(255,69,58,0.6)]"></span>
+</div>
+<div class="flex flex-col divide-y divide-[var(--border-dark)] bg-background-dark">
+<div class="p-4 flex flex-col gap-4 border-l-4 border-severity-high bg-severity-high/5">
+<div class="flex items-start justify-between gap-4">
+<div class="flex items-start gap-4">
+<div class="flex items-center justify-center rounded-lg bg-severity-high text-black shrink-0 size-11 shadow-[0_0_12px_rgba(255,69,58,0.3)]">
+<span class="material-symbols-outlined font-bold">warning</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-black px-1.5 py-0.5 rounded bg-severity-high text-black uppercase">Critical</span>
+<p class="text-xs font-medium text-white/50">2m ago</p>
+</div>
+<p class="text-lg font-bold leading-tight mt-1 text-white">Deepfake Voice Modification</p>
+<div class="mt-2 space-y-0.5">
+<p class="text-white/60 text-xs">Source: <span class="text-white font-mono">X (Twitter)</span></p>
+<p class="text-white/60 text-xs">Type: <span class="text-severity-high font-semibold">Modification</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 bg-severity-high text-black text-xs font-black py-3 rounded-lg active:opacity-80 transition-opacity tracking-widest">ESCALATE</button>
+<button class="flex-1 bg-neon-green/10 text-neon-green text-xs font-black py-3 rounded-lg border border-neon-green/30 active:bg-neon-green/20 transition-colors tracking-widest">ACKNOWLEDGE</button>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-4">
+<div class="flex items-start justify-between gap-4">
+<div class="flex items-start gap-4">
+<div class="flex items-center justify-center rounded-lg bg-severity-medium/20 text-severity-medium shrink-0 size-11 border border-severity-medium/30">
+<span class="material-symbols-outlined">change_circle</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-black px-1.5 py-0.5 rounded bg-severity-medium text-black">MEDIUM</span>
+<p class="text-xs font-medium text-white/50">14m ago</p>
+</div>
+<p class="text-lg font-bold leading-tight mt-1 text-white">Unlicensed Content Reuse</p>
+<div class="mt-2 space-y-0.5">
+<p class="text-white/60 text-xs">Source: <span class="text-white font-mono">YouTube</span></p>
+<p class="text-white/60 text-xs">Type: <span class="text-severity-medium font-semibold">Reuse</span></p>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-bold bg-white/10 text-white/80 border border-white/10">
+<span class="material-symbols-outlined text-[10px]">bolt</span>
+                            AUTO
+                        </span>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 bg-white/5 text-white/80 text-xs font-bold py-3 rounded-lg border border-white/10 active:bg-white/15 transition-colors tracking-widest">DETAILS</button>
+<button class="flex-1 bg-neon-green/10 text-neon-green text-xs font-black py-3 rounded-lg border border-neon-green/30 active:bg-neon-green/20 transition-colors tracking-widest">ACKNOWLEDGE</button>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-4 opacity-75">
+<div class="flex items-start justify-between gap-4">
+<div class="flex items-start gap-4">
+<div class="flex items-center justify-center rounded-lg bg-neon-green/20 text-neon-green shrink-0 size-11 border border-neon-green/30">
+<span class="material-symbols-outlined">check_circle</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-black px-1.5 py-0.5 rounded bg-neon-green text-black uppercase">Resolved</span>
+<p class="text-xs font-medium text-white/50">32m ago</p>
+</div>
+<p class="text-lg font-bold leading-tight mt-1 text-white/80">Synthetic Media Identified</p>
+<div class="mt-2 space-y-0.5">
+<p class="text-white/40 text-xs">Status: <span class="text-neon-green font-bold">Closed</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-4">
+<div class="flex items-start justify-between gap-4">
+<div class="flex items-start gap-4">
+<div class="flex items-center justify-center rounded-lg bg-severity-low/20 text-severity-low shrink-0 size-11 border border-severity-low/30">
+<span class="material-symbols-outlined">info</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-black px-1.5 py-0.5 rounded bg-severity-low text-black">LOW</span>
+<p class="text-xs font-medium text-white/50">45m ago</p>
+</div>
+<p class="text-lg font-bold leading-tight mt-1 text-white">Metadata Inconsistency</p>
+<div class="mt-2 space-y-0.5">
+<p class="text-white/60 text-xs">Source: <span class="text-white font-mono">Reddit</span></p>
+<p class="text-white/60 text-xs">Type: <span class="text-severity-low font-semibold">Metadata</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 bg-white/5 text-white/80 text-xs font-bold py-3 rounded-lg border border-white/10 active:bg-white/15 transition-colors tracking-widest">VIEW</button>
+<button class="flex-1 bg-neon-green/10 text-neon-green text-xs font-black py-3 rounded-lg border border-neon-green/30 active:bg-neon-green/20 transition-colors tracking-widest">ACKNOWLEDGE</button>
+</div>
+</div>
+</div>
+</main>
+<div class="fixed bottom-0 left-0 right-0 bg-background-dark/80 backdrop-blur-2xl border-t border-[var(--border-dark)] pb-8">
+<div class="flex items-center justify-around pt-3 px-2">
+<a class="flex flex-col items-center gap-1 text-white/40 active:text-white" href="#">
+<span class="material-symbols-outlined text-[28px]">rss_feed</span>
+<span class="text-[10px] font-bold uppercase tracking-tight">Feed</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-white/40 active:text-white" href="#">
+<span class="material-symbols-outlined text-[28px]">analytics</span>
+<span class="text-[10px] font-bold uppercase tracking-tight">Insights</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-neon-green" href="#">
+<span class="material-symbols-outlined fill-[1] text-[28px]">verified</span>
+<span class="text-[10px] font-bold uppercase tracking-tight">Resolved</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-white/40 active:text-white" href="#">
+<span class="material-symbols-outlined text-[28px]">settings</span>
+<span class="text-[10px] font-bold uppercase tracking-tight">Settings</span>
+</a>
+</div>
+<div class="w-32 h-1 bg-white/20 rounded-full mx-auto mt-4 mb-2"></div>
+</div>
+
+</body></html>

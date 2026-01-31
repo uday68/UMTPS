@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Forensic Audit Dashboard - UMPTS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0d59f2",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101622",
+                        "border-dark": "#3b4354",
+                        "success": "#0bda5e",
+                        "warning": "#f2a10d"
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Public Sans', sans-serif; }
+        .mono-font { font-family: 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', monospace; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display">
+<!-- Top Navigation Bar -->
+<div class="sticky top-0 z-50 flex items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md p-4 pb-2 justify-between border-b border-border-dark/30">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined cursor-pointer text-slate-900 dark:text-white">arrow_back_ios</span>
+<h2 class="text-lg font-bold leading-tight tracking-tight">Forensic Ledger</h2>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-primary/10 text-primary border border-primary/20">
+<span class="material-symbols-outlined" style="font-size: 20px;">gavel</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-slate-200 dark:bg-[#282e39] text-white">
+<span class="material-symbols-outlined text-slate-900 dark:text-white" style="font-size: 20px;">filter_list</span>
+</button>
+</div>
+</div>
+<!-- Quick Stats / Integrity Indicators -->
+<div class="flex flex-wrap gap-3 p-4">
+<div class="flex min-w-[100px] flex-1 flex-col gap-1 rounded-xl p-4 border border-border-dark bg-white/5">
+<p class="text-slate-500 dark:text-[#9ca6ba] text-xs font-medium uppercase tracking-wider">Integrity</p>
+<p class="text-success tracking-tight text-xl font-bold leading-tight flex items-center gap-1">
+                Verified <span class="material-symbols-outlined text-sm">verified_user</span>
+</p>
+<p class="text-success/80 text-xs font-medium leading-normal">100% Secure</p>
+</div>
+<div class="flex min-w-[100px] flex-1 flex-col gap-1 rounded-xl p-4 border border-border-dark bg-white/5">
+<p class="text-slate-500 dark:text-[#9ca6ba] text-xs font-medium uppercase tracking-wider">Logs</p>
+<p class="text-slate-900 dark:text-white tracking-tight text-xl font-bold leading-tight">1,284</p>
+<p class="text-primary text-xs font-medium leading-normal">UMPTS-X9</p>
+</div>
+</div>
+<!-- Active Asset Card -->
+<div class="px-4 py-2">
+<div class="bg-white dark:bg-[#1c222d] border border-border-dark rounded-xl overflow-hidden shadow-sm">
+<div class="p-4 flex gap-4">
+<div class="w-24 h-24 bg-center bg-no-repeat aspect-square bg-cover rounded-lg shrink-0" data-alt="Digital scan of deepfake analysis footage" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCK7vmHdvc5YriXKBOQeYo2tmt2V5mbQuwuIdGj0CMzydj35AaYY4oMKIXjjdgfJPZn-pus6F99I1i1rO-EOdcmu1kiFgjqNieyDXtuUrj5elEzRJDLg7vTQdQ171PQdyOJDrUaZx4QcILe3SKf_VVyTtKP8yl171RQxro8PmPpkscdF4dzRt--ypTadIyhcLkdVE1sdDdP6iaf_VhMFC5nucx2o0W9o1qYmoHZ1MctOtRhcX8C2hmkRUw07s2kZUlLEgE9Q6B-_Q");'>
+</div>
+<div class="flex flex-col justify-center gap-1">
+<p class="text-primary text-xs font-bold tracking-widest uppercase">CASE FILE</p>
+<h3 class="text-slate-900 dark:text-white text-base font-bold leading-tight">Deepfake_Analysis_09.mp4</h3>
+<p class="text-slate-500 dark:text-[#9ca6ba] text-[10px] mono-font break-all">SHA-256: 7f83...a1b2</p>
+<div class="mt-2 flex gap-2">
+<span class="px-2 py-0.5 bg-slate-100 dark:bg-slate-800 rounded text-[10px] text-slate-400">v42.1</span>
+<span class="px-2 py-0.5 bg-success/10 text-success rounded text-[10px] font-bold">CERTIFIED</span>
+</div>
+</div>
+</div>
+<div class="bg-slate-50 dark:bg-slate-800/50 p-3 flex justify-between items-center border-t border-border-dark">
+<span class="text-xs text-slate-500 dark:text-slate-400 font-medium">Export Chain of Custody</span>
+<button class="bg-primary text-white text-xs font-bold py-1.5 px-3 rounded-lg flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">download</span>
+                    PDF Report
+                </button>
+</div>
+</div>
+</div>
+<!-- Asset Provenance Summary Header -->
+<div class="flex items-center justify-between px-4 pt-6 pb-2">
+<h3 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight">Audit History</h3>
+<span class="text-primary text-xs font-bold flex items-center gap-1">Live Feed <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span></span></span>
+</div>
+<!-- Version History & Deltas List -->
+<div class="px-4 pb-20 space-y-3">
+<!-- Entry 1 -->
+<div class="bg-white dark:bg-[#1c222d] border border-border-dark rounded-xl p-4 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-primary"></div>
+<div class="flex justify-between items-start mb-2">
+<div class="flex items-center gap-2">
+<div class="bg-primary/20 p-1.5 rounded-lg">
+<span class="material-symbols-outlined text-primary text-lg">edit_document</span>
+</div>
+<div>
+<p class="text-sm font-bold text-slate-900 dark:text-white">Metadata Modification</p>
+<p class="text-[10px] text-slate-500 dark:text-[#9ca6ba]">2023-10-24 14:02:11 UTC</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-400">more_vert</span>
+</div>
+<div class="mt-3 bg-slate-100 dark:bg-black/30 rounded-lg p-3 space-y-2">
+<div class="flex justify-between text-[11px]">
+<span class="text-slate-400 uppercase font-bold tracking-tighter">Actor</span>
+<span class="text-slate-900 dark:text-slate-300 mono-font">Agent_ID: 8842-XJ9</span>
+</div>
+<div class="grid grid-cols-2 gap-2 pt-1 border-t border-border-dark/50">
+<div>
+<p class="text-[9px] text-red-400 uppercase font-bold mb-1">Delta Removal</p>
+<p class="text-[11px] text-slate-400 line-through truncate">"GPS_LAT": "40.7128"</p>
+</div>
+<div>
+<p class="text-[9px] text-success uppercase font-bold mb-1">Delta Addition</p>
+<p class="text-[11px] text-slate-900 dark:text-slate-300 truncate">"ANONYM_LOC": "True"</p>
+</div>
+</div>
+</div>
+<div class="mt-3 flex items-center justify-between">
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full border-2 border-background-dark bg-slate-700 flex items-center justify-center text-[10px] font-bold">AS</div>
+<div class="w-6 h-6 rounded-full border-2 border-background-dark bg-primary flex items-center justify-center text-[10px] font-bold">AI</div>
+</div>
+<button class="text-primary text-[11px] font-bold flex items-center gap-1">
+                    Verify Signature <span class="material-symbols-outlined text-sm">verified</span>
+</button>
+</div>
+</div>
+<!-- Entry 2 -->
+<div class="bg-white dark:bg-[#1c222d] border border-border-dark rounded-xl p-4 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-success"></div>
+<div class="flex justify-between items-start mb-2">
+<div class="flex items-center gap-2">
+<div class="bg-success/20 p-1.5 rounded-lg">
+<span class="material-symbols-outlined text-success text-lg">security</span>
+</div>
+<div>
+<p class="text-sm font-bold text-slate-900 dark:text-white">Validation Check</p>
+<p class="text-[10px] text-slate-500 dark:text-[#9ca6ba]">2023-10-24 13:45:00 UTC</p>
+</div>
+</div>
+</div>
+<p class="text-xs text-slate-500 dark:text-[#9ca6ba] mt-2">Automated integrity scan: No tampering detected in frame sequences 0-2400. Cryptographic seal remains intact.</p>
+</div>
+<!-- Entry 3 -->
+<div class="bg-white dark:bg-[#1c222d] border border-border-dark rounded-xl p-4 relative overflow-hidden opacity-80">
+<div class="absolute top-0 left-0 w-1 h-full bg-warning"></div>
+<div class="flex justify-between items-start mb-2">
+<div class="flex items-center gap-2">
+<div class="bg-warning/20 p-1.5 rounded-lg">
+<span class="material-symbols-outlined text-warning text-lg">sync_alt</span>
+</div>
+<div>
+<p class="text-sm font-bold text-slate-900 dark:text-white">Ownership Transfer</p>
+<p class="text-[10px] text-slate-500 dark:text-[#9ca6ba]">2023-10-23 09:12:44 UTC</p>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between mt-2">
+<span class="text-[11px] text-slate-400">Origin: Legal_Dept_A</span>
+<span class="material-symbols-outlined text-sm text-slate-500">arrow_forward</span>
+<span class="text-[11px] text-slate-400">Target: District_Court_01</span>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation / Action Bar (iOS Style) -->
+<div class="fixed bottom-0 left-0 w-full bg-white dark:bg-[#111622] border-t border-border-dark pb-6 pt-3 px-6 flex justify-between items-center shadow-2xl">
+<div class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-[10px] font-bold">Ledger</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">history</span>
+<span class="text-[10px] font-medium">Timeline</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-slate-400">
+<div class="bg-primary rounded-full p-2 -mt-8 border-4 border-background-light dark:border-background-dark shadow-lg shadow-primary/40">
+<span class="material-symbols-outlined text-white">add</span>
+</div>
+<span class="text-[10px] font-medium">Capture</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">folder_shared</span>
+<span class="text-[10px] font-medium">Evidence</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-medium">Audit</span>
+</div>
+</div>
+</body></html>

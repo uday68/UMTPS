@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Platform Moderator Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#186adc",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111821",
+                        "surface-dark": "#1c242f",
+                        "border-dark": "#2d3846",
+                        "success": "#0bda5e",
+                        "danger": "#fa6238"
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Public Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-border-dark px-4 py-3 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="size-9 rounded-full bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[20px]">shield_person</span>
+</div>
+<div>
+<h1 class="text-sm font-bold leading-none">UMPTS Moderator</h1>
+<p class="text-[10px] text-slate-500 dark:text-slate-400 mt-1 uppercase tracking-wider font-semibold">Enterprise Level 4</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="relative p-2 text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-[24px]">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-danger rounded-full border-2 border-background-light dark:border-background-dark"></span>
+</button>
+<div class="size-8 rounded-lg bg-cover bg-center border border-slate-200 dark:border-border-dark" data-alt="User profile avatar placeholder" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDYEes9xiVFOKDg09Uw2pLy1gjBAeTeCdPggrchyEY23MqdvrWYhA-5OdEtPbuqU1iJIhWQpZjbJ539epwm4S64oBIqRnMR6QTeOsBKl3KaQVl1NP7iouA_izpHjgiTxSfC3aCPGUA8MNW6LtLOAo94kcuNM5dL0hpiQg-5Gs6sNph22V13ZkHlJLjVdGzNAJvek42q7a4NwsIa4OeOg6Gp1yGDc4uz1s34xoTTN0RcHk5led2pLc-gfwSBCwkJ10qyjxcb9fVpLw');"></div>
+</div>
+</header>
+<main class="flex-1 pb-24">
+<!-- Platform Health Status -->
+<div class="px-4 pt-4">
+<div class="bg-primary/10 border border-primary/20 rounded p-3 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">verified_user</span>
+<span class="text-xs font-semibold text-primary uppercase">Platform Compliance: 98.4%</span>
+</div>
+<span class="material-symbols-outlined text-primary text-[18px]">chevron_right</span>
+</div>
+</div>
+<!-- Metrics Section -->
+<div class="flex overflow-x-auto no-scrollbar gap-3 p-4">
+<div class="flex min-w-[160px] flex-1 flex-col gap-1 rounded p-4 bg-white dark:bg-surface-dark border border-slate-200 dark:border-border-dark shadow-sm">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-tight">Verified Today</p>
+<p class="text-2xl font-bold leading-tight">12,482</p>
+<p class="text-success text-xs font-bold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +12%
+                </p>
+</div>
+<div class="flex min-w-[160px] flex-1 flex-col gap-1 rounded p-4 bg-white dark:bg-surface-dark border border-slate-200 dark:border-border-dark shadow-sm">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-tight">Flagged Media</p>
+<p class="text-2xl font-bold leading-tight">184</p>
+<p class="text-danger text-xs font-bold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">trending_down</span> -5%
+                </p>
+</div>
+</div>
+<!-- Section Header: Queue -->
+<div class="px-4 py-2 flex items-center justify-between">
+<h2 class="text-lg font-bold tracking-tight">Moderation Queue</h2>
+<button class="text-primary text-xs font-bold flex items-center gap-1 uppercase">
+                Bulk Action <span class="material-symbols-outlined text-[16px]">checklist</span>
+</button>
+</div>
+<!-- Tabs -->
+<div class="px-4 border-b border-slate-200 dark:border-border-dark">
+<div class="flex gap-6">
+<button class="py-3 border-b-2 border-primary text-primary text-xs font-bold uppercase tracking-wider">High Risk</button>
+<button class="py-3 border-b-2 border-transparent text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-wider">AI-Generated</button>
+<button class="py-3 border-b-2 border-transparent text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-wider">Pending</button>
+</div>
+</div>
+<!-- Queue List -->
+<div class="p-4 space-y-4">
+<!-- High Risk Item 1 -->
+<div class="bg-white dark:bg-surface-dark border border-slate-200 dark:border-border-dark rounded overflow-hidden">
+<div class="flex gap-3 p-3">
+<div class="relative w-24 h-24 shrink-0 bg-slate-100 dark:bg-slate-800 rounded overflow-hidden">
+<div class="w-full h-full bg-cover bg-center grayscale blur-[1px]" data-alt="Blurred thumbnail of flagged video content" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBDL2dVAdXd8YSdWX67nEaD8LK12Ihg6DivhfrI-z5gNH_KflVI3XzKR9Zj846gBNnlqVECaLpOkiinI6QKo8L-CU5xB0dJB0iRIu3AVpZPyd1TvZx4smJjTOPvzfkgl1udkp6UgQVyxL4Q01Pk2wEp5LdlHg1P-LAHhx-QY_j1J4x3fKl7Z4s0PfG41Eu9gdBMTU3MYP-ncyRFuXCEg40H5Z1Ewp_NKEM3SxZyuN2m9VrSYRVqlLkIza8BRH2TS7EOVj3zvFsJBg');"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-[24px]">play_circle</span>
+</div>
+</div>
+<div class="flex-1 min-w-0 py-1">
+<div class="flex items-center gap-1.5 mb-1">
+<span class="px-1.5 py-0.5 bg-danger/10 text-danger text-[9px] font-bold rounded uppercase tracking-tighter">CRITICAL RISK</span>
+<span class="text-slate-400 text-[10px]">ID: 492-AX</span>
+</div>
+<h3 class="font-bold text-sm truncate mb-0.5">Deepfake Detection: Video Feed</h3>
+<p class="text-slate-500 dark:text-slate-400 text-[11px] leading-snug mb-2">Provenance Score: <span class="text-danger font-bold">12%</span></p>
+<div class="flex gap-2">
+<button class="flex-1 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-[11px] font-bold py-1.5 rounded uppercase transition-colors">Details</button>
+<button class="flex-1 bg-primary text-white text-[11px] font-bold py-1.5 rounded uppercase flex items-center justify-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[14px]">shield</span> Review
+                            </button>
+</div>
+</div>
+</div>
+<div class="px-3 py-2 bg-slate-50 dark:bg-slate-800/50 border-t border-slate-100 dark:border-border-dark flex items-center justify-between">
+<div class="flex items-center gap-1 text-[10px] text-slate-500 font-medium italic">
+<span class="material-symbols-outlined text-[12px]">schedule</span> 2 mins ago
+                    </div>
+<div class="flex items-center gap-1 text-[10px] text-slate-500 font-medium">
+<span class="material-symbols-outlined text-[12px]">hub</span> Source: Social-API
+                    </div>
+</div>
+</div>
+<!-- Item 2: AI Labeling Focus -->
+<div class="bg-white dark:bg-surface-dark border border-slate-200 dark:border-border-dark rounded overflow-hidden">
+<div class="flex gap-3 p-3">
+<div class="relative w-24 h-24 shrink-0 bg-slate-100 dark:bg-slate-800 rounded overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="Digital artwork showing AI generated patterns" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCxZP3nCte328Iq9GzKZaKjjzbpdnJnqIyH0tjAy52eUUiQPBTxFsCcFApMNOvwB6accyMBUEPT5lJiueIfF-3d_J4a_n7nhkRbE21NkdQ-G1CmXSLdRbgYqf95WJJ85WMpWn5hnjn0cfkoJAfCjbD0KrVtfaSw_QlmdXBAWH2BQ8UUepoq92FW8VcBQ8ikcNTsYW1a3Dt24QeQnGgF2t20NHGSvtHTJnJzVBjHNdej36ru_432vQfuVrfpwXhb81BuXauLhyxrxw');"></div>
+</div>
+<div class="flex-1 min-w-0 py-1">
+<div class="flex items-center gap-1.5 mb-1">
+<span class="px-1.5 py-0.5 bg-primary/10 text-primary text-[9px] font-bold rounded uppercase tracking-tighter">AI-GENERATED (99%)</span>
+</div>
+<h3 class="font-bold text-sm truncate mb-0.5">Automated Asset Labeling</h3>
+<p class="text-slate-500 dark:text-slate-400 text-[11px] leading-snug mb-2">Confidence: <span class="text-primary font-bold">High</span></p>
+<div class="flex gap-2">
+<button class="flex-1 bg-slate-100 dark:bg-slate-700 text-[11px] font-bold py-1.5 rounded uppercase">Dismiss</button>
+<button class="flex-1 bg-primary/20 text-primary text-[11px] font-bold py-1.5 rounded uppercase border border-primary/30">Apply Label</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 3: Metadata Mismatch -->
+<div class="bg-white dark:bg-surface-dark border border-slate-200 dark:border-border-dark rounded overflow-hidden opacity-80">
+<div class="flex gap-3 p-3">
+<div class="relative w-24 h-24 shrink-0 bg-slate-100 dark:bg-slate-800 rounded overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="Landscape photo with metadata verification tags" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBixL7V_3FREltkLdaqjUy8eAFk9QkAyM7F_60Yzwe7Ku7Y4rEc5nwIszz298o2xGIGS9uxXDRJsYPq1gKvapVDJMcwee8SgenNAdHUb5NJ_yi7JQrqwLCbK_fGnTmOuj6hTqHHnejY8eyPTpwSklNmAgcasQqiY4WzF8YZKNrGzefJF7_85gGFt9SaNOq_K8UufSH0I7hsZzsqqawPCR7_Tg_1WGThJZlbY8s5O1gSYI7ye50uX2tYvV2Dq9y1yG3I8WYRy6yWrQ');"></div>
+</div>
+<div class="flex-1 min-w-0 py-1">
+<div class="flex items-center gap-1.5 mb-1">
+<span class="px-1.5 py-0.5 bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-[9px] font-bold rounded uppercase tracking-tighter">METADATA CLASH</span>
+</div>
+<h3 class="font-bold text-sm truncate mb-0.5">IMG_8201 Verification</h3>
+<p class="text-slate-500 dark:text-slate-400 text-[11px] leading-snug mb-2">Provenance Score: <span class="text-slate-600 dark:text-slate-300 font-bold">45%</span></p>
+<div class="flex gap-2">
+<button class="flex-[2] bg-primary text-white text-[11px] font-bold py-1.5 rounded uppercase">Verify Origin</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar (iOS Style) -->
+<nav class="fixed bottom-0 w-full bg-white/90 dark:bg-background-dark/90 backdrop-blur-xl border-t border-slate-200 dark:border-border-dark px-6 pt-2 pb-8 flex items-center justify-between z-50">
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[26px] font-variation-fill">dashboard</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Dash</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500">
+<span class="material-symbols-outlined text-[26px]">view_list</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Queue</span>
+</button>
+<div class="relative -top-6">
+<button class="size-14 bg-primary rounded-full shadow-lg shadow-primary/40 flex items-center justify-center text-white border-4 border-white dark:border-background-dark">
+<span class="material-symbols-outlined text-[28px]">add_moderator</span>
+</button>
+</div>
+<button class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500">
+<span class="material-symbols-outlined text-[26px]">analytics</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Data</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500">
+<span class="material-symbols-outlined text-[26px]">settings</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Setup</span>
+</button>
+</nav>
+<!-- iOS Home Indicator Overlay -->
+<div class="fixed bottom-1 left-1/2 -translate-x-1/2 w-32 h-1 bg-slate-300 dark:bg-slate-700 rounded-full z-[60]"></div>
+</body></html>

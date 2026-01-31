@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Forensic Report Export Modal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#40f91f",
+                        "background-light": "#f6f8f5",
+                        "background-dark": "#12230f",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .checkbox-custom {
+            --checkbox-tick-svg: url('data:image/svg+xml,%3csvg viewBox=%270 0 16 16%27 fill=%27rgb(18,24,17)%27 xmlns=%27http://www.w3.org/2000/svg%27%3e%3cpath d=%27M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z%27/%3e%3c/svg%3e');
+        }
+        .select-custom {
+            --select-button-svg: url('data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724px%27 height=%2724px%27 fill=%27rgb(64,249,31)%27 viewBox=%270 0 256 256%27%3e%3cpath d=%27M181.66,170.34a8,8,0,0,1,0,11.32l-48,48a8,8,0,0,1-11.32,0l-48-48a8,8,0,0,1,11.32-11.32L128,212.69l42.34-42.35A8,8,0,0,1,181.66,170.34Zm-96-84.68L128,43.31l42.34,42.35a8,8,0,0,0,11.32-11.32l-48-48a8,8,0,0,0-11.32,0l-48,48A8,8,0,0,0,85.66,85.66Z%27%3e%3c/path%3e%3c/svg%3e');
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex items-center justify-center p-4">
+<!-- Modal Container -->
+<div class="relative w-full max-w-md bg-[#0d160b] rounded-xl shadow-2xl border border-white/10 overflow-hidden flex flex-col">
+<!-- TopAppBar -->
+<div class="flex items-center bg-[#0d160b] p-4 border-b border-white/5 justify-between">
+<div class="text-white flex size-10 shrink-0 items-center justify-center cursor-pointer hover:bg-white/5 rounded-full transition-colors">
+<span class="material-symbols-outlined">close</span>
+</div>
+<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center font-display">Generate Forensic Report</h2>
+<div class="flex w-10 items-center justify-end">
+<button class="flex size-10 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-transparent text-white/70 hover:text-white transition-colors">
+<span class="material-symbols-outlined">help</span>
+</button>
+</div>
+</div>
+<div class="overflow-y-auto max-h-[80vh] custom-scrollbar">
+<!-- SectionHeader -->
+<div class="px-4 pt-6 pb-2">
+<h3 class="text-primary text-[11px] font-bold leading-tight tracking-[0.1em] uppercase opacity-80">Include Report Sections</h3>
+</div>
+<!-- Checklists -->
+<div class="px-4 checkbox-custom">
+<label class="flex gap-x-3 py-3 items-center justify-between border-b border-white/5 cursor-pointer hover:bg-white/5 px-2 rounded-lg transition-colors group">
+<p class="text-white/90 text-base font-normal leading-normal font-display">Metadata Summary</p>
+<input checked="" class="h-6 w-6 rounded border-white/20 border-2 bg-transparent text-primary checked:bg-primary checked:border-primary checked:bg-[image:--checkbox-tick-svg] focus:ring-0 focus:ring-offset-0 focus:border-primary focus:outline-none transition-all" type="checkbox"/>
+</label>
+<label class="flex gap-x-3 py-3 items-center justify-between border-b border-white/5 cursor-pointer hover:bg-white/5 px-2 rounded-lg transition-colors group">
+<p class="text-white/90 text-base font-normal leading-normal font-display">Integrity Chain of Custody</p>
+<input checked="" class="h-6 w-6 rounded border-white/20 border-2 bg-transparent text-primary checked:bg-primary checked:border-primary checked:bg-[image:--checkbox-tick-svg] focus:ring-0 focus:ring-offset-0 focus:border-primary focus:outline-none transition-all" type="checkbox"/>
+</label>
+<label class="flex gap-x-3 py-3 items-center justify-between border-b border-white/5 cursor-pointer hover:bg-white/5 px-2 rounded-lg transition-colors group">
+<p class="text-white/90 text-base font-normal leading-normal font-display">Detected Online Appearances</p>
+<input class="h-6 w-6 rounded border-white/20 border-2 bg-transparent text-primary checked:bg-primary checked:border-primary checked:bg-[image:--checkbox-tick-svg] focus:ring-0 focus:ring-offset-0 focus:border-primary focus:outline-none transition-all" type="checkbox"/>
+</label>
+<label class="flex gap-x-3 py-3 items-center justify-between border-b border-white/5 cursor-pointer hover:bg-white/5 px-2 rounded-lg transition-colors group">
+<p class="text-white/90 text-base font-normal leading-normal font-display">AI Modification Analysis</p>
+<input checked="" class="h-6 w-6 rounded border-white/20 border-2 bg-transparent text-primary checked:bg-primary checked:border-primary checked:bg-[image:--checkbox-tick-svg] focus:ring-0 focus:ring-offset-0 focus:border-primary focus:outline-none transition-all" type="checkbox"/>
+</label>
+<label class="flex gap-x-3 py-3 items-center justify-between cursor-pointer hover:bg-white/5 px-2 rounded-lg transition-colors group">
+<p class="text-white/90 text-base font-normal leading-normal font-display">Blockchain Verification Proof</p>
+<input class="h-6 w-6 rounded border-white/20 border-2 bg-transparent text-primary checked:bg-primary checked:border-primary checked:bg-[image:--checkbox-tick-svg] focus:ring-0 focus:ring-offset-0 focus:border-primary focus:outline-none transition-all" type="checkbox"/>
+</label>
+</div>
+<!-- TextField (Dropdown) -->
+<div class="flex flex-col gap-1 px-4 py-6 select-custom">
+<p class="text-primary text-[11px] font-bold leading-tight tracking-[0.1em] uppercase opacity-80 px-2 pb-2">Export Format</p>
+<div class="relative">
+<select class="appearance-none flex w-full min-w-0 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-white/10 bg-[#1d2b1a] h-14 bg-[image:--select-button-svg] bg-[position:right_15px_center] bg-[size:24px] bg-no-repeat placeholder:text-white/40 p-[15px] text-base font-medium leading-normal cursor-pointer transition-all">
+<option value="pdf">PDF Forensic Document (.pdf)</option>
+<option value="json">Raw Data Package (.json)</option>
+<option value="xml">Standard Interoperable (.xml)</option>
+</select>
+</div>
+</div>
+<!-- Privacy Warning -->
+<div class="px-6 py-4 mx-4 mb-4 rounded-lg bg-red-500/5 border border-red-500/20 flex gap-3 items-start">
+<span class="material-symbols-outlined text-red-400 text-sm mt-0.5">lock</span>
+<p class="text-red-200/60 text-xs leading-relaxed font-display">
+<span class="font-bold text-red-400 uppercase tracking-wider">Privacy Warning:</span> This report contains sensitive tracking data, PII, and cryptographic proofs. Handle in accordance with enterprise security protocols.
+                </p>
+</div>
+</div>
+<!-- SingleButton (Sticky Footer) -->
+<div class="flex px-4 py-6 bg-[#0d160b] border-t border-white/10">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-14 px-5 flex-1 bg-primary text-[#0d160b] text-base font-bold leading-normal tracking-[0.05em] uppercase shadow-[0_0_20px_-5px_rgba(64,249,31,0.5)] hover:shadow-[0_0_25px_-2px_rgba(64,249,31,0.6)] active:scale-[0.98] transition-all">
+<span class="truncate">Export Report</span>
+<span class="material-symbols-outlined ml-2 text-xl">download</span>
+</button>
+</div>
+</div>
+<!-- Decorative Background Elements -->
+<div class="fixed inset-0 -z-10 bg-black/40 backdrop-blur-sm pointer-events-none"></div>
+<div class="fixed top-0 left-0 w-full h-full -z-20 overflow-hidden pointer-events-none">
+<div class="absolute top-[20%] left-[10%] w-96 h-96 bg-primary/10 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-[20%] right-[10%] w-96 h-96 bg-primary/5 rounded-full blur-[120px]"></div>
+</div>
+</body></html>

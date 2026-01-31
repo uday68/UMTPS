@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>UMPTS Public Verification Tool</title>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00F5FF", // Luminous Cyan
+                        "accent-glow": "rgba(0, 245, 255, 0.4)",
+                        "background-dark": "#05070a",
+                        "surface-dark": "#0e1117",
+                        "border-dark": "#1f2937",
+                        "pure-white": "#ffffff"
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.5rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        :root {
+            --primary-glow: #00F5FF;
+        }
+        .glow-gauge {
+            filter: drop-shadow(0 0 8px var(--primary-glow));
+        }
+        body {
+            background-color: #05070a;
+            -webkit-font-smoothing: antialiased;
+        }
+        .ios-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-dark font-display text-pure-white min-h-screen">
+<div class="relative flex h-full w-full flex-col overflow-x-hidden">
+<div class="sticky top-0 z-50 flex items-center bg-background-dark/80 ios-blur px-4 pt-6 pb-4 justify-between border-b border-white/10">
+<div class="text-primary flex items-center justify-start">
+<span class="material-symbols-outlined fill-1" style="font-size: 26px;">verified_user</span>
+</div>
+<h1 class="text-pure-white text-[17px] font-semibold leading-tight tracking-tight flex-1 text-center">Verification Tool</h1>
+<div class="flex items-center justify-end">
+<button class="text-white/60 active:text-white transition-colors">
+<span class="material-symbols-outlined" style="font-size: 24px;">settings</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col items-start px-6 pt-10 pb-8">
+<h2 class="text-pure-white text-3xl font-bold tracking-tight leading-tight mb-3">Analyze Authenticity</h2>
+<p class="text-white/50 text-base font-light leading-relaxed max-w-sm">UMPTS Enterprise verification for high-fidelity media tracking and AI detection.</p>
+</div>
+<div class="flex flex-col gap-6 px-6 pb-10">
+<div class="group relative flex flex-col items-center justify-center border border-white/10 bg-surface-dark hover:bg-surface-dark/80 rounded-2xl p-10 transition-all active:scale-[0.99]">
+<div class="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent rounded-2xl"></div>
+<span class="material-symbols-outlined text-primary mb-4 glow-gauge" style="font-size: 44px;">cloud_upload</span>
+<p class="text-pure-white font-semibold text-lg relative">Upload Media</p>
+<p class="text-white/40 text-sm mt-1 relative">Photos or videos up to 100MB</p>
+</div>
+<div class="flex flex-col gap-5">
+<div class="relative">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-white/30" style="font-size: 20px;">link</span>
+</div>
+<input class="block w-full rounded-xl bg-surface-dark border-white/10 text-pure-white pl-12 pr-4 py-4 focus:ring-1 focus:ring-primary focus:border-primary transition-all placeholder:text-white/20" placeholder="Paste media URL..." type="text"/>
+</div>
+<button class="w-full flex items-center justify-center rounded-xl h-14 bg-pure-white text-black text-base font-bold transition-all active:scale-[0.97] shadow-lg shadow-white/5">
+                Verify Now
+            </button>
+</div>
+</div>
+<div class="px-6 py-10 bg-black border-t border-white/10">
+<div class="flex items-center justify-between mb-8">
+<h3 class="text-pure-white font-bold text-xl tracking-tight">Analysis Result</h3>
+<div class="flex items-center gap-1.5 px-3 py-1 bg-primary/10 border border-primary/20 rounded-full">
+<span class="block w-1.5 h-1.5 bg-primary rounded-full animate-pulse"></span>
+<span class="text-[10px] text-primary font-bold uppercase tracking-widest">Live Engine</span>
+</div>
+</div>
+<div class="flex flex-col items-center justify-center p-8 bg-surface-dark border border-white/10 rounded-[2rem] mb-8 shadow-2xl relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-primary" style="font-size: 120px;">security</span>
+</div>
+<div class="relative flex items-center justify-center w-48 h-48 mb-6">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-white/5" cx="96" cy="96" fill="transparent" r="84" stroke="currentColor" stroke-width="12"></circle>
+<circle class="text-primary glow-gauge" cx="96" cy="96" fill="transparent" r="84" stroke="currentColor" stroke-dasharray="527" stroke-dashoffset="35" stroke-linecap="round" stroke-width="12"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-5xl font-bold text-pure-white tabular-nums">94<span class="text-2xl opacity-50">%</span></span>
+<span class="text-[11px] text-primary font-bold uppercase tracking-[0.2em] mt-1">Confidence</span>
+</div>
+</div>
+<div class="flex flex-col items-center relative z-10">
+<div class="flex items-center gap-2 text-primary border border-primary/30 bg-primary/5 px-6 py-2.5 rounded-full mb-4">
+<span class="material-symbols-outlined fill-1" style="font-size: 20px;">verified</span>
+<span class="font-bold tracking-widest text-sm uppercase">Authentic</span>
+</div>
+<p class="text-pure-white text-base text-center leading-relaxed max-w-[240px]">
+                    Cryptographic signature matches original capture device.
+                </p>
+</div>
+</div>
+<div class="space-y-8 px-2">
+<div>
+<h4 class="text-white/40 text-[11px] font-bold uppercase tracking-[0.15em] mb-5">Provenance Metadata</h4>
+<div class="space-y-6">
+<div class="flex gap-5">
+<div class="flex flex-col items-center">
+<div class="w-2.5 h-2.5 rounded-full bg-primary glow-gauge"></div>
+<div class="w-[1px] h-full bg-white/10 mt-2"></div>
+</div>
+<div class="flex flex-col -mt-1">
+<p class="text-pure-white text-sm font-semibold">Origin Authenticated</p>
+<p class="text-white/50 text-xs mt-1">Nov 12, 2023 • 08:44:12 UTC</p>
+<p class="text-white/70 text-xs mt-2 leading-relaxed">Hardware-level signature detected: Pro-Res RAW v2.0</p>
+</div>
+</div>
+<div class="flex gap-5">
+<div class="flex flex-col items-center">
+<div class="w-2.5 h-2.5 rounded-full bg-white/20"></div>
+<div class="w-[1px] h-full bg-white/10 mt-2"></div>
+</div>
+<div class="flex flex-col -mt-1">
+<p class="text-pure-white text-sm font-semibold">C2PA Manifest Verified</p>
+<p class="text-white/50 text-xs mt-1">Nov 12, 2023 • 09:15:00 UTC</p>
+<p class="text-white/70 text-xs mt-2 leading-relaxed">End-to-end chain of custody preserved through UMPTS nodes.</p>
+</div>
+</div>
+<div class="flex gap-5">
+<div class="flex flex-col items-center">
+<div class="w-2.5 h-2.5 rounded-full bg-white/20"></div>
+</div>
+<div class="flex flex-col -mt-1">
+<p class="text-pure-white text-sm font-semibold">Deepfake Scan: Negative</p>
+<p class="text-white/50 text-xs mt-1">Analysis Complete</p>
+<p class="text-white/70 text-xs mt-2 leading-relaxed">No inconsistencies detected in spatial-temporal frequencies.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex gap-3 pt-4">
+<button class="flex-1 flex items-center justify-center gap-2 bg-surface-dark border border-white/10 h-14 rounded-xl font-bold text-sm text-pure-white active:bg-white/5 transition-colors">
+<span class="material-symbols-outlined" style="font-size: 20px;">file_download</span>
+                    Full Report
+                </button>
+<button class="flex-1 flex items-center justify-center gap-2 bg-surface-dark border border-white/10 h-14 rounded-xl font-bold text-sm text-pure-white active:bg-white/5 transition-colors">
+<span class="material-symbols-outlined" style="font-size: 20px;">share</span>
+                    Share
+                </button>
+</div>
+</div>
+</div>
+<div class="h-16 bg-black"></div>
+</div>
+
+</body></html>

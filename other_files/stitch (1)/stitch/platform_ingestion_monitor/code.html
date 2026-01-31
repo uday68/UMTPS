@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>UMPTS Ingestion Monitor</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0d59f2",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display">
+<!-- Main Container -->
+<div class="relative flex h-screen w-full flex-col overflow-hidden max-w-[430px] mx-auto border-x border-slate-200 dark:border-slate-800 shadow-2xl">
+<!-- TopAppBar -->
+<header class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between z-10">
+<div class="flex items-center gap-3">
+<div class="text-primary flex size-8 shrink-0 items-center justify-center bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined">analytics</span>
+</div>
+<div>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">UMPTS Monitor</h2>
+<div class="flex items-center gap-1.5">
+<span class="flex size-2 rounded-full bg-green-500 animate-pulse"></span>
+<span class="text-[10px] font-bold uppercase tracking-wider text-green-500">System Live</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex size-10 items-center justify-center rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="relative flex size-10 items-center justify-center rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 flex size-2 rounded-full bg-red-500 border border-white dark:border-background-dark"></span>
+</button>
+</div>
+</header>
+<!-- Scrollable Content -->
+<main class="flex-1 overflow-y-auto pb-20">
+<!-- Stats Section -->
+<div class="flex gap-3 p-4 overflow-x-auto no-scrollbar">
+<div class="flex min-w-[140px] flex-1 flex-col gap-1 rounded-xl p-4 bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 shadow-sm">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium">Active Streams</p>
+<p class="text-slate-900 dark:text-white text-xl font-bold">142</p>
+<p class="text-green-500 text-[10px] font-bold">+5%</p>
+</div>
+<div class="flex min-w-[140px] flex-1 flex-col gap-1 rounded-xl p-4 bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 shadow-sm">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium">Mod. Efficiency</p>
+<p class="text-slate-900 dark:text-white text-xl font-bold">98.4%</p>
+<p class="text-green-500 text-[10px] font-bold">+0.2%</p>
+</div>
+<div class="flex min-w-[140px] flex-1 flex-col gap-1 rounded-xl p-4 bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 shadow-sm">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium">Pending</p>
+<p class="text-slate-900 dark:text-white text-xl font-bold">24</p>
+<p class="text-orange-500 text-[10px] font-bold">-12%</p>
+</div>
+</div>
+<!-- Filter Chips -->
+<div class="flex gap-2 px-4 py-2 overflow-x-auto no-scrollbar">
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary px-4">
+<p class="text-white text-xs font-bold">All Media</p>
+<span class="material-symbols-outlined text-white text-[18px]">expand_more</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-4">
+<p class="text-slate-600 dark:text-slate-400 text-xs font-medium">High Severity</p>
+<span class="material-symbols-outlined text-slate-400 text-[18px]">warning</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-4">
+<p class="text-slate-600 dark:text-slate-400 text-xs font-medium">Deepfake Scan</p>
+<span class="material-symbols-outlined text-slate-400 text-[18px]">biotech</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-4">
+<p class="text-slate-600 dark:text-slate-400 text-xs font-medium">Archival</p>
+</button>
+</div>
+<!-- SectionHeader -->
+<div class="flex items-center justify-between px-4 pb-2 pt-6">
+<h3 class="text-slate-900 dark:text-white text-base font-bold leading-tight">Live Ingestion Queue</h3>
+<span class="text-[10px] font-bold text-primary uppercase tracking-widest">Auto-Refresh</span>
+</div>
+<!-- Ingestion Queue List -->
+<div class="flex flex-col">
+<!-- ListItem 1: High Severity Deepfake -->
+<div class="flex gap-4 border-l-4 border-red-500 bg-white dark:bg-slate-800/50 px-4 py-4 justify-between items-center mb-1 border-b border-slate-100 dark:border-slate-800">
+<div class="flex items-start gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-[64px] shadow-sm" data-alt="Political news broadcast screenshot for verification" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuArtxiSMNIEZy3B6oSEAqQwXo6wMj-fN-gAdOM4dLfivnXA8mJ5HCmy50pO12gX_FmHk6NaoCNpRsx9h7I77qkDmONg3PRTHNoShlV2aQuC2dcNiThhXKdchXrnx_bs_sDxMZFDjUrTD8batvPcSCKZGMBgDH0anSbyZf8E_rn3nbkDoajJpjBasfHYeTeGXVIJBmzROZbe4qaheSABo2j0TnuMukdxflcWkLeMLNOR60cLS96KwqpU6mbBlKgbci3rcm4oXcNytQ");'></div>
+<div class="flex flex-1 flex-col justify-center">
+<p class="text-slate-900 dark:text-white text-sm font-bold leading-tight">#MP-9942 | Twitter/X</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 2s ago
+                            </p>
+<div class="flex items-center gap-1.5 mt-2">
+<span class="px-2 py-0.5 bg-red-500/10 text-red-500 text-[10px] font-bold rounded uppercase">High Risk</span>
+<span class="px-2 py-0.5 bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-[10px] font-bold rounded uppercase">Deepfake</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end gap-2 shrink-0">
+<div class="relative size-10">
+<svg class="size-full" viewbox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+<circle class="stroke-current text-slate-200 dark:text-slate-700" cx="18" cy="18" fill="none" r="16" stroke-width="2"></circle>
+<circle class="stroke-current text-red-500" cx="18" cy="18" fill="none" r="16" stroke-dasharray="100" stroke-dashoffset="15" stroke-linecap="round" stroke-width="2"></circle>
+</svg>
+<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[10px] font-bold text-red-500">85%</div>
+</div>
+</div>
+</div>
+<!-- ListItem 2: Medium Archival -->
+<div class="flex gap-4 border-l-4 border-orange-500 bg-white dark:bg-slate-800/50 px-4 py-4 justify-between items-center mb-1 border-b border-slate-100 dark:border-slate-800">
+<div class="flex items-start gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-[64px] shadow-sm" data-alt="Viral meme image from historical archive" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBJgYvUE51W0jxx6HEJZf-ZhFZ-hMQG3zof8vYuMR-5qHOUHO-0qJkZO0dfGIXKEfoWmC9t4Pl3_f2yl5AAmxts2q7aTN6xOXpIMzySa33mZ-JPHBkOG-uqzQt6jOqEE1HMQx0jEZqUAKAtVD2ipMjjkqKMhcXX-OhTYci9ZpdpOVsloHhj-KmBQDcjuwypvF-353qAlNNeyqMbWnmaeLPW-FoZ14l2De2c3YEWIZyXXZT7dnrfzITe3yarOEw1s-2bC01Pq4dO8Q");'></div>
+<div class="flex flex-1 flex-col justify-center">
+<p class="text-slate-900 dark:text-white text-sm font-bold leading-tight">#MP-9821 | Instagram</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 45s ago
+                            </p>
+<div class="flex items-center gap-1.5 mt-2">
+<span class="px-2 py-0.5 bg-orange-500/10 text-orange-500 text-[10px] font-bold rounded uppercase">Modified</span>
+<span class="px-2 py-0.5 bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-[10px] font-bold rounded uppercase">Archive Match</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end gap-2 shrink-0">
+<div class="relative size-10">
+<svg class="size-full" viewbox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+<circle class="stroke-current text-slate-200 dark:text-slate-700" cx="18" cy="18" fill="none" r="16" stroke-width="2"></circle>
+<circle class="stroke-current text-orange-500" cx="18" cy="18" fill="none" r="16" stroke-dasharray="100" stroke-dashoffset="50" stroke-linecap="round" stroke-width="2"></circle>
+</svg>
+<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[10px] font-bold text-orange-500">50%</div>
+</div>
+</div>
+</div>
+<!-- ListItem 3: Original Verified -->
+<div class="flex gap-4 border-l-4 border-green-500 bg-white dark:bg-slate-800/50 px-4 py-4 justify-between items-center mb-1 border-b border-slate-100 dark:border-slate-800">
+<div class="flex items-start gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-[64px] shadow-sm" data-alt="High resolution sports photography verified" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC4YEqkhi_mxThPDb-g5dy4j8ZK_hbU8CQoyxkQOUsmuBU3-0bubFYxZNekPBvWB3kYmcR5ytbHTSpMAdwo3NERNT62hwCioELzTjrzcR3JoZVYDdkyak7bhlI89xt58_q7hEhp9_hJNqd1wxgGHwC1Y7o_mZ6xyxaOGWniXjuAPz4z_5JMzzIaeCJGCCBDJ1yz8NdPppf1SorYND9U5eRlUkqaJaNMBXcXIeN_0CzwxiLXWrb6FACvz3Fo4oulnm_GJ1VM87LWQQ");'></div>
+<div class="flex flex-1 flex-col justify-center">
+<p class="text-slate-900 dark:text-white text-sm font-bold leading-tight">#MP-9810 | YouTube Shorts</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 1m ago
+                            </p>
+<div class="flex items-center gap-1.5 mt-2">
+<span class="px-2 py-0.5 bg-green-500/10 text-green-500 text-[10px] font-bold rounded uppercase">Verified</span>
+<span class="px-2 py-0.5 bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-[10px] font-bold rounded uppercase">Original</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end gap-2 shrink-0">
+<div class="flex size-10 items-center justify-center rounded-full bg-green-500/10">
+<span class="material-symbols-outlined text-green-500">check_circle</span>
+</div>
+</div>
+</div>
+<!-- ListItem 4: Low Severity -->
+<div class="flex gap-4 border-l-4 border-slate-400 bg-white dark:bg-slate-800/50 px-4 py-4 justify-between items-center mb-1 border-b border-slate-100 dark:border-slate-800 opacity-80">
+<div class="flex items-start gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-[64px] shadow-sm" data-alt="Generic landscape image for test" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA-V9RH41YrumbXHFuYZSs7Jc7HwXDj1TkE4DLQnbSx4X16ZnQTDvHGIORA-7SxugPozwo_E8uZOJyeyQQQqio2y2AO6XDWEbfvfHjmlPmY4O7z-xJ8LSmRfeIYfFVWJpv8_Z3npXclKkQDfsHv5Zi8cxwbcLbhSWcbVtyy4NsV_z6JU96FCXmGm0JL5XQTi4qxEffySrP19ZdWfrBuH_XwVdDe4Jm2fnHMjYUQh79u4j6Bz-4LgShC58kstvwSBI_zMiMWhmfwZw");'></div>
+<div class="flex flex-1 flex-col justify-center">
+<p class="text-slate-900 dark:text-white text-sm font-bold leading-tight">#MP-9799 | TikTok</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 5m ago
+                            </p>
+<div class="flex items-center gap-1.5 mt-2">
+<span class="px-2 py-0.5 bg-slate-400/10 text-slate-400 text-[10px] font-bold rounded uppercase">Processed</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end gap-2 shrink-0">
+<div class="flex size-10 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-700">
+<span class="material-symbols-outlined text-slate-400">history</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Efficiency Card Horizontal Scroll -->
+<div class="px-4 pt-6 pb-2">
+<h3 class="text-slate-900 dark:text-white text-base font-bold leading-tight">Efficiency KPIs</h3>
+</div>
+<div class="flex gap-4 px-4 pb-8 overflow-x-auto no-scrollbar">
+<div class="min-w-[240px] p-4 rounded-xl bg-primary border border-primary shadow-lg shadow-primary/20">
+<p class="text-white/80 text-xs font-medium">Automated Resolution Rate</p>
+<p class="text-white text-2xl font-bold mt-1">94.2%</p>
+<div class="w-full h-1 bg-white/30 rounded-full mt-3">
+<div class="h-1 bg-white rounded-full" style="width: 94%;"></div>
+</div>
+<p class="text-white/80 text-[10px] font-bold mt-2 uppercase tracking-wide">Goal: 95.0%</p>
+</div>
+<div class="min-w-[240px] p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium">Avg. Time to Label</p>
+<p class="text-slate-900 dark:text-white text-2xl font-bold mt-1">450ms</p>
+<div class="flex items-center gap-1 mt-3">
+<span class="material-symbols-outlined text-green-500 text-[16px]">trending_down</span>
+<span class="text-green-500 text-[10px] font-bold uppercase">-15% vs yesterday</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Navigation Bottom Bar (iOS Style) -->
+<nav class="absolute bottom-0 left-0 right-0 h-20 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-t border-slate-200 dark:border-slate-800 flex items-center justify-around px-6 pb-4">
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined">monitoring</span>
+<span class="text-[10px] font-bold">Monitor</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">query_stats</span>
+<span class="text-[10px] font-bold">Analytics</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">notification_important</span>
+<span class="text-[10px] font-bold">Alerts</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-bold">Settings</span>
+</button>
+</nav>
+<!-- FAB for manual scan -->
+<button class="absolute bottom-24 right-4 size-14 rounded-full bg-primary flex items-center justify-center shadow-xl shadow-primary/40 text-white">
+<span class="material-symbols-outlined">add_photo_alternate</span>
+</button>
+</div>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</body></html>

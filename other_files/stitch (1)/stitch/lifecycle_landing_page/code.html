@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>UMPTS - Lifecycle Landing Page</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#40f91f",
+                        "background-light": "#f6f8f5",
+                        "background-dark": "#12230f",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Space Grotesk", sans-serif;
+        }
+        .neon-glow {
+            box-shadow: 0 0 15px rgba(64, 249, 31, 0.3);
+        }
+        .pipeline-line {
+            background: linear-gradient(to bottom, #40f91f 0%, #12230f 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-screen">
+<!-- Top Navigation -->
+<nav class="sticky top-0 z-50 flex items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md p-4 justify-between border-b border-white/10">
+<div class="text-primary flex size-10 shrink-0 items-center justify-center" data-icon="menu">
+<span class="material-symbols-outlined">menu</span>
+</div>
+<h2 class="text-white text-xl font-bold tracking-tight flex-1 text-center font-display">UMPTS</h2>
+<div class="flex w-10 items-center justify-end">
+<button class="flex items-center justify-center rounded-full size-10 bg-primary/10 text-primary border border-primary/20">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<div class="@container">
+<div class="p-4">
+<div class="flex min-h-[420px] flex-col gap-6 bg-cover bg-center bg-no-repeat rounded-xl items-center justify-center p-6 relative overflow-hidden" data-alt="Abstract dark digital matrix with green data flow" style='background-image: linear-gradient(rgba(18, 35, 15, 0.8) 0%, rgba(18, 35, 15, 0.95) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDsARd5sEh4jcmXJ88mA8Dhr0P7mAHJZ3HepV-OzoWeSxceSUCtbOZ6YFTSIj-Yl6g72fJXxfDj2j9Zl55ySZY7gjzkmr-q9fVT8iSllq6KRT_zC_5qFGccJFmb5K6_PVHzxDhMJwCEA_NTOshWdd9OKQ7R3aOcFwOtRkQrMKflZbMT9XLUDq-wuy75hGiFDyLV9dA-is43v3Ac8R-XjHjeu09YBpqIzrcfhbjle0KnY1iGbXZFMjfkpWpXdQhO0miGE1yRy8ELbA");'>
+<div class="flex flex-col gap-4 text-center z-10">
+<span class="text-primary text-xs font-bold tracking-[0.2em] uppercase">Enterprise Blockchain Security</span>
+<h1 class="text-white text-4xl font-black leading-tight tracking-tight @[480px]:text-5xl font-display">
+                        From <span class="text-primary">Recording</span> to <span class="text-primary">Internet</span> — Every Media is Tracked
+                    </h1>
+<p class="text-slate-300 text-sm font-normal leading-relaxed max-w-md mx-auto">
+                        Universal Media Provenance &amp; Automated Tracking System. Secure your digital assets with enterprise-grade blockchain tracking and AI verification.
+                    </p>
+</div>
+<div class="flex flex-col w-full gap-3 mt-4 z-10 px-4">
+<button class="flex w-full cursor-pointer items-center justify-center rounded-lg h-12 bg-primary text-background-dark text-base font-bold transition-transform active:scale-95 neon-glow">
+<span class="material-symbols-outlined mr-2">upload_file</span>
+                        Upload Media
+                    </button>
+<button class="flex w-full cursor-pointer items-center justify-center rounded-lg h-12 bg-white/5 border border-white/20 text-white text-base font-bold transition-transform active:scale-95 backdrop-blur-sm">
+<span class="material-symbols-outlined mr-2">verified_user</span>
+                        Verify Media
+                    </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Live Ticker -->
+<div class="px-4 py-2">
+<div class="bg-primary/5 border border-primary/20 rounded-lg p-3 flex items-center justify-between overflow-hidden">
+<div class="flex items-center gap-2">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+<span class="text-[10px] font-bold text-primary uppercase tracking-widest">Live Network Status</span>
+</div>
+<div class="flex gap-4">
+<div class="flex flex-col items-end">
+<span class="text-[10px] text-white/50 uppercase">Assets</span>
+<span class="text-xs font-mono text-white font-bold">1,204,582</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-[10px] text-white/50 uppercase">TPS</span>
+<span class="text-xs font-mono text-white font-bold">4.2k</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Pipeline Section -->
+<section class="py-6">
+<h2 class="text-white text-2xl font-bold px-4 mb-8 font-display flex items-center gap-2">
+            Media Lifecycle Pipeline
+            <span class="h-1 w-12 bg-primary block"></span>
+</h2>
+<div class="relative px-6">
+<!-- Timeline Container -->
+<div class="grid grid-cols-[48px_1fr] gap-x-4">
+<!-- Step 1 -->
+<div class="flex flex-col items-center">
+<div class="z-10 flex size-12 items-center justify-center rounded-full bg-primary text-background-dark neon-glow">
+<span class="material-symbols-outlined">videocam</span>
+</div>
+<div class="w-[2px] h-20 bg-gradient-to-b from-primary to-primary/20"></div>
+</div>
+<div class="flex flex-col pt-1 pb-10">
+<p class="text-primary text-lg font-bold font-display uppercase tracking-wider">01. Record</p>
+<p class="text-white text-base font-medium mt-1">Source Authentication</p>
+<p class="text-slate-400 text-sm mt-2 leading-relaxed">Cryptographic hardware signing at the moment of capture. Establishing the "Root of Trust".</p>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col items-center">
+<div class="z-10 flex size-12 items-center justify-center rounded-full bg-white/10 border border-primary/40 text-primary">
+<span class="material-symbols-outlined">memory</span>
+</div>
+<div class="w-[2px] h-20 bg-gradient-to-b from-primary/20 to-primary/5"></div>
+</div>
+<div class="flex flex-col pt-1 pb-10">
+<p class="text-primary/70 text-lg font-bold font-display uppercase tracking-wider">02. Process</p>
+<p class="text-white text-base font-medium mt-1">AI Metadata Extraction</p>
+<p class="text-slate-400 text-sm mt-2 leading-relaxed">Automated indexing of content, context, and environment. AI-driven forensic analysis for integrity.</p>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col items-center">
+<div class="z-10 flex size-12 items-center justify-center rounded-full bg-white/5 border border-white/20 text-white/40">
+<span class="material-symbols-outlined">account_tree</span>
+</div>
+</div>
+<div class="flex flex-col pt-1">
+<p class="text-white/40 text-lg font-bold font-display uppercase tracking-wider">03. Track</p>
+<p class="text-white text-base font-medium mt-1">Global Monitoring</p>
+<p class="text-slate-400 text-sm mt-2 leading-relaxed">Distributed ledger monitoring across platforms. Real-time alerts for unauthorized modifications.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Use Cases Section -->
+<section class="py-8 bg-white/5 border-y border-white/10">
+<h2 class="text-white text-xl font-bold px-4 pb-6 font-display">Enterprise Use Cases</h2>
+<div class="flex overflow-x-auto gap-4 px-4 pb-4 no-scrollbar">
+<!-- Case 1 -->
+<div class="min-w-[280px] bg-background-dark border border-white/10 rounded-xl p-5">
+<div class="bg-primary/10 text-primary size-12 rounded-lg flex items-center justify-center mb-4">
+<span class="material-symbols-outlined">edit_square</span>
+</div>
+<h3 class="text-white text-lg font-bold mb-2">Creators</h3>
+<p class="text-slate-400 text-sm">Protect your digital rights and ensure proper attribution as your content circulates the web.</p>
+<button class="mt-4 text-primary text-xs font-bold uppercase tracking-widest flex items-center">
+                    Learn More <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+</button>
+</div>
+<!-- Case 2 -->
+<div class="min-w-[280px] bg-background-dark border border-white/10 rounded-xl p-5">
+<div class="bg-primary/10 text-primary size-12 rounded-lg flex items-center justify-center mb-4">
+<span class="material-symbols-outlined">hub</span>
+</div>
+<h3 class="text-white text-lg font-bold mb-2">Platforms</h3>
+<p class="text-slate-400 text-sm">Automate content moderation and trust signals for user-generated content at scale.</p>
+<button class="mt-4 text-primary text-xs font-bold uppercase tracking-widest flex items-center">
+                    Learn More <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+</button>
+</div>
+<!-- Case 3 -->
+<div class="min-w-[280px] bg-background-dark border border-white/10 rounded-xl p-5">
+<div class="bg-primary/10 text-primary size-12 rounded-lg flex items-center justify-center mb-4">
+<span class="material-symbols-outlined">policy</span>
+</div>
+<h3 class="text-white text-lg font-bold mb-2">Government</h3>
+<p class="text-slate-400 text-sm">Combat deepfakes and misinformation with high-assurance verification protocols.</p>
+<button class="mt-4 text-primary text-xs font-bold uppercase tracking-widest flex items-center">
+                    Learn More <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Footer Stats -->
+<footer class="p-8 text-center bg-background-dark">
+<div class="flex justify-center gap-8 mb-6">
+<div class="flex flex-col">
+<span class="text-2xl font-bold text-white font-display">99.9%</span>
+<span class="text-[10px] text-slate-500 uppercase tracking-widest">Uptime</span>
+</div>
+<div class="w-[1px] bg-white/10 h-10"></div>
+<div class="flex flex-col">
+<span class="text-2xl font-bold text-white font-display">ISO-7</span>
+<span class="text-[10px] text-slate-500 uppercase tracking-widest">Certified</span>
+</div>
+</div>
+<p class="text-slate-600 text-[10px] uppercase tracking-tighter">© 2024 UMPTS Global Tracking Protocol. All rights reserved.</p>
+</footer>
+<!-- Bottom Navigation Bar (iOS Style) -->
+<div class="fixed bottom-0 left-0 right-0 h-20 bg-background-dark/90 backdrop-blur-xl border-t border-white/10 flex items-center justify-around px-6 z-50">
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-bold">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-500">
+<span class="material-symbols-outlined">search</span>
+<span class="text-[10px] font-bold">Explore</span>
+</button>
+<div class="relative -top-4">
+<button class="bg-primary size-14 rounded-full flex items-center justify-center text-background-dark shadow-lg shadow-primary/40 border-4 border-background-dark">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+</div>
+<button class="flex flex-col items-center gap-1 text-slate-500">
+<span class="material-symbols-outlined">history</span>
+<span class="text-[10px] font-bold">History</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-500">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-bold">Settings</span>
+</button>
+</div>
+<!-- Padding for bottom nav -->
+<div class="h-24"></div>
+</body></html>

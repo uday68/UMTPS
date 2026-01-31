@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>UMPTS - Change &amp; Impact Analysis</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0d59f2",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<!-- Top Navigation Bar -->
+<div class="relative flex h-auto w-full flex-col bg-background-light dark:bg-background-dark sticky top-0 z-50 border-b border-slate-200 dark:border-slate-800">
+<div class="flex items-center p-4 pb-2 justify-between">
+<div class="flex size-12 shrink-0 items-center justify-start cursor-pointer">
+<span class="material-symbols-outlined text-2xl">arrow_back_ios</span>
+</div>
+<div class="flex flex-col items-center flex-1">
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">Impact Analysis</h2>
+<span class="text-[10px] uppercase tracking-widest text-primary font-bold">Asset ID: 8829-QX</span>
+</div>
+<div class="flex w-12 items-center justify-end">
+<button class="flex cursor-pointer items-center justify-center rounded-lg h-12 bg-transparent gap-2 p-0">
+<span class="material-symbols-outlined text-2xl">share</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Metrics Section -->
+<div class="flex flex-wrap gap-3 p-4">
+<div class="flex min-w-[100px] flex-1 flex-col gap-1 rounded-xl p-4 bg-white dark:bg-[#1c2433] shadow-sm border border-slate-200 dark:border-slate-800">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-wider">Modification</p>
+<p class="tracking-tight text-2xl font-bold leading-tight">14.2%</p>
+<p class="text-emerald-500 text-xs font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">trending_up</span> +2.1%
+            </p>
+</div>
+<div class="flex min-w-[100px] flex-1 flex-col gap-1 rounded-xl p-4 bg-white dark:bg-[#1c2433] shadow-sm border border-slate-200 dark:border-slate-800">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-wider">Change Type</p>
+<p class="tracking-tight text-xl font-bold leading-tight truncate">AI Style</p>
+<p class="text-primary text-xs font-bold">Generative</p>
+</div>
+<div class="flex min-w-[100px] flex-1 flex-col gap-1 rounded-xl p-4 bg-white dark:bg-[#1c2433] shadow-sm border border-slate-200 dark:border-slate-800">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-wider">Confidence</p>
+<p class="tracking-tight text-2xl font-bold leading-tight">98.4%</p>
+<p class="text-emerald-500 text-xs font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">verified</span> High
+            </p>
+</div>
+</div>
+<!-- View Mode Selector -->
+<div class="px-4 py-2">
+<div class="flex h-11 flex-1 items-center justify-center rounded-xl bg-slate-200/50 dark:bg-slate-800/50 p-1">
+<label class="flex cursor-pointer h-full grow items-center justify-center rounded-lg px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-background-dark has-[:checked]:shadow-sm text-slate-500 dark:text-slate-400 has-[:checked]:text-primary text-sm font-bold transition-all">
+<span class="truncate">Side-by-Side</span>
+<input checked="" class="hidden" name="view-mode" type="radio" value="side-by-side"/>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center rounded-lg px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-background-dark has-[:checked]:shadow-sm text-slate-500 dark:text-slate-400 has-[:checked]:text-primary text-sm font-bold transition-all">
+<span class="truncate">Overlay View</span>
+<input class="hidden" name="view-mode" type="radio" value="overlay"/>
+</label>
+</div>
+</div>
+<!-- Comparison Header -->
+<div class="flex items-center justify-between px-4 pt-6 pb-2">
+<h3 class="text-lg font-bold leading-tight tracking-tight">Forensic Comparison</h3>
+<span class="material-symbols-outlined text-slate-400 cursor-pointer">info</span>
+</div>
+<!-- Media Comparison Grid -->
+<div class="grid grid-cols-1 gap-4 p-4">
+<!-- Original Media -->
+<div class="group relative overflow-hidden rounded-xl bg-slate-200 dark:bg-slate-800 aspect-video ring-1 ring-slate-200 dark:ring-slate-800">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="high resolution original landscape photo for comparison" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAvG3FPdra0t105Z4osyUlogu04ceriH0aNd5mKJOoiPt0ZI_AZH1ozdw-DvgfMNks19BHn3XXVvrQYUUNevMJCa59EjBAG_viGnBZG1YwAAaV8sFiaeG0Tes8krt27APwgbo6_48CVZhbEt1npsgZO5W0s8Rw5WvCCCUdW7rbLm4QqcplaP2AtCwzGPqW-8XEKdCdd1_TeXTEWjHjkeOVVe2AdwUEgyRhRRq0JdfROLdDPhHjxFVuC5lOLIclgOLo-Ql8JeadO8g");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-3 left-3 flex items-center gap-2">
+<span class="px-2 py-0.5 bg-slate-900/80 text-white text-[10px] font-bold rounded uppercase tracking-widest">Original</span>
+<p class="text-white text-xs font-medium">Source: Verified Archive</p>
+</div>
+</div>
+<!-- Detected Media -->
+<div class="group relative overflow-hidden rounded-xl bg-slate-200 dark:bg-slate-800 aspect-video ring-2 ring-primary">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="modified version of the same landscape with highlighted AI changes" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBJsg4WQAgiXHaw_y7WH_rBZ3coKjMVKwPnwM6pvkT3IuKaNcekr6BscLRhdcQb2tNokvvHPvU_OZFMGdNTOGfEPz9CKb_LenWaVuo5qNIoNYsq0FEriExGB45ndOfcpmcfZOjjRM6dEXagTQ2uN1I7d0hIc0ruZqXiKxtIyY9c3LWeMtt43TFT-bOV9WDm2_8Ua5lu9WGngQSLJAI1ZrZ2yfQgYuniKBObvzSec_wYuAuuXweoXL0f78ISu_9vOxIBs9eN7OVKjQ");'></div>
+<!-- Simulated Forensic Overlays -->
+<div class="absolute inset-0 border-[3px] border-primary/40 m-8 rounded-lg pointer-events-none">
+<div class="absolute -top-1 -left-1 bg-primary text-white text-[8px] px-1 font-bold">SCENE_MOD_01</div>
+</div>
+<div class="absolute top-1/4 right-1/4 w-12 h-12 rounded-full border-2 border-dashed border-red-500 animate-pulse flex items-center justify-center">
+<span class="text-red-500 font-bold text-[8px]">AI_GEN</span>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent"></div>
+<div class="absolute bottom-3 left-3 flex items-center gap-2">
+<span class="px-2 py-0.5 bg-primary text-white text-[10px] font-bold rounded uppercase tracking-widest">Detected</span>
+<p class="text-white text-xs font-medium">Inconsistent Pixels Identified</p>
+</div>
+<button class="absolute top-3 right-3 size-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-lg">layers</span>
+</button>
+</div>
+</div>
+<!-- Forensic Details Header -->
+<h3 class="text-lg font-bold leading-tight tracking-tight px-4 pb-2 pt-6">Modification Logs</h3>
+<!-- Audit Log Component -->
+<div class="px-4 pb-24 flex flex-col gap-2">
+<div class="flex items-center gap-4 p-4 rounded-xl bg-white dark:bg-[#1c2433] border border-slate-200 dark:border-slate-800">
+<div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">brush</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<p class="font-bold text-sm">Pixel Manipulation</p>
+<span class="text-[10px] font-mono text-slate-500 uppercase">Coord: 21.04, 88.1</span>
+</div>
+<p class="text-xs text-slate-500 dark:text-slate-400">Localized sharpening and color balance shift detected in foreground.</p>
+</div>
+</div>
+<div class="flex items-center gap-4 p-4 rounded-xl bg-white dark:bg-[#1c2433] border border-slate-200 dark:border-slate-800">
+<div class="size-10 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-500">
+<span class="material-symbols-outlined">data_object</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<p class="font-bold text-sm">EXIF Discrepancy</p>
+<span class="text-[10px] font-mono text-slate-500 uppercase">Header: 0x44F</span>
+</div>
+<p class="text-xs text-slate-500 dark:text-slate-400">Timestamp mismatch between container and bitstream metadata.</p>
+</div>
+</div>
+<div class="flex items-center gap-4 p-4 rounded-xl bg-white dark:bg-[#1c2433] border border-slate-200 dark:border-slate-800">
+<div class="size-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-500">
+<span class="material-symbols-outlined">robot_2</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<p class="font-bold text-sm">AI Latent Space Hit</p>
+<span class="text-[10px] font-mono text-slate-500 uppercase">Match: 92%</span>
+</div>
+<p class="text-xs text-slate-500 dark:text-slate-400">Signature matches Stable Diffusion v2.1 noise patterns.</p>
+</div>
+</div>
+</div>
+<!-- Floating Bottom Action Bar -->
+<div class="fixed bottom-0 left-0 right-0 p-4 bg-white/80 dark:bg-[#101622]/80 backdrop-blur-xl border-t border-slate-200 dark:border-slate-800 flex gap-3">
+<button class="flex-1 h-12 rounded-xl border border-slate-300 dark:border-slate-700 font-bold text-sm flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg">flag</span>
+            Flag
+        </button>
+<button class="flex-[2] h-12 rounded-xl bg-primary text-white font-bold text-sm flex items-center justify-center gap-2 shadow-lg shadow-primary/25">
+<span class="material-symbols-outlined text-lg">check_circle</span>
+            Approve Integrity
+        </button>
+</div>
+</body></html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Alerts &amp; Reporting Center</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#186adc",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111821",
+                        "severity-high": "#ef4444",
+                        "severity-medium": "#f59e0b",
+                        "severity-low": "#10b981",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<!-- Top Navigation Bar -->
+<div class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+<div class="flex items-center justify-between p-4 pb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">shield_with_heart</span>
+<h2 class="text-lg font-bold leading-tight tracking-tight">Alerts &amp; Reporting</h2>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800">
+<span class="material-symbols-outlined">tune</span>
+</button>
+</div>
+</div>
+<!-- Summary Dashboard (Mini) -->
+<div class="flex gap-3 px-4 py-4 overflow-x-auto no-scrollbar">
+<div class="flex flex-col min-w-[100px] flex-1 gap-1 rounded p-3 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50">
+<p class="text-xs font-medium text-severity-high uppercase tracking-wider">High</p>
+<p class="text-2xl font-bold leading-tight">12</p>
+</div>
+<div class="flex flex-col min-w-[100px] flex-1 gap-1 rounded p-3 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50">
+<p class="text-xs font-medium text-severity-medium uppercase tracking-wider">Medium</p>
+<p class="text-2xl font-bold leading-tight">28</p>
+</div>
+<div class="flex flex-col min-w-[100px] flex-1 gap-1 rounded p-3 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50">
+<p class="text-xs font-medium text-severity-low uppercase tracking-wider">Low</p>
+<p class="text-2xl font-bold leading-tight">145</p>
+</div>
+</div>
+<!-- Tabs -->
+<div class="flex border-b border-slate-200 dark:border-slate-800 px-4 gap-8">
+<a class="flex flex-col items-center justify-center border-b-[3px] border-primary text-primary pb-3 pt-4" href="#">
+<p class="text-sm font-bold leading-normal">Live Feed</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-transparent text-slate-500 pb-3 pt-4" href="#">
+<p class="text-sm font-bold leading-normal">Priority</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-transparent text-slate-500 pb-3 pt-4" href="#">
+<p class="text-sm font-bold leading-normal">Resolved</p>
+</a>
+</div>
+</div>
+<!-- Main Content Area -->
+<main class="pb-24">
+<h3 class="text-sm font-semibold uppercase tracking-widest text-slate-500 px-4 pb-2 pt-6">Real-time Activity</h3>
+<!-- Alert Items -->
+<div class="flex flex-col divide-y divide-slate-200 dark:divide-slate-800">
+<!-- High Alert Item -->
+<div class="bg-white dark:bg-background-dark p-4 flex flex-col gap-3">
+<div class="flex items-start justify-between gap-4">
+<div class="flex items-start gap-3">
+<div class="flex items-center justify-center rounded bg-severity-high/10 text-severity-high shrink-0 size-10">
+<span class="material-symbols-outlined">warning</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-severity-high text-white">HIGH</span>
+<p class="text-sm font-semibold text-slate-400">2m ago</p>
+</div>
+<p class="text-base font-bold leading-tight mt-1">Deepfake Voice Modification</p>
+<p class="text-slate-500 text-xs mt-1">Source: <span class="font-mono text-primary">X (Twitter)</span> • Type: <span class="text-slate-300">Modification</span></p>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-medium bg-primary/10 text-primary">
+<span class="size-1.5 rounded-full bg-primary animate-pulse"></span>
+                            Pending
+                        </span>
+</div>
+</div>
+<div class="flex gap-2 mt-2">
+<button class="flex-1 bg-primary text-white text-xs font-bold py-2.5 rounded hover:bg-blue-700 transition-colors">ESCALATE</button>
+<button class="flex-1 border border-slate-300 dark:border-slate-700 text-xs font-bold py-2.5 rounded hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">ACKNOWLEDGE</button>
+</div>
+</div>
+<!-- Medium Alert Item -->
+<div class="bg-white dark:bg-background-dark p-4 flex flex-col gap-3">
+<div class="flex items-start justify-between gap-4">
+<div class="flex items-start gap-3">
+<div class="flex items-center justify-center rounded bg-severity-medium/10 text-severity-medium shrink-0 size-10">
+<span class="material-symbols-outlined">change_circle</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-severity-medium text-white">MEDIUM</span>
+<p class="text-sm font-semibold text-slate-400">14m ago</p>
+</div>
+<p class="text-base font-bold leading-tight mt-1">Unlicensed Content Reuse</p>
+<p class="text-slate-500 text-xs mt-1">Source: <span class="font-mono text-primary">YouTube</span> • Type: <span class="text-slate-300">Reuse</span></p>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-medium bg-severity-low/10 text-severity-low">
+<span class="material-symbols-outlined text-[10px]">check_circle</span>
+                            Auto-Reported
+                        </span>
+</div>
+</div>
+<div class="flex gap-2 mt-2">
+<button class="flex-1 border border-slate-300 dark:border-slate-700 text-xs font-bold py-2.5 rounded hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">VIEW DETAILS</button>
+<button class="flex-1 border border-slate-300 dark:border-slate-700 text-xs font-bold py-2.5 rounded hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">ACKNOWLEDGE</button>
+</div>
+</div>
+<!-- Low Alert Item -->
+<div class="bg-white dark:bg-background-dark p-4 flex flex-col gap-3">
+<div class="flex items-start justify-between gap-4">
+<div class="flex items-start gap-3">
+<div class="flex items-center justify-center rounded bg-severity-low/10 text-severity-low shrink-0 size-10">
+<span class="material-symbols-outlined">info</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-severity-low text-white">LOW</span>
+<p class="text-sm font-semibold text-slate-400">45m ago</p>
+</div>
+<p class="text-base font-bold leading-tight mt-1">Metadata Inconsistency</p>
+<p class="text-slate-500 text-xs mt-1">Source: <span class="font-mono text-primary">Reddit</span> • Type: <span class="text-slate-300">Metadata</span></p>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-medium bg-slate-500/10 text-slate-500">
+                            Ignored
+                        </span>
+</div>
+</div>
+</div>
+<!-- High Alert Item 2 -->
+<div class="bg-white dark:bg-background-dark p-4 flex flex-col gap-3 border-l-4 border-severity-high">
+<div class="flex items-start justify-between gap-4">
+<div class="flex items-start gap-3">
+<div class="flex items-center justify-center rounded bg-severity-high/10 text-severity-high shrink-0 size-10">
+<span class="material-symbols-outlined">face</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-severity-high text-white">HIGH</span>
+<p class="text-sm font-semibold text-slate-400">1h ago</p>
+</div>
+<p class="text-base font-bold leading-tight mt-1">Executive Face-Swap Detection</p>
+<p class="text-slate-500 text-xs mt-1">Source: <span class="font-mono text-primary">Telegram</span> • Type: <span class="text-slate-300">Deepfake</span></p>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-medium bg-primary/10 text-primary">
+<span class="size-1.5 rounded-full bg-primary"></span>
+                            Queued
+                        </span>
+</div>
+</div>
+<div class="flex gap-2 mt-2">
+<button class="flex-1 bg-primary text-white text-xs font-bold py-2.5 rounded hover:bg-blue-700 transition-colors">ESCALATE</button>
+<button class="flex-1 border border-slate-300 dark:border-slate-700 text-xs font-bold py-2.5 rounded hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">ACKNOWLEDGE</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Tab Bar -->
+<div class="fixed bottom-0 left-0 right-0 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-lg border-t border-slate-200 dark:border-slate-800 pb-safe">
+<div class="flex items-center justify-around p-3">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined fill-[1]">rss_feed</span>
+<span class="text-[10px] font-bold">Feed</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500 hover:text-primary" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-[10px] font-bold">Analytics</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500 hover:text-primary" href="#">
+<span class="material-symbols-outlined">verified</span>
+<span class="text-[10px] font-bold">Resolved</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500 hover:text-primary" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-bold">Settings</span>
+</a>
+</div>
+</div>
+</body></html>

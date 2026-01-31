@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>UMPTS | Legal &amp; Government Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3b82f6",
+                        "background-dark": "#000000",
+                        "surface-dark": "#111111",
+                        "border-high": "#333333",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans"]
+                    },
+                    borderRadius: { "DEFAULT": "0rem", "lg": "0rem", "xl": "0.125rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer base {
+            body {
+                font-family: 'Public Sans', sans-serif;
+                -webkit-tap-highlight-color: transparent;
+                background-color: #000000;
+            }
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #444;
+            border-radius: 0px;
+        }
+        .ios-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-dark text-white min-h-screen pb-32">
+<header class="sticky top-0 z-50 bg-black/90 ios-blur border-b border-border-high">
+<div class="flex items-center p-4 justify-between max-w-lg mx-auto">
+<div class="flex items-center gap-3">
+<div class="flex size-10 shrink-0 items-center justify-center border border-white bg-white text-black">
+<span class="material-symbols-outlined text-xl">security</span>
+</div>
+<div>
+<h2 class="text-xs font-black leading-none tracking-tighter uppercase">Legal Authority</h2>
+<p class="text-[10px] text-green-400 font-bold uppercase tracking-widest flex items-center gap-1 mt-1">
+<span class="size-1 bg-green-400 rounded-full animate-pulse"></span>
+                    Terminal Secure
+                </p>
+</div>
+</div>
+<div class="flex gap-2">
+<div class="flex items-center px-2 py-1 border border-border-high text-[10px] font-mono text-slate-400">
+                #LGL-982-AX
+            </div>
+</div>
+</div>
+</header>
+<main class="max-w-lg mx-auto">
+<section class="p-4">
+<div class="grid grid-cols-2 gap-px bg-border-high border border-border-high">
+<div class="flex flex-col gap-1 p-4 bg-black">
+<p class="text-slate-500 text-[10px] font-bold uppercase tracking-widest">Active Cases</p>
+<p class="text-3xl font-black leading-none text-white tracking-tighter">14</p>
+<div class="mt-2 text-[10px] text-white bg-blue-600 px-1.5 py-0.5 self-start font-bold uppercase">Critical</div>
+</div>
+<div class="flex flex-col gap-1 p-4 bg-black">
+<p class="text-slate-500 text-[10px] font-bold uppercase tracking-widest">Auth Level</p>
+<p class="text-3xl font-black leading-none text-white tracking-tighter">III</p>
+<div class="mt-2 text-[10px] text-white border border-white px-1.5 py-0.5 self-start font-bold uppercase tracking-wider">Restricted</div>
+</div>
+</div>
+</section>
+<section class="mt-2">
+<div class="flex items-center justify-between px-4 pb-3">
+<h3 class="text-xs font-black uppercase tracking-widest border-l-2 border-white pl-2">Correlation Matrix</h3>
+<span class="text-[10px] text-white underline font-bold uppercase">Export Log</span>
+</div>
+<div class="px-4">
+<div class="overflow-x-auto custom-scrollbar">
+<table class="w-full border-collapse bg-white text-black">
+<thead>
+<tr class="bg-black text-white text-[10px] font-black uppercase tracking-tighter text-left">
+<th class="p-3 border-r border-border-high">Asset Identifier</th>
+<th class="p-3 border-r border-border-high">Source</th>
+<th class="p-3">Veracity</th>
+</tr>
+</thead>
+<tbody class="text-xs font-bold border border-white">
+<tr class="border-b border-black">
+<td class="p-3 font-mono tracking-tighter bg-white">#AD-204-X</td>
+<td class="p-3 bg-white">
+<div class="flex gap-1">
+<span class="material-symbols-outlined text-sm">alternate_email</span>
+<span class="material-symbols-outlined text-sm">play_circle</span>
+</div>
+</td>
+<td class="p-3 bg-white">
+<div class="flex items-center gap-1">
+<span class="bg-black text-white px-1 py-0.5 text-[10px]">98%</span>
+</div>
+</td>
+</tr>
+<tr class="border-b border-black">
+<td class="p-3 font-mono tracking-tighter bg-white">#MG-911-A</td>
+<td class="p-3 bg-white">
+<div class="flex gap-1">
+<span class="material-symbols-outlined text-sm">send</span>
+<span class="material-symbols-outlined text-sm">chat</span>
+</div>
+</td>
+<td class="p-3 bg-white">
+<div class="flex items-center gap-1">
+<span class="bg-black text-white px-1 py-0.5 text-[10px]">74%</span>
+</div>
+</td>
+</tr>
+<tr>
+<td class="p-3 font-mono tracking-tighter bg-white">#KT-442-B</td>
+<td class="p-3 bg-white">
+<div class="flex gap-1">
+<span class="material-symbols-outlined text-sm">video_library</span>
+</div>
+</td>
+<td class="p-3 bg-white">
+<div class="flex items-center gap-1">
+<span class="bg-red-600 text-white px-1 py-0.5 text-[10px]">42%</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section class="mt-8 px-4">
+<h3 class="text-xs font-black uppercase tracking-widest border-l-2 border-white pl-2 mb-6">Evidence Timeline</h3>
+<div class="relative">
+<div class="absolute left-[7px] top-0 bottom-0 w-px bg-white"></div>
+<div class="relative pl-8 mb-8">
+<div class="absolute left-0 top-1.5 size-4 bg-white border-2 border-black rounded-full"></div>
+<div class="border border-border-high p-4 bg-surface-dark">
+<div class="flex justify-between items-start mb-2">
+<span class="text-[10px] font-black uppercase tracking-widest bg-white text-black px-1.5">Ingest</span>
+<span class="text-[10px] font-mono text-slate-500">24-OCT-23 08:30</span>
+</div>
+<p class="text-xs font-bold mb-2">Digital Asset Hashing Processed</p>
+<div class="bg-black p-2 font-mono text-[10px] text-green-400 border border-border-high">
+                        SHA256: 8f2a71d...c91d0a
+                    </div>
+</div>
+</div>
+<div class="relative pl-8 mb-8">
+<div class="absolute left-0 top-1.5 size-4 bg-white border-2 border-black rounded-full"></div>
+<div class="border border-border-high p-4 bg-surface-dark">
+<div class="flex justify-between items-start mb-2">
+<span class="text-[10px] font-black uppercase tracking-widest bg-white text-black px-1.5">Match</span>
+<span class="text-[10px] font-mono text-slate-500">24-OCT-23 10:15</span>
+</div>
+<p class="text-xs font-bold">Cross-Platform Correlation Verified</p>
+<p class="text-[10px] text-slate-400 mt-1">Confirmed identity across 3 disparate channels.</p>
+</div>
+</div>
+<div class="relative pl-8">
+<div class="absolute left-0 top-1.5 size-4 bg-green-500 border-2 border-black rounded-full"></div>
+<div class="border border-green-900/50 p-4 bg-green-950/20">
+<div class="flex justify-between items-start mb-2">
+<span class="text-[10px] font-black uppercase tracking-widest bg-green-500 text-black px-1.5">Verified</span>
+<span class="text-[10px] font-mono text-slate-500">25-OCT-23 14:00</span>
+</div>
+<p class="text-xs font-bold text-green-400">Legal Custody Established</p>
+<p class="text-[10px] text-green-400/70 mt-1">Officer: AGENT_D_MILLER</p>
+</div>
+</div>
+</div>
+</section>
+<section class="mt-10 mb-20 bg-surface-dark border-t border-border-high p-4">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-sm">history_edu</span>
+<h3 class="text-[10px] font-black uppercase tracking-[0.3em] text-white">Immutable Audit Log</h3>
+</div>
+<div class="space-y-2 font-mono text-[10px] text-slate-400">
+<div class="flex gap-4 p-1.5 border-b border-border-high">
+<span class="text-white shrink-0">14:22:01</span>
+<span><b class="text-blue-400">USR_882</b> GRANTED_ACCESS :: CASE_982</span>
+</div>
+<div class="flex gap-4 p-1.5 border-b border-border-high">
+<span class="text-white shrink-0">14:19:45</span>
+<span><b class="text-blue-400">SYS_UMPTS</b> SYNC_COMPLETE :: 98.2%</span>
+</div>
+<div class="flex gap-4 p-1.5 border-b border-border-high">
+<span class="text-white shrink-0">13:55:12</span>
+<span><b class="text-red-500">USR_101</b> ACCESS_DENIED :: ENCRYPT_01</span>
+</div>
+</div>
+</section>
+</main>
+<nav class="fixed bottom-0 left-0 right-0 bg-black border-t-2 border-white p-4 pb-8 z-[60] ios-blur">
+<div class="max-w-lg mx-auto grid grid-cols-2 gap-3">
+<button class="flex items-center justify-center gap-2 h-12 border-2 border-white bg-black text-white font-black text-xs uppercase tracking-widest active:bg-white active:text-black transition-colors">
+<span class="material-symbols-outlined text-base">flag</span>
+            Flag Evidence
+        </button>
+<button class="flex items-center justify-center gap-2 h-12 bg-white text-black border-2 border-white font-black text-xs uppercase tracking-widest active:bg-black active:text-white transition-colors">
+<span class="material-symbols-outlined text-base">gavel</span>
+            Seal &amp; Export
+        </button>
+</div>
+</nav>
+
+</body></html>

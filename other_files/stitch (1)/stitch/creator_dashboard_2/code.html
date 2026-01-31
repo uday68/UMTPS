@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Creator Dashboard - UMPTS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3b82f6",
+                        "canvas": "#000000",
+                        "card-bg": "#121212",
+                        "card-border": "#262626",
+                        "status-red": "#ff3b30",
+                        "status-amber": "#ffcc00",
+                        "status-green": "#34c759",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "1rem"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        body {
+            font-family: 'Public Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+            background-color: #000000;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .ios-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-canvas text-white min-h-screen">
+<header class="sticky top-0 z-50 bg-black/60 ios-blur border-b border-card-border">
+<div class="flex items-center p-4 pb-2 justify-between">
+<div class="flex size-10 shrink-0 items-center justify-center rounded-full bg-white/10 text-white">
+<span class="material-symbols-outlined">account_circle</span>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-tight flex-1 text-center font-display uppercase tracking-widest text-[11px] opacity-70">UMPTS Creator</h2>
+<div class="flex w-10 items-center justify-end">
+<button class="relative flex size-10 items-center justify-center rounded bg-transparent text-white">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2.5 right-2.5 flex h-2 w-2 rounded-full bg-status-red ring-2 ring-black"></span>
+</button>
+</div>
+</div>
+<div class="px-4 pb-4">
+<h1 class="text-2xl font-bold mb-3">Dashboard</h1>
+<div class="flex items-center bg-card-bg rounded-xl px-4 py-2.5 gap-2 border border-card-border shadow-inner">
+<span class="material-symbols-outlined text-zinc-500 text-lg">search</span>
+<input class="bg-transparent border-none p-0 text-sm focus:ring-0 w-full placeholder:text-zinc-600 text-white" placeholder="Search registered media..." type="text"/>
+</div>
+</div>
+</header>
+<main class="pb-32">
+<div class="p-4 grid grid-cols-2 gap-3">
+<div class="flex flex-col gap-1 rounded-xl p-4 border border-card-border bg-card-bg">
+<p class="text-zinc-500 text-[10px] font-bold uppercase tracking-wider">Registered</p>
+<div class="flex items-baseline gap-2">
+<p class="text-2xl font-bold">128</p>
+<p class="text-status-green text-[10px] font-bold">+5%</p>
+</div>
+</div>
+<div class="flex flex-col gap-1 rounded-xl p-4 border border-card-border bg-card-bg">
+<p class="text-zinc-500 text-[10px] font-bold uppercase tracking-wider">Active Alerts</p>
+<div class="flex items-baseline gap-2">
+<p class="text-2xl font-bold text-status-amber">12</p>
+<p class="text-status-green text-[10px] font-bold">+2%</p>
+</div>
+</div>
+<div class="flex flex-col gap-1 rounded-xl p-4 border border-card-border bg-card-bg">
+<p class="text-zinc-500 text-[10px] font-bold uppercase tracking-wider">Presence</p>
+<div class="flex items-baseline gap-2">
+<p class="text-2xl font-bold">450</p>
+<p class="text-status-green text-[10px] font-bold">+15%</p>
+</div>
+</div>
+<div class="flex flex-col gap-1 rounded-xl p-4 border border-card-border bg-card-bg">
+<p class="text-zinc-500 text-[10px] font-bold uppercase tracking-wider">AI Mods</p>
+<div class="flex items-baseline gap-2">
+<p class="text-2xl font-bold text-status-red">3</p>
+<p class="text-status-red text-[10px] font-bold">-1%</p>
+</div>
+</div>
+</div>
+<div>
+<div class="flex items-center justify-between px-4 pt-4 mb-2">
+<h3 class="text-sm font-bold uppercase tracking-widest text-zinc-500">Critical Alerts</h3>
+<button class="text-primary text-xs font-bold">View All</button>
+</div>
+<div class="flex flex-col space-y-px">
+<div class="flex items-center gap-4 px-4 min-h-[80px] py-4 justify-between bg-card-bg border-y border-card-border">
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center rounded-lg bg-status-red/10 text-status-red shrink-0 size-12 ring-1 ring-status-red/30">
+<span class="material-symbols-outlined">warning</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-sm font-bold leading-tight">Unauthorized Usage: X</p>
+<p class="text-zinc-500 text-[11px] mt-1">Source: x.com/unauth_handle</p>
+</div>
+</div>
+<div class="shrink-0 text-right">
+<p class="text-zinc-600 text-[10px] font-bold uppercase">2m ago</p>
+<span class="inline-flex mt-1 items-center rounded-sm bg-status-red px-1.5 py-0.5 text-[9px] font-black text-black uppercase tracking-tighter">Critical</span>
+</div>
+</div>
+<div class="flex items-center gap-4 px-4 min-h-[80px] py-4 justify-between bg-card-bg border-b border-card-border">
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center rounded-lg bg-status-amber/10 text-status-amber shrink-0 size-12 ring-1 ring-status-amber/30">
+<span class="material-symbols-outlined">robot</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-sm font-bold leading-tight">AI Modification Detected</p>
+<p class="text-zinc-500 text-[11px] mt-1">Deepfake signature identified</p>
+</div>
+</div>
+<div class="shrink-0 text-right">
+<p class="text-zinc-600 text-[10px] font-bold uppercase">1h ago</p>
+<span class="inline-flex mt-1 items-center rounded-sm bg-status-amber px-1.5 py-0.5 text-[9px] font-black text-black uppercase tracking-tighter">Review</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-8 px-4">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-sm font-bold uppercase tracking-widest text-zinc-500">Registered Media</h3>
+<button class="flex items-center gap-1 bg-white text-black text-[11px] font-black px-3 py-1.5 rounded-full uppercase">
+<span class="material-symbols-outlined text-sm">add</span>
+                    Register
+                </button>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col bg-card-bg border border-card-border rounded-xl overflow-hidden shadow-lg">
+<div class="relative aspect-[4/3]">
+<img alt="Digital art abstract" class="object-cover w-full h-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAq4iGt2xk-KyZfX09hjTbtl8Os8x3lB13Bt5wacB043oS_fZ8TT6KL1uw0O0bR5wSJkeVcnn-TeU7vVafrm_fOqilvK3ZBojIicOE0WXqqBynsvskAh5EBKrm2g2ftWZnNTuIBZSDcNRHEv1lWrZ7n66WtbPRVfn9tat_mlJAFnQxeJUZJysGmpfwfKcng4YC7p5lYslwKcHTPP4DjzrADzW4hfYaG_2LxiXc2hV_etocK6RyoNISznOh0LWFPOvaLGXLLSR5UPA"/>
+<div class="absolute top-2 left-2 bg-status-green text-black text-[9px] px-1.5 py-0.5 rounded-sm font-black uppercase tracking-tighter">
+                            Secure
+                        </div>
+</div>
+<div class="p-3">
+<p class="text-[11px] font-bold truncate">Neon Abstract 01</p>
+<div class="mt-3 space-y-1.5">
+<div class="flex justify-between text-[9px] uppercase tracking-wider">
+<span class="text-zinc-600 font-bold">Copies</span>
+<span class="text-white font-black">12</span>
+</div>
+<div class="flex justify-between text-[9px] uppercase tracking-wider">
+<span class="text-zinc-600 font-bold">Seen</span>
+<span class="text-white font-black">12m</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col bg-card-bg border border-card-border rounded-xl overflow-hidden shadow-lg">
+<div class="relative aspect-[4/3]">
+<img alt="Technical visualization" class="object-cover w-full h-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdWa1hw-HuoZnyS6QAE_5Liz8piJDF3Izk1dtKAKtIJnlHxJcyvPQwssX6lSUSLx9ewHCPyW2p4SvDGnVDYysWV-53zuT1Z-pWFqTxbPKNaJJPS5FyCZiw82gu7eXCalv3Wl6JKLimH5SnKo9v-e17s4cFxH5BSNSGriHclTRao84I-iFnOoOlEGZXuGzDxygwcDMHdsdW3b5-yZlCVcQXvCAuZkhwSDnhj9B5LRsgPedSfa4gmk4_N1lo8GcG7WKnAycx8WNRrQ"/>
+<div class="absolute top-2 left-2 bg-status-amber text-black text-[9px] px-1.5 py-0.5 rounded-sm font-black uppercase tracking-tighter">
+                            Action
+                        </div>
+</div>
+<div class="p-3">
+<p class="text-[11px] font-bold truncate">Cyber Structure</p>
+<div class="mt-3 space-y-1.5">
+<div class="flex justify-between text-[9px] uppercase tracking-wider">
+<span class="text-zinc-600 font-bold">Copies</span>
+<span class="text-white font-black">254</span>
+</div>
+<div class="flex justify-between text-[9px] uppercase tracking-wider">
+<span class="text-zinc-600 font-bold">Seen</span>
+<span class="text-white font-black">1h</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col bg-card-bg border border-card-border rounded-xl overflow-hidden shadow-lg">
+<div class="relative aspect-[4/3]">
+<img alt="Purple gradient texture" class="object-cover w-full h-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqlXYNdNl4DVZ7RO-ffdFyPIzxfCTtDhZqEJ9Ah-4MAW2916JU3co8RQGWwG02bwmiDUqbAbllytDfrEZ1J9SsQwWuByL6yjJ4TeLzvuDJTr2R5o2gKjv1dcfrLQxzXneonYljvJ4sku3UXZ-zxwPH9mbl1k_fs95rGrnJ8tOBGdSVdU39ivmLtYxhcd_VXqqcT41BCnvQSIo4l6AZHxgQXDHQTQroUNJbb4n4eyXJkMtWnhH_9Bf0APqmhgHnfHGelkDhF3wjVw"/>
+<div class="absolute top-2 left-2 bg-status-green text-black text-[9px] px-1.5 py-0.5 rounded-sm font-black uppercase tracking-tighter">
+                            Secure
+                        </div>
+</div>
+<div class="p-3">
+<p class="text-[11px] font-bold truncate">Aura Mesh</p>
+<div class="mt-3 space-y-1.5">
+<div class="flex justify-between text-[9px] uppercase tracking-wider">
+<span class="text-zinc-600 font-bold">Copies</span>
+<span class="text-white font-black">3</span>
+</div>
+<div class="flex justify-between text-[9px] uppercase tracking-wider">
+<span class="text-zinc-600 font-bold">Seen</span>
+<span class="text-white font-black">3d</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col bg-card-bg border border-card-border rounded-xl overflow-hidden shadow-lg">
+<div class="relative aspect-[4/3]">
+<img alt="Dark tech pattern" class="object-cover w-full h-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOy_M8T0_jReH1Iz5NBuOO12gbNGazixgzU_M4QTDh9dU9F198EzkvC_mBI0fSXiSHMx9Bzvx5rmdJmD-YdUBQBjC0Gukg_GmJdcpgGTO7rlfqJ6JOXNdy9ifZ3CRuCwEt92rG6BAIbwpUQg5xQ4CK2rw46AmuzdCyqApjKyekxz7MmA07cW0aXDct1wo2n4U-4PBplg_eXPdPv3gUow8akp1MeMZ5KMelK57pJPxxzgVp0b9HMpsDnztiRNiDrY1VF26j5IaxRg"/>
+<div class="absolute top-2 left-2 bg-zinc-700 text-white text-[9px] px-1.5 py-0.5 rounded-sm font-black uppercase tracking-tighter">
+                            Scan
+                        </div>
+</div>
+<div class="p-3">
+<p class="text-[11px] font-bold truncate">Vortex Texture B</p>
+<div class="mt-3 space-y-1.5">
+<div class="flex justify-between text-[9px] uppercase tracking-wider">
+<span class="text-zinc-600 font-bold">Copies</span>
+<span class="text-white font-black">--</span>
+</div>
+<div class="flex justify-between text-[9px] uppercase tracking-wider">
+<span class="text-zinc-600 font-bold">Seen</span>
+<span class="text-white font-black">Now</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<nav class="fixed bottom-0 left-0 right-0 bg-black/80 ios-blur border-t border-card-border px-6 pb-8 pt-3 z-[60]">
+<div class="flex items-center justify-between">
+<a class="flex flex-col items-center gap-1.5 text-white" href="#">
+<span class="material-symbols-outlined text-[26px]">dashboard</span>
+<span class="text-[9px] font-bold uppercase tracking-widest">Dash</span>
+</a>
+<a class="flex flex-col items-center gap-1.5 text-zinc-600" href="#">
+<span class="material-symbols-outlined text-[26px]">analytics</span>
+<span class="text-[9px] font-bold uppercase tracking-widest">Stats</span>
+</a>
+<div class="relative -top-6">
+<button class="flex size-14 items-center justify-center rounded-full bg-white text-black shadow-2xl shadow-white/10 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-3xl font-bold">add</span>
+</button>
+</div>
+<a class="flex flex-col items-center gap-1.5 text-zinc-600" href="#">
+<span class="material-symbols-outlined text-[26px]">verified</span>
+<span class="text-[9px] font-bold uppercase tracking-widest">Track</span>
+</a>
+<a class="flex flex-col items-center gap-1.5 text-zinc-600" href="#">
+<span class="material-symbols-outlined text-[26px]">settings</span>
+<span class="text-[9px] font-bold uppercase tracking-widest">Setup</span>
+</a>
+</div>
+</nav>
+<div class="fixed bottom-1 left-1/2 -translate-x-1/2 w-32 h-1.5 bg-zinc-800 rounded-full z-[70]"></div>
+
+</body></html>

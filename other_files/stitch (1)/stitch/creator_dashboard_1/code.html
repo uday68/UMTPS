@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Creator Dashboard - UMPTS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#186adc",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111821",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Public Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-screen">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+<div class="flex items-center p-4 pb-2 justify-between">
+<div class="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined">account_circle</span>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center font-display">Creator Dashboard</h2>
+<div class="flex w-10 items-center justify-end">
+<button class="relative flex size-10 cursor-pointer items-center justify-center overflow-hidden rounded bg-transparent text-slate-900 dark:text-white">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 flex h-2 w-2 rounded-full bg-red-500"></span>
+</button>
+</div>
+</div>
+<div class="px-4 pb-3">
+<div class="flex items-center bg-slate-100 dark:bg-slate-800 rounded-lg px-3 py-2 gap-2 border border-slate-200 dark:border-slate-700">
+<span class="material-symbols-outlined text-slate-400 text-sm">search</span>
+<input class="bg-transparent border-none p-0 text-sm focus:ring-0 w-full placeholder:text-slate-500 dark:text-white" placeholder="Search registered media..." type="text"/>
+</div>
+</div>
+</header>
+<main class="pb-24">
+<!-- Summary Stats Grid -->
+<div class="p-4 grid grid-cols-2 gap-3">
+<div class="flex flex-col gap-1 rounded-lg p-4 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-wider">Registered</p>
+<div class="flex items-baseline gap-2">
+<p class="text-2xl font-bold leading-tight">128</p>
+<p class="text-[#0bda5e] text-xs font-medium">+5%</p>
+</div>
+</div>
+<div class="flex flex-col gap-1 rounded-lg p-4 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-wider">Active Alerts</p>
+<div class="flex items-baseline gap-2">
+<p class="text-2xl font-bold leading-tight text-amber-500">12</p>
+<p class="text-[#0bda5e] text-xs font-medium">+2%</p>
+</div>
+</div>
+<div class="flex flex-col gap-1 rounded-lg p-4 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-wider">Online Presence</p>
+<div class="flex items-baseline gap-2">
+<p class="text-2xl font-bold leading-tight">450</p>
+<p class="text-[#0bda5e] text-xs font-medium">+15%</p>
+</div>
+</div>
+<div class="flex flex-col gap-1 rounded-lg p-4 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-wider">AI Mods</p>
+<div class="flex items-baseline gap-2">
+<p class="text-2xl font-bold leading-tight text-red-500">3</p>
+<p class="text-[#fa6238] text-xs font-medium">-1%</p>
+</div>
+</div>
+</div>
+<!-- Recent Alerts Section -->
+<div>
+<div class="flex items-center justify-between px-4 pt-2">
+<h3 class="text-lg font-bold leading-tight tracking-[-0.015em]">Recent Alerts</h3>
+<button class="text-primary text-sm font-semibold">View All</button>
+</div>
+<div class="mt-2 flex flex-col divide-y divide-slate-100 dark:divide-slate-800">
+<!-- Alert Item 1 -->
+<div class="flex items-center gap-4 px-4 min-h-[72px] py-3 justify-between bg-white dark:bg-transparent">
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center rounded-lg bg-red-500/10 text-red-500 shrink-0 size-11">
+<span class="material-symbols-outlined">warning</span>
+</div>
+<div class="flex flex-col justify-center max-w-[180px]">
+<p class="text-sm font-semibold leading-tight line-clamp-1">Unauthorized Usage: X</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs leading-normal line-clamp-1">Source: x.com/unauth_handle</p>
+</div>
+</div>
+<div class="shrink-0 text-right">
+<p class="text-slate-400 text-[10px] font-medium uppercase">2m ago</p>
+<span class="inline-flex mt-1 items-center rounded bg-red-500 px-1.5 py-0.5 text-[10px] font-bold text-white uppercase">Critical</span>
+</div>
+</div>
+<!-- Alert Item 2 -->
+<div class="flex items-center gap-4 px-4 min-h-[72px] py-3 justify-between bg-white dark:bg-transparent">
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center rounded-lg bg-amber-500/10 text-amber-500 shrink-0 size-11">
+<span class="material-symbols-outlined">robot</span>
+</div>
+<div class="flex flex-col justify-center max-w-[180px]">
+<p class="text-sm font-semibold leading-tight line-clamp-1">AI Modification Detected</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs leading-normal line-clamp-1">Deepfake signature identified</p>
+</div>
+</div>
+<div class="shrink-0 text-right">
+<p class="text-slate-400 text-[10px] font-medium uppercase">1h ago</p>
+<span class="inline-flex mt-1 items-center rounded bg-amber-500 px-1.5 py-0.5 text-[10px] font-bold text-white uppercase">Review</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Registered Media Grid -->
+<div class="mt-6 px-4">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-lg font-bold leading-tight tracking-[-0.015em]">Registered Media</h3>
+<button class="flex items-center gap-1 bg-primary text-white text-xs font-bold px-3 py-1.5 rounded-lg">
+<span class="material-symbols-outlined text-sm">add</span>
+                    New
+                </button>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<!-- Media Card 1 -->
+<div class="flex flex-col bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg overflow-hidden">
+<div class="relative aspect-video">
+<img alt="Digital art abstract" class="object-cover w-full h-full" data-alt="Abstract blue digital art wave" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAq4iGt2xk-KyZfX09hjTbtl8Os8x3lB13Bt5wacB043oS_fZ8TT6KL1uw0O0bR5wSJkeVcnn-TeU7vVafrm_fOqilvK3ZBojIicOE0WXqqBynsvskAh5EBKrm2g2ftWZnNTuIBZSDcNRHEv1lWrZ7n66WtbPRVfn9tat_mlJAFnQxeJUZJysGmpfwfKcng4YC7p5lYslwKcHTPP4DjzrADzW4hfYaG_2LxiXc2hV_etocK6RyoNISznOh0LWFPOvaLGXLLSR5UPA"/>
+<div class="absolute top-2 left-2 bg-primary/90 text-white text-[10px] px-1.5 py-0.5 rounded font-bold uppercase backdrop-blur-sm">
+                            Protected
+                        </div>
+</div>
+<div class="p-3">
+<p class="text-xs font-bold truncate">Neon Abstract 01</p>
+<div class="mt-2 space-y-1">
+<div class="flex justify-between text-[10px]">
+<span class="text-slate-400">Copy Count:</span>
+<span class="text-slate-700 dark:text-slate-200 font-medium">12</span>
+</div>
+<div class="flex justify-between text-[10px]">
+<span class="text-slate-400">Last Seen:</span>
+<span class="text-slate-700 dark:text-slate-200 font-medium">12m ago</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Media Card 2 -->
+<div class="flex flex-col bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg overflow-hidden">
+<div class="relative aspect-video">
+<img alt="Technical visualization" class="object-cover w-full h-full" data-alt="Technical blueprint 3D rendering" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdWa1hw-HuoZnyS6QAE_5Liz8piJDF3Izk1dtKAKtIJnlHxJcyvPQwssX6lSUSLx9ewHCPyW2p4SvDGnVDYysWV-53zuT1Z-pWFqTxbPKNaJJPS5FyCZiw82gu7eXCalv3Wl6JKLimH5SnKo9v-e17s4cFxH5BSNSGriHclTRao84I-iFnOoOlEGZXuGzDxygwcDMHdsdW3b5-yZlCVcQXvCAuZkhwSDnhj9B5LRsgPedSfa4gmk4_N1lo8GcG7WKnAycx8WNRrQ"/>
+<div class="absolute top-2 left-2 bg-amber-500/90 text-white text-[10px] px-1.5 py-0.5 rounded font-bold uppercase backdrop-blur-sm">
+                            Action Required
+                        </div>
+</div>
+<div class="p-3">
+<p class="text-xs font-bold truncate">Cyber Structure Render</p>
+<div class="mt-2 space-y-1">
+<div class="flex justify-between text-[10px]">
+<span class="text-slate-400">Copy Count:</span>
+<span class="text-slate-700 dark:text-slate-200 font-medium">254</span>
+</div>
+<div class="flex justify-between text-[10px]">
+<span class="text-slate-400">Last Seen:</span>
+<span class="text-slate-700 dark:text-slate-200 font-medium">1h ago</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Media Card 3 -->
+<div class="flex flex-col bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg overflow-hidden">
+<div class="relative aspect-video">
+<img alt="Purple gradient texture" class="object-cover w-full h-full" data-alt="Purple fluid background gradient" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqlXYNdNl4DVZ7RO-ffdFyPIzxfCTtDhZqEJ9Ah-4MAW2916JU3co8RQGWwG02bwmiDUqbAbllytDfrEZ1J9SsQwWuByL6yjJ4TeLzvuDJTr2R5o2gKjv1dcfrLQxzXneonYljvJ4sku3UXZ-zxwPH9mbl1k_fs95rGrnJ8tOBGdSVdU39ivmLtYxhcd_VXqqcT41BCnvQSIo4l6AZHxgQXDHQTQroUNJbb4n4eyXJkMtWnhH_9Bf0APqmhgHnfHGelkDhF3wjVw"/>
+<div class="absolute top-2 left-2 bg-primary/90 text-white text-[10px] px-1.5 py-0.5 rounded font-bold uppercase backdrop-blur-sm">
+                            Protected
+                        </div>
+</div>
+<div class="p-3">
+<p class="text-xs font-bold truncate">Aura Mesh Background</p>
+<div class="mt-2 space-y-1">
+<div class="flex justify-between text-[10px]">
+<span class="text-slate-400">Copy Count:</span>
+<span class="text-slate-700 dark:text-slate-200 font-medium">3</span>
+</div>
+<div class="flex justify-between text-[10px]">
+<span class="text-slate-400">Last Seen:</span>
+<span class="text-slate-700 dark:text-slate-200 font-medium">3d ago</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Media Card 4 -->
+<div class="flex flex-col bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg overflow-hidden">
+<div class="relative aspect-video">
+<img alt="Dark tech pattern" class="object-cover w-full h-full" data-alt="Dark hexagonal grid tech pattern" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOy_M8T0_jReH1Iz5NBuOO12gbNGazixgzU_M4QTDh9dU9F198EzkvC_mBI0fSXiSHMx9Bzvx5rmdJmD-YdUBQBjC0Gukg_GmJdcpgGTO7rlfqJ6JOXNdy9ifZ3CRuCwEt92rG6BAIbwpUQg5xQ4CK2rw46AmuzdCyqApjKyekxz7MmA07cW0aXDct1wo2n4U-4PBplg_eXPdPv3gUow8akp1MeMZ5KMelK57pJPxxzgVp0b9HMpsDnztiRNiDrY1VF26j5IaxRg"/>
+<div class="absolute top-2 left-2 bg-slate-500/90 text-white text-[10px] px-1.5 py-0.5 rounded font-bold uppercase backdrop-blur-sm">
+                            Scanning
+                        </div>
+</div>
+<div class="p-3">
+<p class="text-xs font-bold truncate">Vortex Texture B</p>
+<div class="mt-2 space-y-1">
+<div class="flex justify-between text-[10px]">
+<span class="text-slate-400">Copy Count:</span>
+<span class="text-slate-700 dark:text-slate-200 font-medium">--</span>
+</div>
+<div class="flex justify-between text-[10px]">
+<span class="text-slate-400">Last Seen:</span>
+<span class="text-slate-700 dark:text-slate-200 font-medium">Just now</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar (iOS Style) -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-t border-slate-200 dark:border-slate-800 px-6 pb-8 pt-2 z-[60]">
+<div class="flex items-center justify-between">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] font-bold">Dashboard</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-[10px] font-medium">Analytics</span>
+</a>
+<div class="relative -top-5">
+<button class="flex size-14 items-center justify-center rounded-full bg-primary text-white shadow-lg shadow-primary/40">
+<span class="material-symbols-outlined text-3xl">upload_file</span>
+</button>
+</div>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">verified</span>
+<span class="text-[10px] font-medium">Protection</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-medium">Settings</span>
+</a>
+</div>
+</nav>
+<!-- Home Indicator Area -->
+<div class="fixed bottom-0 left-0 right-0 h-1 bg-transparent pointer-events-none"></div>
+</body></html>

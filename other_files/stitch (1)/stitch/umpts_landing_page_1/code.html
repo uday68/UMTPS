@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>UMPTS | Media Provenance</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#186adc",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111821",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Public Sans", sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-screen">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+<div class="flex items-center p-4 justify-between max-w-screen-xl mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-size: 32px;">fingerprint</span>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">UMPTS</h2>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center p-2 text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<button class="flex items-center justify-center p-2 text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<main class="w-full">
+<!-- HeroSection -->
+<section class="px-4 py-12 md:py-20 max-w-screen-xl mx-auto">
+<div class="@container">
+<div class="flex flex-col gap-8 @[864px]:flex-row @[864px]:items-center">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl border border-slate-200 dark:border-slate-800 shadow-2xl @[864px]:w-1/2" data-alt="Abstract digital data visualization representing media tracking" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBcBJEp4OUlVtYkukHuxICYKff9YJyuc2adLuaN-XJihbesO7p9lq3yFmeWcyCP_Wz1e1M21pFiLsKVr1_Dg6JBYP53e_JAywIpuea-e4DIolaI5CKjFxD_IwZ4Vci8ONSQr-0Hm9WoGnIS94HUeKcPlXdfeNPYwIYexRcazSTseUqIuRhzE_gyxAJX6L2S1cByZTLCNKOXVRr38jSwsx-OIKisct963BDqqTMvwZd1bc0Z6F1EubQYQAxR19sIb-PV4SvNLvlgtA");'>
+<div class="w-full h-full bg-primary/10 backdrop-contrast-75 rounded-xl"></div>
+</div>
+<div class="flex flex-col gap-6 @[864px]:w-1/2">
+<div class="flex flex-col gap-4">
+<h1 class="text-slate-900 dark:text-white text-4xl font-black leading-tight tracking-tight @[480px]:text-5xl">
+                                Verify. Track. <br/>Trust Digital Media.
+                            </h1>
+<p class="text-slate-600 dark:text-slate-400 text-lg leading-relaxed max-w-lg">
+                                The enterprise standard for AI-driven media provenance. Protect your assets with immutable digital signatures.
+                            </p>
+</div>
+<div class="flex flex-col sm:flex-row gap-3">
+<button class="flex flex-1 min-w-[140px] items-center justify-center rounded-lg h-14 bg-primary text-white text-base font-bold tracking-wide hover:bg-primary/90 transition-colors">
+<span class="truncate">Upload Media</span>
+</button>
+<button class="flex flex-1 min-w-[140px] items-center justify-center rounded-lg h-14 border-2 border-slate-300 dark:border-slate-700 bg-transparent text-slate-900 dark:text-white text-base font-bold tracking-wide hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+<span class="truncate">Verify Media</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SectionHeader: How It Works -->
+<div class="mt-8 border-t border-slate-200 dark:border-slate-800">
+<h4 class="text-primary text-xs font-black uppercase leading-normal tracking-[0.2em] px-4 py-10 text-center">How It Works</h4>
+</div>
+<!-- Timeline -->
+<section class="px-4 pb-20 max-w-md mx-auto">
+<div class="grid grid-cols-[48px_1fr] gap-x-4">
+<!-- Step 1 -->
+<div class="flex flex-col items-center">
+<div class="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary border border-primary/20">
+<span class="material-symbols-outlined">upload_file</span>
+</div>
+<div class="w-[2px] bg-slate-200 dark:bg-slate-800 h-20 grow my-1"></div>
+</div>
+<div class="flex flex-col pt-1 pb-10">
+<p class="text-slate-900 dark:text-white text-lg font-bold">Securely Ingest</p>
+<p class="text-slate-600 dark:text-slate-400 text-base mt-1">Upload your media assets to our encrypted cloud infrastructure with one click.</p>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col items-center">
+<div class="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary border border-primary/20">
+<span class="material-symbols-outlined">memory</span>
+</div>
+<div class="w-[2px] bg-slate-200 dark:bg-slate-800 h-20 grow my-1"></div>
+</div>
+<div class="flex flex-col pt-1 pb-10">
+<p class="text-slate-900 dark:text-white text-lg font-bold">AI Fingerprinting</p>
+<p class="text-slate-600 dark:text-slate-400 text-base mt-1">Our neural engine analyzes pixel-level provenance and deep metadata structures.</p>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col items-center">
+<div class="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary border border-primary/20">
+<span class="material-symbols-outlined">verified_user</span>
+</div>
+</div>
+<div class="flex flex-col pt-1">
+<p class="text-slate-900 dark:text-white text-lg font-bold">Immutable Records</p>
+<p class="text-slate-600 dark:text-slate-400 text-base mt-1">Generate verifiable authentication certificates logged on a private ledger.</p>
+</div>
+</div>
+</section>
+<!-- SectionHeader: Use Cases -->
+<div class="bg-slate-50 dark:bg-slate-900/50 py-16 border-y border-slate-200 dark:border-slate-800">
+<h4 class="text-primary text-xs font-black uppercase leading-normal tracking-[0.2em] px-4 pb-8 text-center">Use Cases</h4>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4 max-w-screen-xl mx-auto">
+<!-- Case 1: Creators -->
+<div class="bg-background-light dark:bg-background-dark p-8 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-primary/50 transition-colors">
+<div class="mb-4 text-primary">
+<span class="material-symbols-outlined" style="font-size: 40px;">palette</span>
+</div>
+<h3 class="text-slate-900 dark:text-white text-xl font-bold mb-2">Creators</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed">Protect your intellectual property and track distribution across the open web.</p>
+</div>
+<!-- Case 2: Platforms -->
+<div class="bg-background-light dark:bg-background-dark p-8 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-primary/50 transition-colors">
+<div class="mb-4 text-primary">
+<span class="material-symbols-outlined" style="font-size: 40px;">hub</span>
+</div>
+<h3 class="text-slate-900 dark:text-white text-xl font-bold mb-2">Platforms</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed">Automate content moderation and verification at scale using our robust API.</p>
+</div>
+<!-- Case 3: Government -->
+<div class="bg-background-light dark:bg-background-dark p-8 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-primary/50 transition-colors">
+<div class="mb-4 text-primary">
+<span class="material-symbols-outlined" style="font-size: 40px;">account_balance</span>
+</div>
+<h3 class="text-slate-900 dark:text-white text-xl font-bold mb-2">Government</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed">Secure public information channels and combat malicious deepfakes effectively.</p>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="p-10 text-center border-t border-slate-200 dark:border-slate-800">
+<div class="flex items-center justify-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary">fingerprint</span>
+<span class="text-slate-900 dark:text-white font-bold">UMPTS</span>
+</div>
+<p class="text-slate-500 text-sm">© 2024 UMPTS Protocol. All rights reserved.</p>
+<div class="flex justify-center gap-6 mt-6">
+<a class="text-slate-400 hover:text-primary transition-colors" href="#">Privacy</a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#">Terms</a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#">Contact</a>
+</div>
+</footer>
+</main>
+</body></html>

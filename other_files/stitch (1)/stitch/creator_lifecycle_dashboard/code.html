@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Creator Lifecycle Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#40f91f",
+                        "background-light": "#f6f8f5",
+                        "background-dark": "#0a0d0a",
+                        "card-dark": "#161d15",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .glass-card {
+            background: rgba(22, 29, 21, 0.8);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(64, 249, 31, 0.1);
+        }
+        .neon-glow {
+            box-shadow: 0 0 15px rgba(64, 249, 31, 0.2);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-screen pb-24">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-black/5 dark:border-white/5">
+<div class="flex items-center p-4 justify-between max-w-lg mx-auto">
+<div class="flex items-center gap-3">
+<div class="text-primary flex size-10 shrink-0 items-center justify-center bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-2xl">terminal</span>
+</div>
+<div>
+<h2 class="text-white text-base font-bold leading-tight tracking-tight">Creator Lifecycle</h2>
+<p class="text-xs text-primary font-medium uppercase tracking-widest">UMPTS v4.2</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex items-center justify-center rounded-full size-10 bg-white/5 text-white hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-2xl">notifications</span>
+</button>
+<button class="flex items-center justify-center rounded-full size-10 bg-primary text-background-dark">
+<span class="material-symbols-outlined text-2xl font-bold">person</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-lg mx-auto">
+<!-- Summary Stats Section -->
+<section class="p-4">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+<div class="flex flex-col gap-1 rounded-xl p-5 bg-card-dark border border-white/5 neon-glow">
+<div class="flex justify-between items-start">
+<p class="text-slate-400 text-sm font-medium">Total Media Tracked</p>
+<span class="material-symbols-outlined text-primary text-xl">database</span>
+</div>
+<p class="text-white text-3xl font-bold mt-1">12.4k</p>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-primary text-sm">trending_up</span>
+<p class="text-primary text-xs font-bold">+12.4%</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="flex flex-col gap-1 rounded-xl p-4 bg-card-dark border border-white/5">
+<p class="text-slate-400 text-xs font-medium uppercase">Active Mods</p>
+<p class="text-white text-xl font-bold">342</p>
+<p class="text-primary text-[10px] font-bold">+5%</p>
+</div>
+<div class="flex flex-col gap-1 rounded-xl p-4 bg-card-dark border border-white/5">
+<p class="text-slate-400 text-xs font-medium uppercase">Locations</p>
+<p class="text-white text-xl font-bold">89</p>
+<p class="text-red-500 text-[10px] font-bold">-2%</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Activity Performance Chart -->
+<section class="mt-2">
+<div class="px-4 flex justify-between items-end">
+<h3 class="text-white text-lg font-bold tracking-tight">Activity Performance</h3>
+<span class="text-primary text-xs font-bold tracking-widest uppercase">Real-Time</span>
+</div>
+<div class="px-4 py-4">
+<div class="bg-card-dark rounded-xl p-5 border border-white/5">
+<div class="flex flex-wrap gap-4 items-baseline">
+<p class="text-slate-400 text-sm font-medium">Asset Provenance Tracking</p>
+<div class="flex items-center gap-1">
+<p class="text-white text-2xl font-bold leading-tight">98.2%</p>
+<span class="text-primary text-xs font-bold">+2.4%</span>
+</div>
+</div>
+<div class="h-40 mt-4 relative">
+<svg fill="none" height="100%" preserveaspectratio="none" viewbox="0 0 480 150" width="100%" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25V149H0V109Z" fill="url(#neonGradient)"></path>
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25" stroke="#40f91f" stroke-linecap="round" stroke-width="2"></path>
+<defs>
+<lineargradient id="neonGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#40f91f" stop-opacity="0.2"></stop>
+<stop offset="100%" stop-color="#40f91f" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+</svg>
+</div>
+<div class="flex justify-between mt-4">
+<span class="text-slate-500 text-[10px] font-bold">00:00</span>
+<span class="text-slate-500 text-[10px] font-bold">06:00</span>
+<span class="text-slate-500 text-[10px] font-bold">12:00</span>
+<span class="text-slate-500 text-[10px] font-bold">18:00</span>
+<span class="text-primary text-[10px] font-bold uppercase tracking-widest">Live</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Top Modified Assets List -->
+<section class="mt-4">
+<div class="px-4 pb-4">
+<h3 class="text-white text-lg font-bold tracking-tight">Top Modified Assets</h3>
+</div>
+<div class="px-4 space-y-3">
+<!-- Asset Item 1 -->
+<div class="flex items-center gap-4 p-3 bg-card-dark rounded-xl border border-white/5">
+<div class="size-16 bg-slate-800 rounded-lg overflow-hidden shrink-0">
+<img alt="Digital art piece of cyberpunk cityscape" class="w-full h-full object-cover" data-alt="Digital art piece of cyberpunk cityscape" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDf8daqRRjX6oDrNkeeol4j78NLlzLusw_hT4PNzIpNxWU5-6rhXp2yBO2X3ts_ISPyInAKCcnDv-SzQLxpUET6-08-vCDw30ZBJuHruMScG7sA6akFTt_SrUHyRSuFVnCbcaTYNPCTG0XSj7vHvACy1un-JoSbKblQyTdn3-tT0xeEfUQEGZ5dNa5a5_QGpmQ7lxgIFgT3QPavnrUW_2Vpt0yUX1bt85sclGNV3FvQ2u8yhIkpA5C9eAI938SacgrPaD6Vx8KCbQ"/>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-white text-sm font-bold truncate">NeonCity_v2_Final.mp4</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="bg-primary/10 text-primary text-[10px] px-2 py-0.5 rounded font-bold uppercase">Published</span>
+<span class="text-slate-500 text-xs">18 Mods</span>
+</div>
+</div>
+<div class="text-right">
+<span class="material-symbols-outlined text-slate-400">chevron_right</span>
+</div>
+</div>
+<!-- Asset Item 2 -->
+<div class="flex items-center gap-4 p-3 bg-card-dark rounded-xl border border-white/5">
+<div class="size-16 bg-slate-800 rounded-lg overflow-hidden shrink-0">
+<img alt="3D architectural visualization rendering" class="w-full h-full object-cover" data-alt="3D architectural visualization rendering" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCR7t_6dA1eCpxrDWsiJAeaKXRa7LLQPI1FujgTFjRF_rmvfKvXwg8WFqr1Ec0KucU-kf3NZLPp3ao1wxcZ1_gzBRhzWLi1_Og4RlqGMXNt_tAHNUHvhBhcZ3d2_vaxkRsuY85wlP1RTNyhsf49hck95O-XnQftbbTkuCxLQc83Qqn4_8iDrutT7_v91NfiGTwCcFe9wvrZNUsLlCK-zS2PkfRHKd52mw3tz9R9TKrhtPjwwyy377oShJUdoW_TCfBzZbCSaNYC8A"/>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-white text-sm font-bold truncate">Arch_Interior_R3.exr</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="bg-yellow-500/10 text-yellow-500 text-[10px] px-2 py-0.5 rounded font-bold uppercase">Verifying</span>
+<span class="text-slate-500 text-xs">42 Mods</span>
+</div>
+</div>
+<div class="text-right">
+<span class="material-symbols-outlined text-slate-400">chevron_right</span>
+</div>
+</div>
+<!-- Asset Item 3 -->
+<div class="flex items-center gap-4 p-3 bg-card-dark rounded-xl border border-white/5">
+<div class="size-16 bg-slate-800 rounded-lg overflow-hidden shrink-0">
+<img alt="Abstract motion graphics background" class="w-full h-full object-cover" data-alt="Abstract motion graphics background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWzdYHW4ycaN3rTZ3RGh_j3HVlvce469gApH8Vwb7hlkIhb627dujC123GESdcl52irjIwNx3ePUYmbT0YXQZpL1E38ZWzjxD-hryjd2Dd9UDppPE-DEoY62kEDcPTbAsdoT1gCNBvyd92cZrND1fr9BNYYTVeBB1f38fcfLv6_RrnETabwoCTIW884oKHn2MLP_1El9BReHbGhKBi5XKMKWolHzT898i57VQ-OhOD5lB9FxBiDztes1b0AOmnqzxbY2JZzKmWig"/>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-white text-sm font-bold truncate">Motion_Graphic_Source.aep</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="bg-blue-500/10 text-blue-500 text-[10px] px-2 py-0.5 rounded font-bold uppercase">In Pipeline</span>
+<span class="text-slate-500 text-xs">102 Mods</span>
+</div>
+</div>
+<div class="text-right">
+<span class="material-symbols-outlined text-slate-400">chevron_right</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Pipeline Timeline -->
+<section class="mt-8 pb-10">
+<div class="px-4 pb-4 flex justify-between items-center">
+<h3 class="text-white text-lg font-bold tracking-tight">Recent Pipeline Events</h3>
+<button class="text-primary text-xs font-bold uppercase">View Logs</button>
+</div>
+<div class="px-4 relative">
+<!-- Timeline Line -->
+<div class="absolute left-[27px] top-2 bottom-0 w-0.5 bg-white/10"></div>
+<div class="space-y-6">
+<!-- Event 1 -->
+<div class="relative pl-10">
+<div class="absolute left-0 top-1 size-7 bg-primary rounded-full flex items-center justify-center neon-glow">
+<span class="material-symbols-outlined text-background-dark text-sm font-bold">water_drop</span>
+</div>
+<div class="bg-card-dark/40 p-4 rounded-lg border border-white/5">
+<div class="flex justify-between items-start">
+<h4 class="text-white text-sm font-bold">Watermark Applied</h4>
+<span class="text-slate-500 text-[10px] font-medium uppercase">2m ago</span>
+</div>
+<p class="text-slate-400 text-xs mt-1">Provenance ID: <span class="text-primary/70">UMP-7729-LX</span></p>
+</div>
+</div>
+<!-- Event 2 -->
+<div class="relative pl-10">
+<div class="absolute left-0 top-1 size-7 bg-slate-800 rounded-full flex items-center justify-center border border-white/10">
+<span class="material-symbols-outlined text-slate-400 text-sm font-bold">fingerprint</span>
+</div>
+<div class="bg-card-dark/40 p-4 rounded-lg border border-white/5">
+<div class="flex justify-between items-start">
+<h4 class="text-white text-sm font-bold">Metadata Hash Generated</h4>
+<span class="text-slate-500 text-[10px] font-medium uppercase">15m ago</span>
+</div>
+<p class="text-slate-400 text-xs mt-1">Source: Mainframe_Node_Alpha</p>
+</div>
+</div>
+<!-- Event 3 -->
+<div class="relative pl-10">
+<div class="absolute left-0 top-1 size-7 bg-slate-800 rounded-full flex items-center justify-center border border-white/10">
+<span class="material-symbols-outlined text-slate-400 text-sm font-bold">share</span>
+</div>
+<div class="bg-card-dark/40 p-4 rounded-lg border border-white/5">
+<div class="flex justify-between items-start">
+<h4 class="text-white text-sm font-bold">Asset Shared to Marketplace</h4>
+<span class="text-slate-500 text-[10px] font-medium uppercase">1h ago</span>
+</div>
+<p class="text-slate-400 text-xs mt-1">Endpoint: Global_CDN_Vertex</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- iOS style Bottom Navigation Bar -->
+<nav class="fixed bottom-0 inset-x-0 bg-background-dark/90 backdrop-blur-xl border-t border-white/10 pb-6 pt-2 z-50">
+<div class="max-w-lg mx-auto flex justify-around items-center px-4">
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-primary">dashboard</span>
+<span class="text-[10px] font-bold text-primary uppercase">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-slate-500 group-hover:text-primary transition-colors">category</span>
+<span class="text-[10px] font-bold text-slate-500 group-hover:text-primary uppercase">Assets</span>
+</a>
+<div class="relative -top-6">
+<button class="size-14 bg-primary text-background-dark rounded-2xl flex items-center justify-center shadow-lg shadow-primary/20 neon-glow">
+<span class="material-symbols-outlined text-3xl font-bold">add</span>
+</button>
+</div>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-slate-500 group-hover:text-primary transition-colors">insights</span>
+<span class="text-[10px] font-bold text-slate-500 group-hover:text-primary uppercase">Analytics</span>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-slate-500 group-hover:text-primary transition-colors">settings</span>
+<span class="text-[10px] font-bold text-slate-500 group-hover:text-primary uppercase">Config</span>
+</a>
+</div>
+</nav>
+</body></html>

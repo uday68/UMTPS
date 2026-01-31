@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Provenance Hash Ledger</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#40f91f",
+                        "background-light": "#f6f8f5",
+                        "background-dark": "#0d140b",
+                        "surface-dark": "#1a2618",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .glow-green {
+            box-shadow: 0 0 15px rgba(64, 249, 31, 0.3);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-screen">
+<!-- Top Navigation Bar -->
+<div class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-white/10">
+<div class="flex items-center p-4 justify-between max-w-md mx-auto">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-400">arrow_back_ios</span>
+<div class="flex flex-col">
+<h2 class="text-lg font-bold leading-none tracking-tight">UMPTS Ledger</h2>
+<p class="text-[10px] text-primary uppercase tracking-widest font-bold">Universal Media System</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center rounded-full size-10 bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10">
+<span class="material-symbols-outlined text-primary">verified_user</span>
+</button>
+</div>
+</div>
+</div>
+<main class="max-w-md mx-auto pb-24">
+<!-- Asset Identity Section -->
+<div class="p-4 pt-6">
+<div class="flex flex-col items-stretch justify-start rounded-xl shadow-lg bg-white dark:bg-surface-dark border border-slate-200 dark:border-white/5 overflow-hidden">
+<div class="w-full h-48 bg-center bg-no-repeat bg-cover relative" data-alt="Digital asset visualization with holographic data overlays" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAtvh2c9nMjjP1ZnVFUFShYHGCdddk4m8cUAm3IStB3kTFKClEUlAxX6q4bWAgE5eoN2gX4nAfG7XJGGEkBe5kKVjXf7md0joSUInIZalY1Uqw-Cv2Sy337g9kQ78PezUeZfYVwMoNTWF1z-7wntIDwMLN05lDJSc2JYEC8e-nyO0rFaBjdIX8sBkX3QDWClEr2hMbdvjNGVdV4hotdYaWNa1CX8sFMD1TRIvonu-5uE1nnnvsUKgBTlxPaAoiGODTis8zYAzZ3vg");'>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<span class="bg-primary/20 backdrop-blur-sm text-primary text-[10px] font-bold px-2 py-1 rounded border border-primary/30 uppercase tracking-widest">Master Asset</span>
+<h3 class="text-white text-xl font-bold mt-1">Project_Zephyr_v4.mp4</h3>
+</div>
+</div>
+<div class="flex w-full flex-col gap-1 p-4">
+<div class="flex justify-between items-center mb-1">
+<p class="text-slate-500 dark:text-[#a0bb9b] text-xs font-medium uppercase tracking-wider">Current Global Truth</p>
+<span class="flex items-center gap-1">
+<span class="size-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-[10px] text-primary font-bold">LIVE SYNC</span>
+</span>
+</div>
+<div class="flex items-center gap-3 justify-between bg-slate-50 dark:bg-black/20 p-3 rounded-lg border border-slate-200 dark:border-white/5">
+<p class="text-slate-700 dark:text-white font-mono text-sm truncate">0x7f4b82c19d9e3a5f720184c9f1a2e3d4c5b6a7f8</p>
+<button class="flex shrink-0 cursor-pointer items-center justify-center rounded-lg h-8 px-3 bg-primary text-black text-xs font-bold transition-transform active:scale-95">
+<span class="material-symbols-outlined text-sm mr-1">content_copy</span>
+<span>Copy</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Statistics Row -->
+<div class="grid grid-cols-3 gap-3 px-4 mb-4">
+<div class="bg-white dark:bg-surface-dark p-3 rounded-xl border border-slate-200 dark:border-white/5">
+<p class="text-[10px] text-slate-500 dark:text-slate-400 uppercase font-bold">Versions</p>
+<p class="text-xl font-bold text-slate-900 dark:text-white leading-tight">05</p>
+</div>
+<div class="bg-white dark:bg-surface-dark p-3 rounded-xl border border-slate-200 dark:border-white/5">
+<p class="text-[10px] text-slate-500 dark:text-slate-400 uppercase font-bold">Integrity</p>
+<p class="text-xl font-bold text-primary leading-tight">100%</p>
+</div>
+<div class="bg-white dark:bg-surface-dark p-3 rounded-xl border border-slate-200 dark:border-white/5">
+<p class="text-[10px] text-slate-500 dark:text-slate-400 uppercase font-bold">Delta</p>
+<p class="text-xl font-bold text-slate-900 dark:text-white leading-tight">2.4%</p>
+</div>
+</div>
+<!-- Section Header -->
+<div class="flex items-center justify-between px-4 py-2 mt-4">
+<h2 class="text-slate-900 dark:text-white text-xl font-bold tracking-tight">Provenance History</h2>
+<span class="material-symbols-outlined text-slate-400">filter_list</span>
+</div>
+<!-- Ledger Timeline -->
+<div class="px-4 space-y-3 mt-2">
+<!-- Latest Version (v4) -->
+<div class="flex gap-4 bg-white dark:bg-surface-dark p-4 rounded-xl border-l-4 border-primary shadow-sm">
+<div class="flex items-start gap-4 flex-1">
+<div class="text-black flex items-center justify-center rounded-lg bg-primary shrink-0 size-12 glow-green">
+<span class="material-symbols-outlined font-bold">check_circle</span>
+</div>
+<div class="flex flex-1 flex-col justify-center min-w-0">
+<div class="flex items-center gap-2">
+<p class="text-slate-900 dark:text-white text-base font-bold">Version 4 (Latest)</p>
+<span class="bg-primary/10 text-primary text-[10px] px-1.5 py-0.5 rounded font-bold border border-primary/20">+0.2%</span>
+</div>
+<p class="text-slate-500 dark:text-[#a0bb9b] text-xs mt-0.5">Updated: 2 mins ago</p>
+<p class="text-slate-400 dark:text-[#a0bb9b]/60 text-[11px] font-mono mt-1 truncate">HASH: 0x7f4b...3a9</p>
+</div>
+</div>
+<div class="shrink-0 self-center">
+<div class="flex size-7 items-center justify-center">
+<div class="size-3 rounded-full bg-primary animate-pulse"></div>
+</div>
+</div>
+</div>
+<!-- Version 3 -->
+<div class="flex gap-4 bg-white/50 dark:bg-surface-dark/50 p-4 rounded-xl border border-slate-200 dark:border-white/5">
+<div class="flex items-start gap-4 flex-1 opacity-80">
+<div class="text-slate-500 dark:text-white flex items-center justify-center rounded-lg bg-slate-200 dark:bg-white/10 shrink-0 size-12">
+<span class="material-symbols-outlined">history</span>
+</div>
+<div class="flex flex-1 flex-col justify-center min-w-0">
+<div class="flex items-center gap-2">
+<p class="text-slate-900 dark:text-white text-base font-medium">Version 3</p>
+<span class="bg-slate-200 dark:bg-white/10 text-slate-500 dark:text-slate-400 text-[10px] px-1.5 py-0.5 rounded font-bold border border-transparent">+1.8%</span>
+</div>
+<p class="text-slate-500 dark:text-[#a0bb9b] text-xs mt-0.5">Oct 24, 2023 14:20:01</p>
+<p class="text-slate-400 dark:text-[#a0bb9b]/60 text-[11px] font-mono mt-1 truncate">HASH: 0x3a2e...1f4</p>
+</div>
+</div>
+<div class="shrink-0 self-center">
+<span class="material-symbols-outlined text-slate-300 dark:text-slate-700">lock</span>
+</div>
+</div>
+<!-- Version 2 -->
+<div class="flex gap-4 bg-white/50 dark:bg-surface-dark/50 p-4 rounded-xl border border-slate-200 dark:border-white/5">
+<div class="flex items-start gap-4 flex-1 opacity-70">
+<div class="text-slate-500 dark:text-white flex items-center justify-center rounded-lg bg-slate-200 dark:bg-white/10 shrink-0 size-12">
+<span class="material-symbols-outlined">history</span>
+</div>
+<div class="flex flex-1 flex-col justify-center min-w-0">
+<div class="flex items-center gap-2">
+<p class="text-slate-900 dark:text-white text-base font-medium">Version 2</p>
+<span class="bg-slate-200 dark:bg-white/10 text-slate-500 dark:text-slate-400 text-[10px] px-1.5 py-0.5 rounded font-bold border border-transparent">+0.4%</span>
+</div>
+<p class="text-slate-500 dark:text-[#a0bb9b] text-xs mt-0.5">Oct 22, 2023 09:15:44</p>
+<p class="text-slate-400 dark:text-[#a0bb9b]/60 text-[11px] font-mono mt-1 truncate">HASH: 0x9b1c...e2d</p>
+</div>
+</div>
+<div class="shrink-0 self-center">
+<span class="material-symbols-outlined text-slate-300 dark:text-slate-700">lock</span>
+</div>
+</div>
+<!-- Initial State -->
+<div class="flex gap-4 bg-white/50 dark:bg-surface-dark/50 p-4 rounded-xl border border-slate-200 dark:border-white/5">
+<div class="flex items-start gap-4 flex-1 opacity-60">
+<div class="text-slate-500 dark:text-white flex items-center justify-center rounded-lg bg-slate-200 dark:bg-white/10 shrink-0 size-12">
+<span class="material-symbols-outlined">fingerprint</span>
+</div>
+<div class="flex flex-1 flex-col justify-center min-w-0">
+<p class="text-slate-900 dark:text-white text-base font-medium">v0 Genesis Block</p>
+<p class="text-slate-500 dark:text-[#a0bb9b] text-xs mt-0.5">Oct 20, 2023 18:00:00</p>
+<p class="text-slate-400 dark:text-[#a0bb9b]/60 text-[11px] font-mono mt-1 truncate">HASH: 0x1f2a...9c0</p>
+</div>
+</div>
+<div class="shrink-0 self-center">
+<span class="material-symbols-outlined text-slate-300 dark:text-slate-700">stars</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Bar (FAB-style Bottom Nav) -->
+<div class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-sm">
+<div class="bg-slate-900/90 dark:bg-surface-dark/95 backdrop-blur-xl border border-white/10 rounded-2xl p-2 shadow-2xl flex items-center justify-between">
+<button class="flex items-center justify-center flex-1 py-3 text-white">
+<span class="material-symbols-outlined">grid_view</span>
+</button>
+<button class="flex items-center justify-center size-14 bg-primary rounded-xl text-black shadow-[0_0_20px_rgba(64,249,31,0.4)] relative -top-6 border-4 border-background-light dark:border-background-dark">
+<span class="material-symbols-outlined font-bold text-2xl">qr_code_scanner</span>
+</button>
+<button class="flex items-center justify-center flex-1 py-3 text-white">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+</div>
+</body></html>

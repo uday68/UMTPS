@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>UMPTS | Enterprise Media Provenance</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#007AFF", // Bright Blue for actions
+                        "alert": "#FF3B30",   // Vivid Red for high severity
+                        "bg-dark": "#000000", // Pure Black
+                        "surface": "#121212", // Deep Charcoal
+                        "border-dark": "#2A2A2A" // Sharp borders
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0px",
+                        "md": "0px",
+                        "lg": "0px",
+                        "xl": "0px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        body {
+            font-family: "Public Sans", sans-serif;
+            background-color: theme('colors.bg-dark');
+            color: #FFFFFF;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .enterprise-border {
+            border: 1px solid theme('colors.border-dark');
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen selection:bg-primary selection:text-white">
+<header class="sticky top-0 z-50 bg-bg-dark border-b border-border-dark">
+<div class="flex items-center p-4 justify-between max-w-screen-xl mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-size: 28px;">fingerprint</span>
+<h2 class="text-white text-lg font-bold tracking-tighter">UMPTS</h2>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex items-center justify-center p-2 text-white">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="flex items-center justify-center p-2 text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<main class="w-full">
+<section class="px-6 py-12 border-b border-border-dark">
+<div class="flex flex-col gap-10">
+<div class="flex flex-col gap-6">
+<div class="inline-flex items-center gap-2 text-alert text-[10px] font-black uppercase tracking-[0.2em]">
+<span class="w-2 h-2 rounded-full bg-alert animate-pulse"></span>
+                    System Active: Secure Monitoring
+                </div>
+<h1 class="text-white text-5xl font-black leading-[1.1] tracking-tighter">
+                    Verify.<br/>Track.<br/>Trust.
+                </h1>
+<p class="text-zinc-400 text-base leading-relaxed max-w-sm">
+                    High-performance enterprise infrastructure for AI-driven media provenance. Protocol-level tracking for global digital assets.
+                </p>
+</div>
+<div class="w-full aspect-square bg-surface enterprise-border relative overflow-hidden">
+<div class="absolute inset-0 opacity-40 bg-center bg-no-repeat bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBcBJEp4OUlVtYkukHuxICYKff9YJyuc2adLuaN-XJihbesO7p9lq3yFmeWcyCP_Wz1e1M21pFiLsKVr1_Dg6JBYP53e_JAywIpuea-e4DIolaI5CKjFxD_IwZ4Vci8ONSQr-0Hm9WoGnIS94HUeKcPlXdfeNPYwIYexRcazSTseUqIuRhzE_gyxAJX6L2S1cByZTLCNKOXVRr38jSwsx-OIKisct963BDqqTMvwZd1bc0Z6F1EubQYQAxR19sIb-PV4SvNLvlgtA");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-bg-dark to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4 p-4 bg-surface/80 backdrop-blur-sm border border-border-dark">
+<div class="flex justify-between items-center">
+<span class="text-[10px] font-mono text-zinc-500 uppercase tracking-widest">Active Scan</span>
+<span class="text-[10px] font-mono text-primary uppercase">Hash: 0x82...F42</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-3">
+<button class="flex w-full items-center justify-center h-14 bg-primary text-white text-sm font-bold uppercase tracking-widest hover:bg-blue-600 transition-colors">
+<span class="material-symbols-outlined mr-2 text-sm">upload_file</span>
+                    Upload Media
+                </button>
+<button class="flex w-full items-center justify-center h-14 border border-border-dark bg-surface text-white text-sm font-bold uppercase tracking-widest hover:bg-zinc-800 transition-colors">
+                    Verify Ledger
+                </button>
+</div>
+</div>
+</section>
+<section class="bg-surface py-16 border-b border-border-dark">
+<h4 class="text-zinc-500 text-[10px] font-black uppercase tracking-[0.3em] px-6 mb-12">Protocol Workflow</h4>
+<div class="px-6 space-y-12">
+<div class="flex gap-6">
+<div class="flex flex-col items-center">
+<div class="flex h-10 w-10 items-center justify-center border border-primary text-primary text-sm font-mono">01</div>
+<div class="w-px bg-border-dark grow mt-4"></div>
+</div>
+<div class="flex flex-col pb-8">
+<p class="text-white text-lg font-bold tracking-tight">Encrypted Ingestion</p>
+<p class="text-zinc-400 text-sm mt-2 leading-relaxed">Direct hardware-level encryption for all incoming media streams and static assets.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex flex-col items-center">
+<div class="flex h-10 w-10 items-center justify-center border border-zinc-700 text-zinc-500 text-sm font-mono">02</div>
+<div class="w-px bg-border-dark grow mt-4"></div>
+</div>
+<div class="flex flex-col pb-8">
+<p class="text-white text-lg font-bold tracking-tight">Neural Provenance</p>
+<p class="text-zinc-400 text-sm mt-2 leading-relaxed">AI engine extracts pixel-integrity data and validates synthetic generation markers.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex flex-col items-center">
+<div class="flex h-10 w-10 items-center justify-center border border-zinc-700 text-zinc-500 text-sm font-mono">03</div>
+</div>
+<div class="flex flex-col">
+<p class="text-white text-lg font-bold tracking-tight">L3 Ledger Logging</p>
+<p class="text-zinc-400 text-sm mt-2 leading-relaxed">Immutable timestamping on our private validator network with instant verification.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-16 px-6">
+<h4 class="text-zinc-500 text-[10px] font-black uppercase tracking-[0.3em] mb-8">Sectors</h4>
+<div class="flex flex-col gap-4">
+<div class="bg-surface p-6 enterprise-border group">
+<div class="flex justify-between items-start mb-6">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform" style="font-size: 32px;">security</span>
+<span class="text-zinc-700 font-mono text-[10px]">SEC_01</span>
+</div>
+<h3 class="text-white text-xl font-bold mb-2">Platforms</h3>
+<p class="text-zinc-400 text-sm leading-relaxed">Enterprise-grade API for automated moderation and trust-shield deployment across social networks.</p>
+</div>
+<div class="bg-surface p-6 enterprise-border group border-l-4 border-l-primary">
+<div class="flex justify-between items-start mb-6">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform" style="font-size: 32px;">account_balance</span>
+<span class="text-zinc-700 font-mono text-[10px]">SEC_02</span>
+</div>
+<h3 class="text-white text-xl font-bold mb-2">Public Sector</h3>
+<p class="text-zinc-400 text-sm leading-relaxed">Securing national discourse by verifying government communications and official press releases.</p>
+</div>
+<div class="bg-surface p-6 enterprise-border group">
+<div class="flex justify-between items-start mb-6">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform" style="font-size: 32px;">copyright</span>
+<span class="text-zinc-700 font-mono text-[10px]">SEC_03</span>
+</div>
+<h3 class="text-white text-xl font-bold mb-2">IP Protection</h3>
+<p class="text-zinc-400 text-sm leading-relaxed">Protecting high-value IP from unauthorized remixing and deepfake manipulation at the source.</p>
+</div>
+</div>
+</section>
+<footer class="p-10 border-t border-border-dark bg-bg-dark">
+<div class="flex flex-col items-center gap-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">fingerprint</span>
+<span class="text-white font-black tracking-widest text-sm uppercase">UMPTS Protocol</span>
+</div>
+<div class="grid grid-cols-2 gap-x-12 gap-y-4 text-center">
+<a class="text-zinc-500 text-[10px] font-bold uppercase tracking-widest hover:text-white" href="#">Privacy Ops</a>
+<a class="text-zinc-500 text-[10px] font-bold uppercase tracking-widest hover:text-white" href="#">Legal Dept</a>
+<a class="text-zinc-500 text-[10px] font-bold uppercase tracking-widest hover:text-white" href="#">Terminal</a>
+<a class="text-zinc-500 text-[10px] font-bold uppercase tracking-widest hover:text-white" href="#">Network Status</a>
+</div>
+<div class="mt-8 pt-8 border-t border-border-dark w-full text-center">
+<p class="text-zinc-600 text-[9px] font-mono uppercase tracking-[0.2em]">© 2024 Unified Media Provenance Tracking System. V4.0.2</p>
+</div>
+</div>
+</footer>
+</main>
+
+</body></html>

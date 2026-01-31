@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Settings &amp; Governance - UMPTS</title>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#186adc",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111821",
+                        "surface-dark": "#1a212b",
+                        "border-dark": "#2d3748"
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Public Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .ios-scroller::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<!-- Top App Bar -->
+<div class="sticky top-0 z-50 flex items-center bg-background-light dark:bg-background-dark/95 backdrop-blur-md p-4 pb-2 justify-between border-b border-slate-200 dark:border-border-dark">
+<div class="text-primary flex size-10 shrink-0 items-center justify-center cursor-pointer">
+<span class="material-symbols-outlined">arrow_back_ios</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-10">Governance</h2>
+<div class="flex w-10 items-center justify-end">
+<button class="flex cursor-pointer items-center justify-center text-primary">
+<span class="material-symbols-outlined">save</span>
+</button>
+</div>
+</div>
+<main class="max-w-md mx-auto pb-24">
+<!-- Navigation Drawer Simulation (Horizontal Tabs for Mobile Governance Focus) -->
+<div class="flex overflow-x-auto ios-scroller gap-2 p-4 bg-background-light dark:bg-background-dark border-b border-slate-200 dark:border-border-dark">
+<button class="flex items-center gap-2 rounded px-4 py-2 bg-slate-200 dark:bg-surface-dark border border-transparent">
+<span class="material-symbols-outlined text-sm">settings</span>
+<span class="text-xs font-bold whitespace-nowrap">General</span>
+</button>
+<button class="flex items-center gap-2 rounded px-4 py-2 bg-primary text-white">
+<span class="material-symbols-outlined text-sm">gavel</span>
+<span class="text-xs font-bold whitespace-nowrap">Governance</span>
+</button>
+<button class="flex items-center gap-2 rounded px-4 py-2 bg-slate-200 dark:bg-surface-dark">
+<span class="material-symbols-outlined text-sm">shield_lock</span>
+<span class="text-xs font-bold whitespace-nowrap">Security</span>
+</button>
+<button class="flex items-center gap-2 rounded px-4 py-2 bg-slate-200 dark:bg-surface-dark">
+<span class="material-symbols-outlined text-sm">fact_check</span>
+<span class="text-xs font-bold whitespace-nowrap">Compliance</span>
+</button>
+</div>
+<!-- Section: Access Control -->
+<div class="mt-4">
+<h2 class="text-slate-900 dark:text-white text-[18px] font-bold leading-tight tracking-tight px-4 pb-3 pt-4 uppercase text-xs opacity-60">Access Control</h2>
+<div class="flex items-center gap-4 bg-white dark:bg-surface-dark px-4 min-h-[72px] py-2 justify-between border-b border-slate-100 dark:border-border-dark">
+<div class="flex flex-col justify-center">
+<p class="text-slate-900 dark:text-white text-base font-medium leading-normal">Role-Based Visibility</p>
+<p class="text-slate-500 dark:text-[#9da9b8] text-xs font-normal leading-normal">Restrict provenance metadata to admins</p>
+</div>
+<div class="shrink-0">
+<label class="relative flex h-[28px] w-[48px] cursor-pointer items-center rounded-full border-none bg-slate-300 dark:bg-[#292f38] p-0.5 has-[:checked]:justify-end has-[:checked]:bg-primary transition-all">
+<div class="h-full w-[24px] rounded-full bg-white shadow-md"></div>
+<input checked="" class="invisible absolute" type="checkbox"/>
+</label>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-white dark:bg-surface-dark px-4 min-h-[72px] py-2 justify-between border-b border-slate-100 dark:border-border-dark">
+<div class="flex flex-col justify-center">
+<p class="text-slate-900 dark:text-white text-base font-medium leading-normal">Granular API Access</p>
+<p class="text-slate-500 dark:text-[#9da9b8] text-xs font-normal leading-normal">Enable UMPTS tracking tokens for 3rd party</p>
+</div>
+<div class="shrink-0">
+<label class="relative flex h-[28px] w-[48px] cursor-pointer items-center rounded-full border-none bg-slate-300 dark:bg-[#292f38] p-0.5 has-[:checked]:justify-end has-[:checked]:bg-primary transition-all">
+<div class="h-full w-[24px] rounded-full bg-white shadow-md"></div>
+<input class="invisible absolute" type="checkbox"/>
+</label>
+</div>
+</div>
+</div>
+<!-- Section: Data Retention -->
+<div class="mt-4">
+<h2 class="text-slate-900 dark:text-white text-[18px] font-bold leading-tight tracking-tight px-4 pb-3 pt-4 uppercase text-xs opacity-60">Data Retention &amp; Privacy</h2>
+<div class="bg-white dark:bg-surface-dark p-4 border-b border-slate-100 dark:border-border-dark">
+<label class="block text-xs font-semibold text-slate-500 dark:text-slate-400 mb-2 uppercase tracking-wider">Provenance History Purge</label>
+<div class="relative">
+<select class="w-full bg-slate-50 dark:bg-background-dark border border-slate-200 dark:border-border-dark rounded-lg py-3 px-4 text-sm appearance-none focus:outline-none focus:ring-1 focus:ring-primary">
+<option>90 Days (Recommended)</option>
+<option>180 Days</option>
+<option>1 Year</option>
+<option>Indefinite</option>
+</select>
+<div class="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-white dark:bg-surface-dark px-4 min-h-[72px] py-2 justify-between border-b border-slate-100 dark:border-border-dark">
+<div class="flex flex-col justify-center">
+<p class="text-slate-900 dark:text-white text-base font-medium leading-normal">Anonymize Media Logs</p>
+<p class="text-slate-500 dark:text-[#9da9b8] text-xs font-normal leading-normal">Strip PII from metadata logs after processing</p>
+</div>
+<div class="shrink-0">
+<label class="relative flex h-[28px] w-[48px] cursor-pointer items-center rounded-full border-none bg-slate-300 dark:bg-[#292f38] p-0.5 has-[:checked]:justify-end has-[:checked]:bg-primary transition-all">
+<div class="h-full w-[24px] rounded-full bg-white shadow-md"></div>
+<input checked="" class="invisible absolute" type="checkbox"/>
+</label>
+</div>
+</div>
+</div>
+<!-- Section: Ethical AI Config -->
+<div class="mt-4">
+<div class="flex items-center justify-between px-4 pb-3 pt-4">
+<h2 class="text-slate-900 dark:text-white text-[18px] font-bold leading-tight tracking-tight uppercase text-xs opacity-60">Ethical AI Configuration</h2>
+<span class="bg-primary/20 text-primary text-[10px] px-2 py-0.5 rounded-full font-bold">BETA</span>
+</div>
+<div class="bg-white dark:bg-surface-dark mx-4 rounded-xl border border-slate-200 dark:border-border-dark overflow-hidden">
+<div class="p-4 border-b border-slate-100 dark:border-border-dark flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1">psychology</span>
+<div>
+<p class="text-sm font-semibold">Bias Detection Protocol</p>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Automatically audit AI-generated provenance for systemic bias in media classification.</p>
+<button class="mt-3 text-primary text-xs font-bold flex items-center gap-1">
+                            Configure thresholds <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="p-4 bg-slate-50 dark:bg-white/5">
+<div class="flex items-center justify-between">
+<span class="text-xs font-medium">Human-in-the-loop (HITL)</span>
+<label class="relative flex h-[24px] w-[40px] cursor-pointer items-center rounded-full border-none bg-slate-300 dark:bg-[#292f38] p-0.5 has-[:checked]:justify-end has-[:checked]:bg-primary transition-all">
+<div class="h-full w-[20px] rounded-full bg-white shadow-sm"></div>
+<input checked="" class="invisible absolute" type="checkbox"/>
+</label>
+</div>
+<p class="text-[10px] text-slate-500 mt-1">Requires manual approval for high-confidence provenance overrides.</p>
+</div>
+</div>
+</div>
+<!-- Section: Authorization Logs -->
+<div class="mt-4">
+<h2 class="text-slate-900 dark:text-white text-[18px] font-bold leading-tight tracking-tight px-4 pb-3 pt-4 uppercase text-xs opacity-60">Legal Authorization Logs</h2>
+<div class="bg-white dark:bg-surface-dark border-t border-slate-100 dark:border-border-dark">
+<div class="px-4 py-3 flex items-center justify-between border-b border-slate-100 dark:border-border-dark">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-lg bg-emerald-500/10 text-emerald-500 flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">verified_user</span>
+</div>
+<div>
+<p class="text-xs font-bold">C2PA Standard Consent</p>
+<p class="text-[10px] text-slate-500">User: adm_jwilson</p>
+</div>
+</div>
+<p class="text-[10px] font-mono text-slate-400">14:02 UTC</p>
+</div>
+<div class="px-4 py-3 flex items-center justify-between border-b border-slate-100 dark:border-border-dark">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-lg bg-blue-500/10 text-blue-500 flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">history_edu</span>
+</div>
+<div>
+<p class="text-xs font-bold">GDPR Compliance Check</p>
+<p class="text-[10px] text-slate-500">System Auto-Audit</p>
+</div>
+</div>
+<p class="text-[10px] font-mono text-slate-400">11:45 UTC</p>
+</div>
+<div class="px-4 py-3 flex items-center justify-between border-b border-slate-100 dark:border-border-dark">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-lg bg-orange-500/10 text-orange-500 flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">warning</span>
+</div>
+<div>
+<p class="text-xs font-bold">Access Policy Change</p>
+<p class="text-[10px] text-slate-500">User: sec_ops_9</p>
+</div>
+</div>
+<p class="text-[10px] font-mono text-slate-400">Yesterday</p>
+</div>
+</div>
+<button class="w-full py-4 text-primary text-xs font-bold uppercase tracking-widest bg-white dark:bg-surface-dark">
+                View All Activity Logs
+            </button>
+</div>
+<!-- Compliance Status Summary -->
+<div class="m-4 p-4 rounded-xl bg-primary text-white flex items-center gap-4">
+<div class="flex-1">
+<p class="text-[10px] font-bold uppercase opacity-80">Compliance Rating</p>
+<p class="text-xl font-bold">98.4% Compliant</p>
+<div class="mt-2 h-1 w-full bg-white/20 rounded-full overflow-hidden">
+<div class="h-full bg-white w-[98%]"></div>
+</div>
+</div>
+<div class="size-12 rounded-full border-2 border-white/30 flex items-center justify-center">
+<span class="material-symbols-outlined">check_circle</span>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar (iOS style) -->
+<div class="fixed bottom-0 left-0 right-0 bg-white/80 dark:bg-background-dark/80 backdrop-blur-xl border-t border-slate-200 dark:border-border-dark flex justify-around items-center h-16 pb-2">
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] font-medium">Dashboard</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">track_changes</span>
+<span class="text-[10px] font-medium">Tracking</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">settings</span>
+<span class="text-[10px] font-medium">Settings</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</button>
+</div>
+</body></html>

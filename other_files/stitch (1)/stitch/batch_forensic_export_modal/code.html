@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Batch Forensic Export Modal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#40f91f",
+                        "background-light": "#f6f8f5",
+                        "background-dark": "#0c0e0c",
+                        "surface-dark": "#181d17",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+            height: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #2a3a27;
+            border-radius: 10px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex items-end sm:items-center justify-center">
+<!-- Modal Container (iOS Bottom Sheet Style for Mobile) -->
+<div class="relative flex h-[92vh] sm:h-auto sm:max-w-md w-full flex-col bg-background-light dark:bg-background-dark rounded-t-xl sm:rounded-xl overflow-hidden border-t dark:border-white/10 shadow-2xl">
+<!-- TopAppBar Component -->
+<div class="sticky top-0 z-10 flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between border-b dark:border-white/5">
+<div class="text-slate-900 dark:text-white flex size-10 shrink-0 items-center justify-center cursor-pointer">
+<span class="material-symbols-outlined">close</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Batch Forensic Export</h2>
+<div class="flex w-10 items-center justify-end">
+<p class="text-primary text-xs font-bold leading-normal tracking-[0.015em] shrink-0">7 Assets</p>
+</div>
+</div>
+<!-- Content Area (Scrollable) -->
+<div class="flex-1 overflow-y-auto custom-scrollbar pb-32">
+<!-- SectionHeader: Selected Items -->
+<div class="px-4 py-4 flex justify-between items-end">
+<h4 class="text-slate-500 dark:text-[#a0bb9b] text-xs font-bold uppercase tracking-widest">Selected Media Items</h4>
+<span class="text-[10px] text-slate-400 dark:text-slate-500">Est. 450MB total</span>
+</div>
+<!-- ImageGrid (Horizontal Scroll for Mobile Efficiency) -->
+<div class="flex overflow-x-auto gap-3 px-4 pb-4 custom-scrollbar">
+<div class="min-w-[140px] h-[140px] bg-cover bg-center flex flex-col gap-3 rounded-lg justify-end p-3 relative group overflow-hidden shrink-0 border dark:border-white/10" data-alt="Satellite imagery of urban terrain" style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDLJaUb8h02SIWJD373NDfxzAZpx-uwCyf2Ppli5UjwDuTTXUClQbKgnT1G2n8CSdcIdbB0RSFwq_An1AzF3oFsOwi4uHalhMb1pzlyRa9Y6IQdkmaWEoRpngEIbkjVXVIOBPuC4CgvRuEgaWlSVbmdm4SQfwXQAN372jHe9Ql4s3-5AKlaRhaxKeC-sy1uJOUUp-c2pzNOfH09hCDHTeV4YbAh9auOivhwNx7cSy66JGF1DdakLUdDgjCp3xlhkwCY6uXX1HknTA");'>
+<p class="text-white text-[10px] font-mono leading-tight">ID: UMPTS-9921</p>
+<div class="absolute top-2 right-2 bg-primary text-black rounded-full p-0.5">
+<span class="material-symbols-outlined text-[14px] font-bold">check</span>
+</div>
+</div>
+<div class="min-w-[140px] h-[140px] bg-cover bg-center flex flex-col gap-3 rounded-lg justify-end p-3 relative group overflow-hidden shrink-0 border dark:border-white/10" data-alt="Microscopic electronic circuit details" style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAuE7RyWhG90cwOiypXvsKfeKjFo90T02o6ruBhYpGBRiFxEIc97v1qohgiCBSPYBzFicfnH2tviSQcQMrXKUrwZxaLo0B22bJLPFR_Ex66PxITUVd0a9eFxndADcXb-m96q5DDsSTOhe9gdNUZ6F3uOWjIbvetZC6XFUMZTKxuwmIBiIHChZ7gTxAmSMT9-tZW-4LA0l9Ilkw18kVQ04eyUhocKoZYUxFfNjLO2Aoec2YXRzYkH9GeJpJmnQvmMrf89vMJW_zv3A");'>
+<p class="text-white text-[10px] font-mono leading-tight">ID: UMPTS-4432</p>
+<div class="absolute top-2 right-2 bg-primary text-black rounded-full p-0.5">
+<span class="material-symbols-outlined text-[14px] font-bold">check</span>
+</div>
+</div>
+<div class="min-w-[140px] h-[140px] bg-cover bg-center flex flex-col gap-3 rounded-lg justify-end p-3 relative group overflow-hidden shrink-0 border dark:border-white/10" data-alt="Thermal heat map visualization" style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuACjYayAGj2pRYGe1Jdohymjn5lT5BBk8--0Tvb8X3FDcyBC0AMZbzp5-OeFJqjbbWSmLq78IFgKjrvwuQB4hGksevwdiJBZVvOyThDoTf2Fav_-aXo2TeuULLjqcgRdfONvJvl0cAFpgfMYYohyHof9l8S-f2AgBzc4JJetOLZEDdpoyFr4wPnUFwznKukDwLyGN2Ps7LgNdaNIcZfojPELrl6Fnne7zYM62q0crTX_rfJY8chP3HnSyFdPUH1kpKaBqEuMCjL_w");'>
+<p class="text-white text-[10px] font-mono leading-tight">ID: UMPTS-8812</p>
+<div class="absolute top-2 right-2 bg-primary text-black rounded-full p-0.5">
+<span class="material-symbols-outlined text-[14px] font-bold">check</span>
+</div>
+</div>
+<div class="min-w-[140px] h-[140px] bg-cover bg-center flex flex-col gap-3 rounded-lg justify-end p-3 relative group overflow-hidden shrink-0 border dark:border-white/10" data-alt="Abstract data encryption pattern" style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAW4-3P2wlJOiJjGmZ_Y2yt_KWeZwhnXUIc_wNf8zuZO6C2ucROx8awV_Pey8GNF9yOTcQV9h8bHXeiYf4aKvjoLGtUfIDkbkVrKhTEOJUXrmOHLJOWnnxHa9WyahM-WCP2X7AeXhO68kuZswmF70RneFtK8BAFii03zRl8gxO-aYcGNFUiziFY57AEiGGaTGWyYaFz-NZFFGCqlCLTQhkkyABtyrlGfO1xwniNs1gW7mBSIcIGbDHRWiU_MfCJhxJS4LDlppeC6g");'>
+<p class="text-white text-[10px] font-mono leading-tight">ID: UMPTS-3301</p>
+<div class="absolute top-2 right-2 bg-primary text-black rounded-full p-0.5">
+<span class="material-symbols-outlined text-[14px] font-bold">check</span>
+</div>
+</div>
+</div>
+<!-- SegmentedButtons -->
+<div class="flex px-4 py-3">
+<div class="flex h-11 flex-1 items-center justify-center rounded-lg bg-slate-200 dark:bg-[#1a2318] p-1 border dark:border-white/5">
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-md px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-[#2a3a27] has-[:checked]:shadow-sm has-[:checked]:text-slate-900 dark:has-[:checked]:text-white text-slate-500 dark:text-[#a0bb9b] text-xs font-bold leading-normal transition-all">
+<span class="truncate uppercase tracking-tight">Apply to all</span>
+<input checked="" class="invisible w-0" name="mode-select" type="radio" value="Apply to all"/>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-md px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-[#2a3a27] has-[:checked]:shadow-sm has-[:checked]:text-slate-900 dark:has-[:checked]:text-white text-slate-500 dark:text-[#a0bb9b] text-xs font-bold leading-normal transition-all">
+<span class="truncate uppercase tracking-tight">Customize per asset</span>
+<input class="invisible w-0" name="mode-select" type="radio" value="Customize per asset"/>
+</label>
+</div>
+</div>
+<!-- SectionHeader: Report Sections -->
+<div class="px-4 pt-6 pb-2">
+<h3 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Report Configuration</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Select forensic modules to include in the batch export.</p>
+</div>
+<!-- Checkbox List -->
+<div class="px-4 py-2 space-y-3">
+<div class="flex items-center p-4 rounded-xl bg-slate-100 dark:bg-surface-dark/50 border dark:border-white/5">
+<div class="flex-1">
+<p class="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                            Metadata
+                            <span class="material-symbols-outlined text-xs text-slate-400">info</span>
+</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">EXIF, XMP, and manifest integrity data</p>
+</div>
+<input checked="" class="w-5 h-5 rounded border-slate-300 dark:border-white/20 bg-transparent text-primary focus:ring-primary focus:ring-offset-background-dark" type="checkbox"/>
+</div>
+<div class="flex items-center p-4 rounded-xl bg-slate-100 dark:bg-surface-dark/50 border dark:border-white/5">
+<div class="flex-1">
+<p class="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                            Tracking History
+                            <span class="material-symbols-outlined text-xs text-slate-400">info</span>
+</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Chain of custody and provenance logs</p>
+</div>
+<input checked="" class="w-5 h-5 rounded border-slate-300 dark:border-white/20 bg-transparent text-primary focus:ring-primary focus:ring-offset-background-dark" type="checkbox"/>
+</div>
+<div class="flex items-center p-4 rounded-xl bg-slate-100 dark:bg-surface-dark/50 border dark:border-white/5">
+<div class="flex-1">
+<p class="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                            AI Analysis
+                            <span class="material-symbols-outlined text-xs text-slate-400">info</span>
+</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Deepfake detection &amp; manipulation heatmaps</p>
+</div>
+<input class="w-5 h-5 rounded border-slate-300 dark:border-white/20 bg-transparent text-primary focus:ring-primary focus:ring-offset-background-dark" type="checkbox"/>
+</div>
+</div>
+<!-- Footer Action Container -->
+<div class="fixed bottom-0 left-0 right-0 p-4 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-t dark:border-white/10 sm:relative sm:bg-transparent sm:border-t-0">
+<button class="w-full bg-primary hover:brightness-110 active:scale-[0.98] transition-all text-black font-bold py-4 rounded-xl flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(64,249,31,0.2)]">
+<span class="material-symbols-outlined">analytics</span>
+                    GENERATE BATCH (7 ASSETS)
+                </button>
+<p class="text-center text-[10px] text-slate-500 mt-2 font-medium tracking-wide">ESTIMATED PROCESSING TIME: 4-6 MINUTES</p>
+</div>
+</div>
+</div>
+</body></html>

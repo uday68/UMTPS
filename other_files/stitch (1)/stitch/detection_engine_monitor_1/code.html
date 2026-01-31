@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Detection Engine Monitor</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#186adc",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111821",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Public Sans", sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .status-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .4; }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display">
+<!-- Top Navigation Bar -->
+<div class="sticky top-0 z-50 flex items-center bg-white/80 dark:bg-background-dark/80 backdrop-blur-md px-4 py-3 justify-between border-b border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3">
+<div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined">settings_input_component</span>
+</div>
+<div>
+<h2 class="text-sm font-bold leading-none tracking-tight">UMPTS Engine</h2>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="size-2 rounded-full bg-emerald-500 status-pulse"></span>
+<span class="text-[10px] uppercase font-bold text-emerald-500 tracking-wider">Operational</span>
+</div>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="flex size-10 items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined text-[22px]">tune</span>
+</button>
+<button class="flex size-10 items-center justify-center rounded-lg bg-primary text-white">
+<span class="material-symbols-outlined text-[22px]">notifications</span>
+</button>
+</div>
+</div>
+<main class="p-4 space-y-6 pb-24">
+<!-- Live Counters -->
+<div class="grid grid-cols-2 gap-3">
+<div class="flex flex-col gap-2 rounded-xl p-4 bg-white dark:bg-[#1a222c] border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center justify-between">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-semibold uppercase tracking-wider">Sources</p>
+<span class="material-symbols-outlined text-primary text-sm">rss_feed</span>
+</div>
+<p class="text-2xl font-bold leading-tight">1,284</p>
+<div class="flex items-center gap-1 text-emerald-500 text-xs font-bold">
+<span class="material-symbols-outlined text-xs">trending_up</span>
+<span>12%</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-4 bg-white dark:bg-[#1a222c] border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center justify-between">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-semibold uppercase tracking-wider">Detections</p>
+<span class="material-symbols-outlined text-primary text-sm">radar</span>
+</div>
+<p class="text-2xl font-bold leading-tight">42.5k</p>
+<div class="flex items-center gap-1 text-emerald-500 text-xs font-bold">
+<span class="material-symbols-outlined text-xs">trending_up</span>
+<span>8%</span>
+</div>
+</div>
+</div>
+<!-- Performance Section -->
+<div>
+<div class="flex items-center justify-between px-1 mb-4">
+<h3 class="text-lg font-bold leading-tight tracking-tight">System Health</h3>
+<div class="flex gap-1 bg-slate-100 dark:bg-slate-800 p-1 rounded-lg">
+<button class="px-2 py-0.5 text-[10px] font-bold rounded bg-white dark:bg-slate-700 shadow-sm">1H</button>
+<button class="px-2 py-0.5 text-[10px] font-bold text-slate-500">6H</button>
+<button class="px-2 py-0.5 text-[10px] font-bold text-slate-500">24H</button>
+</div>
+</div>
+<div class="space-y-4">
+<!-- CPU Usage -->
+<div class="bg-white dark:bg-[#1a222c] rounded-xl p-4 border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium">CPU Usage</p>
+<p class="text-2xl font-bold tracking-tight">34%</p>
+</div>
+<div class="text-right">
+<p class="text-[#fa6238] text-xs font-bold leading-none">-2%</p>
+<p class="text-slate-400 text-[10px] mt-1">vs Last Hour</p>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<svg fill="none" height="80" preserveaspectratio="none" viewbox="0 0 478 150" width="100%" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25" stroke="#186adc" stroke-linecap="round" stroke-width="4"></path>
+</svg>
+<div class="flex justify-between">
+<p class="text-slate-400 text-[10px] font-bold">10:00</p>
+<p class="text-slate-400 text-[10px] font-bold">10:30</p>
+<p class="text-slate-400 text-[10px] font-bold">11:00</p>
+</div>
+</div>
+</div>
+<!-- Network -->
+<div class="bg-white dark:bg-[#1a222c] rounded-xl p-4 border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium">Network Throughput</p>
+<p class="text-2xl font-bold tracking-tight">850 MB/s</p>
+</div>
+<div class="text-right">
+<p class="text-emerald-500 text-xs font-bold leading-none">+5%</p>
+<p class="text-slate-400 text-[10px] mt-1">vs Last Hour</p>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<svg fill="none" height="80" preserveaspectratio="none" viewbox="0 0 478 150" width="100%" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 50C20 50 40 120 60 120C80 120 100 30 120 30C140 30 160 80 180 80C200 80 220 40 240 40C260 40 280 140 300 140C320 140 340 10 360 10C380 10 400 90 420 90C440 90 460 60 480 60" stroke="#10b981" stroke-linecap="round" stroke-width="4"></path>
+</svg>
+<div class="flex justify-between">
+<p class="text-slate-400 text-[10px] font-bold">10:00</p>
+<p class="text-slate-400 text-[10px] font-bold">10:30</p>
+<p class="text-slate-400 text-[10px] font-bold">11:00</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Active Crawlers -->
+<div class="space-y-4">
+<div class="flex items-center justify-between px-1">
+<h3 class="text-lg font-bold leading-tight tracking-tight">Active Crawlers</h3>
+<span class="bg-primary/20 text-primary text-[10px] font-black px-2 py-1 rounded">12 RUNNING</span>
+</div>
+<div class="bg-white dark:bg-[#1a222c] border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden divide-y divide-slate-100 dark:divide-slate-800 shadow-sm">
+<div class="p-3 flex items-center justify-between hover:bg-slate-50 dark:hover:bg-slate-800/50">
+<div class="flex items-center gap-3">
+<div class="size-2 rounded-full bg-emerald-500"></div>
+<div>
+<p class="text-xs font-bold font-mono">CRW-774-ALPHA</p>
+<p class="text-[10px] text-slate-500">Source: Twitter/X · 2.4s ago</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-400 text-lg">chevron_right</span>
+</div>
+<div class="p-3 flex items-center justify-between hover:bg-slate-50 dark:hover:bg-slate-800/50">
+<div class="flex items-center gap-3">
+<div class="size-2 rounded-full bg-emerald-500"></div>
+<div>
+<p class="text-xs font-bold font-mono">CRW-812-GAMMA</p>
+<p class="text-[10px] text-slate-500">Source: YouTube · 0.8s ago</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-400 text-lg">chevron_right</span>
+</div>
+<div class="p-3 flex items-center justify-between hover:bg-slate-50 dark:hover:bg-slate-800/50">
+<div class="flex items-center gap-3">
+<div class="size-2 rounded-full bg-emerald-500"></div>
+<div>
+<p class="text-xs font-bold font-mono">CRW-090-SIGMA</p>
+<p class="text-[10px] text-slate-500">Source: Reuters Web · 5.1s ago</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-400 text-lg">chevron_right</span>
+</div>
+<div class="p-3 flex items-center justify-between hover:bg-slate-50 dark:hover:bg-slate-800/50">
+<div class="flex items-center gap-3">
+<div class="size-2 rounded-full bg-amber-500"></div>
+<div>
+<p class="text-xs font-bold font-mono">CRW-221-BETA</p>
+<p class="text-[10px] text-slate-500">Source: Reddit · Retrying...</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-400 text-lg">chevron_right</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation (iOS Style) -->
+<div class="fixed bottom-0 left-0 right-0 bg-white/90 dark:bg-background-dark/90 backdrop-blur-lg border-t border-slate-200 dark:border-slate-800 px-6 pt-2 pb-8 flex justify-between items-center z-50">
+<div class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] font-bold">Monitor</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-[10px] font-bold">Analytics</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">dns</span>
+<span class="text-[10px] font-bold">Nodes</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-bold">Settings</span>
+</div>
+</div>
+<!-- Floating Action Button -->
+<button class="fixed bottom-24 right-4 size-14 rounded-full bg-primary text-white shadow-xl flex items-center justify-center z-40 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-2xl">refresh</span>
+</button>
+</body></html>

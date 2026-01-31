@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Register New Media - UMPTS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#186adc",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111821",
+                        "surface-dark": "#1c212b",
+                        "success": "#10b981"
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Public Sans", sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen text-slate-900 dark:text-white">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 flex items-center bg-background-light dark:bg-background-dark border-b border-slate-200 dark:border-slate-800 p-4 justify-between h-14">
+<div class="flex size-10 items-center justify-start text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined cursor-pointer">arrow_back_ios</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-base font-bold leading-tight tracking-tight flex-1 text-center pr-10">Register New Media</h2>
+</header>
+<main class="max-w-md mx-auto pb-20">
+<!-- Header Section -->
+<div class="px-4 pt-6">
+<h3 class="text-slate-900 dark:text-white tracking-tight text-2xl font-bold leading-tight pb-1">Upload Media</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal">Register your assets with UMPTS for AI-driven provenance tracking.</p>
+</div>
+<!-- Drop Zone Component -->
+<div class="p-4">
+<div class="flex flex-col items-center gap-4 rounded-lg border-2 border-dashed border-slate-300 dark:border-slate-700 bg-white/50 dark:bg-surface-dark/50 px-6 py-12 transition-colors active:bg-slate-100 dark:active:bg-slate-800">
+<div class="flex size-14 items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-3xl">cloud_upload</span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<p class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight text-center">Tap to upload</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-normal leading-normal text-center">Supported: MP4, MOV, PNG, JPG (Max 500MB)</p>
+</div>
+<button class="mt-2 flex min-w-[120px] cursor-pointer items-center justify-center overflow-hidden rounded bg-primary text-white text-sm font-bold leading-normal tracking-wide h-10 px-6">
+                    Select File
+                </button>
+</div>
+</div>
+<!-- Progress Bar (Active State Simulation) -->
+<div class="px-4 mb-6">
+<div class="flex justify-between items-end mb-2">
+<div>
+<p class="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Uploading</p>
+<p class="text-sm font-bold text-slate-900 dark:text-white">interview_b_roll_01.mp4</p>
+</div>
+<span class="text-xs font-bold text-primary">68%</span>
+</div>
+<div class="w-full bg-slate-200 dark:bg-slate-800 rounded-full h-1.5">
+<div class="bg-primary h-1.5 rounded-full" style="width: 68%"></div>
+</div>
+</div>
+<!-- Protocols Checklist -->
+<div class="px-4 py-2">
+<h3 class="text-slate-900 dark:text-white text-sm font-bold uppercase tracking-widest leading-tight pb-4">AI Processing Protocols</h3>
+<div class="space-y-3">
+<!-- Protocol Item 1 -->
+<div class="flex items-center justify-between p-4 rounded-lg bg-white dark:bg-surface-dark border border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3">
+<div class="text-primary">
+<span class="material-symbols-outlined">water_drop</span>
+</div>
+<div>
+<p class="text-sm font-bold text-slate-900 dark:text-white">Watermarking Enabled</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Invisible digital signature injection</p>
+</div>
+</div>
+<div class="relative inline-flex h-6 w-11 items-center rounded-full bg-primary">
+<span class="inline-block h-4 w-4 translate-x-6 transform rounded-full bg-white transition"></span>
+</div>
+</div>
+<!-- Protocol Item 2 -->
+<div class="flex items-center justify-between p-4 rounded-lg bg-white dark:bg-surface-dark border border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3">
+<div class="text-primary">
+<span class="material-symbols-outlined">radar</span>
+</div>
+<div>
+<p class="text-sm font-bold text-slate-900 dark:text-white">Tracking Active</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Real-time distribution monitoring</p>
+</div>
+</div>
+<div class="relative inline-flex h-6 w-11 items-center rounded-full bg-primary">
+<span class="inline-block h-4 w-4 translate-x-6 transform rounded-full bg-white transition"></span>
+</div>
+</div>
+</div>
+</div>
+<!-- Success State Card -->
+<div class="m-4 p-5 rounded-lg border border-success/30 bg-success/5 dark:bg-success/10 flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<div class="flex size-8 items-center justify-center rounded-full bg-success text-white">
+<span class="material-symbols-outlined text-xl">verified</span>
+</div>
+<p class="text-success text-base font-bold">Integrity Confirmed</p>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-[10px] font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">Media ID</label>
+<div class="flex items-center justify-between bg-white dark:bg-black/20 p-2 rounded border border-slate-200 dark:border-slate-800">
+<code class="text-sm font-mono text-slate-900 dark:text-white tracking-tighter">UMPTS-882-9910-X</code>
+<span class="material-symbols-outlined text-primary text-lg cursor-pointer">content_copy</span>
+</div>
+</div>
+<div class="flex gap-2 pt-2">
+<button class="flex-1 bg-primary text-white text-xs font-bold h-10 rounded uppercase tracking-wide">
+                    View in Dashboard
+                </button>
+<button class="flex-1 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-white text-xs font-bold h-10 rounded uppercase tracking-wide">
+                    Register Another
+                </button>
+</div>
+</div>
+</main>
+<!-- Navigation Tab Bar (iOS Style) -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-t border-slate-200 dark:border-slate-800 h-16 flex items-center justify-around px-6">
+<div class="flex flex-col items-center text-slate-400">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] mt-1 font-medium">Assets</span>
+</div>
+<div class="flex flex-col items-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add_box</span>
+<span class="text-[10px] mt-1 font-bold">Register</span>
+</div>
+<div class="flex flex-col items-center text-slate-400">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-[10px] mt-1 font-medium">Tracking</span>
+</div>
+<div class="flex flex-col items-center text-slate-400">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] mt-1 font-medium">Settings</span>
+</div>
+</nav>
+</body></html>
