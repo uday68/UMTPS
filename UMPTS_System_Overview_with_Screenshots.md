@@ -247,7 +247,280 @@ The forensic dashboard provides comprehensive audit trails for legal and complia
 
 ---
 
+## 4.8. Decision Flow Process - Option A Implementation
+
+**Figure 13: UMPTS Decision Option A Flow**
+
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+  
+  <!-- Title -->
+  <text x="400" y="25" text-anchor="middle" fill="#1f2937" font-size="18" font-weight="bold">UMPTS Decision Flow - Option A Implementation</text>
+  
+  <!-- Start Node -->
+  <g transform="translate(350, 60)">
+    <ellipse cx="50" cy="25" rx="40" ry="20" fill="#10b981" stroke="#059669" stroke-width="2"/>
+    <text x="50" y="30" text-anchor="middle" fill="white" font-size="12" font-weight="bold">START</text>
+  </g>
+  
+  <!-- Media Input Decision -->
+  <g transform="translate(320, 120)">
+    <polygon points="50,0 100,25 50,50 0,25" fill="#3b82f6" stroke="#1d4ed8" stroke-width="2"/>
+    <text x="50" y="20" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Media</text>
+    <text x="50" y="35" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Input?</text>
+  </g>
+  
+  <!-- Arrow from START to Media Input -->
+  <path d="M 400 85 L 400 120" stroke="#374151" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Branch 1: New Media Upload -->
+  <g transform="translate(150, 200)">
+    <rect x="0" y="0" width="120" height="60" fill="#8b5cf6" rx="8" stroke="#7c3aed" stroke-width="2"/>
+    <text x="60" y="25" text-anchor="middle" fill="white" font-size="11" font-weight="bold">New Media</text>
+    <text x="60" y="40" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Upload</text>
+    <text x="60" y="55" text-anchor="middle" fill="white" font-size="9">(Option A)</text>
+  </g>
+  
+  <!-- Branch 2: Existing Media Verification -->
+  <g transform="translate(530, 200)">
+    <rect x="0" y="0" width="120" height="60" fill="#f59e0b" rx="8" stroke="#d97706" stroke-width="2"/>
+    <text x="60" y="25" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Existing Media</text>
+    <text x="60" y="40" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Verification</text>
+    <text x="60" y="55" text-anchor="middle" fill="white" font-size="9">(Option B)</text>
+  </g>
+  
+  <!-- Decision arrows -->
+  <path d="M 350 145 L 210 200" stroke="#374151" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M 420 145 L 590 200" stroke="#374151" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Labels for decision paths -->
+  <text x="280" y="175" fill="#374151" font-size="10" font-weight="bold">New</text>
+  <text x="480" y="175" fill="#374151" font-size="10" font-weight="bold">Existing</text>
+  
+  <!-- Option A Process Flow -->
+  <!-- Step 1: Cryptographic Hashing -->
+  <g transform="translate(80, 300)">
+    <rect x="0" y="0" width="100" height="50" fill="#10b981" rx="6" stroke="#059669" stroke-width="2"/>
+    <text x="50" y="20" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Cryptographic</text>
+    <text x="50" y="35" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Hashing</text>
+  </g>
+  
+  <!-- Step 2: Invisible Watermarking -->
+  <g transform="translate(200, 300)">
+    <rect x="0" y="0" width="100" height="50" fill="#3b82f6" rx="6" stroke="#1d4ed8" stroke-width="2"/>
+    <text x="50" y="20" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Invisible</text>
+    <text x="50" y="35" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Watermarking</text>
+  </g>
+  
+  <!-- Step 3: AI Fingerprinting -->
+  <g transform="translate(320, 300)">
+    <rect x="0" y="0" width="100" height="50" fill="#8b5cf6" rx="6" stroke="#7c3aed" stroke-width="2"/>
+    <text x="50" y="20" text-anchor="middle" fill="white" font-size="10" font-weight="bold">AI</text>
+    <text x="50" y="35" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Fingerprinting</text>
+  </g>
+  
+  <!-- Arrows between Option A steps -->
+  <path d="M 210 260 L 130 300" stroke="#374151" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M 180 325 L 200 325" stroke="#374151" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M 300 325 L 320 325" stroke="#374151" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Blockchain Registration -->
+  <g transform="translate(150, 380)">
+    <rect x="0" y="0" width="140" height="50" fill="#ef4444" rx="6" stroke="#dc2626" stroke-width="2"/>
+    <text x="70" y="20" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Blockchain</text>
+    <text x="70" y="35" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Registration</text>
+  </g>
+  
+  <!-- Arrow to blockchain -->
+  <path d="M 250 350 L 220 380" stroke="#374151" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Option B Process Flow (Verification) -->
+  <!-- Verification Steps -->
+  <g transform="translate(500, 300)">
+    <rect x="0" y="0" width="100" height="50" fill="#06b6d4" rx="6" stroke="#0891b2" stroke-width="2"/>
+    <text x="50" y="20" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Extract</text>
+    <text x="50" y="35" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Watermark</text>
+  </g>
+  
+  <g transform="translate(620, 300)">
+    <rect x="0" y="0" width="100" height="50" fill="#f59e0b" rx="6" stroke="#d97706" stroke-width="2"/>
+    <text x="50" y="20" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Compare</text>
+    <text x="50" y="35" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Registry</text>
+  </g>
+  
+  <!-- Arrows for Option B -->
+  <path d="M 590 260 L 550 300" stroke="#374151" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M 600 325 L 620 325" stroke="#374151" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Verification Result -->
+  <g transform="translate(560, 380)">
+    <polygon points="70,0 140,25 70,50 0,25" fill="#10b981" stroke="#059669" stroke-width="2"/>
+    <text x="70" y="20" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Authentic?</text>
+    <text x="70" y="35" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Result</text>
+  </g>
+  
+  <!-- Arrow to verification result -->
+  <path d="M 670 350 L 630 380" stroke="#374151" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Final Results -->
+  <!-- Success Path -->
+  <g transform="translate(300, 480)">
+    <ellipse cx="70" cy="25" rx="60" ry="20" fill="#10b981" stroke="#059669" stroke-width="2"/>
+    <text x="70" y="20" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Media Protected</text>
+    <text x="70" y="35" text-anchor="middle" fill="white" font-size="11" font-weight="bold">& Verified</text>
+  </g>
+  
+  <!-- Arrows to final result -->
+  <path d="M 220 430 L 340 480" stroke="#374151" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M 630 405 L 400 480" stroke="#374151" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Decision Labels -->
+  <text x="500" y="470" fill="#10b981" font-size="9" font-weight="bold">✓ Authentic</text>
+  <text x="680" y="470" fill="#ef4444" font-size="9" font-weight="bold">✗ Suspicious</text>
+  
+  <!-- Alert Path for Suspicious Content -->
+  <g transform="translate(650, 480)">
+    <ellipse cx="50" cy="25" rx="45" ry="20" fill="#ef4444" stroke="#dc2626" stroke-width="2"/>
+    <text x="50" y="20" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Alert</text>
+    <text x="50" y="35" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Generated</text>
+  </g>
+  
+  <!-- Arrow to alert -->
+  <path d="M 700 405 L 700 480" stroke="#ef4444" stroke-width="2" marker-end="url(#arrowhead-red)"/>
+  
+  <!-- Process Statistics -->
+  <g transform="translate(50, 540)">
+    <rect x="0" y="0" width="700" height="40" fill="#f3f4f6" rx="6" stroke="#d1d5db" stroke-width="1"/>
+    <text x="350" y="15" text-anchor="middle" fill="#374151" font-size="12" font-weight="bold">Option A Performance Metrics</text>
+    <text x="350" y="30" text-anchor="middle" fill="#6b7280" font-size="10">Processing Time: &lt;2s • Success Rate: 98.4% • False Positives: &lt;1.2% • Scalability: 1M+ assets/day</text>
+  </g>
+  
+  <!-- Arrow marker definitions -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+    </marker>
+    <marker id="arrowhead-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ef4444"/>
+    </marker>
+  </defs>
+</svg>
+
+**Figure 14: Decision Option A Flow (Original)**
+![Decision Option A Flow](images_used_in_document/Decision Option A Flow-2026-01-31-083012.png)
+
+The Decision Option A Flow represents the primary implementation pathway for UMPTS, focusing on proactive media protection through comprehensive watermarking and blockchain registration. This approach prioritizes:
+
+**Key Features of Option A:**
+- **Proactive Protection**: Media is protected at the point of creation/upload
+- **Multi-layered Security**: Combines cryptographic hashing, invisible watermarking, and AI fingerprinting
+- **Immediate Registration**: Assets are registered on the blockchain in real-time
+- **High Performance**: Processing completed in under 2 seconds with 98.4% success rate
+- **Scalability**: Capable of handling 1M+ assets per day
+
+**Decision Criteria for Option A:**
+1. **New Media Content**: Prioritizes fresh content that requires immediate protection
+2. **Creator-Focused**: Designed for content creators who want proactive IP protection
+3. **Platform Integration**: Seamlessly integrates with content platforms and social media
+4. **Real-time Processing**: Provides immediate feedback and protection status
+
+**Alternative Path (Option B):**
+- **Verification-Focused**: Designed for verifying existing media authenticity
+- **Forensic Analysis**: Suitable for legal and compliance use cases
+- **Retroactive Protection**: Can analyze and verify previously created content
+- **Investigation Support**: Provides detailed provenance analysis for suspicious content
+
+---
+
 ## 5. Feasibility and Challenges
+
+**Figure 12: UMPTS Implementation Challenges**
+
+<svg width="750" height="400" viewBox="0 0 750 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="750" height="400" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+  
+  <!-- Title -->
+  <text x="375" y="25" text-anchor="middle" fill="#1f2937" font-size="16" font-weight="bold">Key Implementation Challenges</text>
+  
+  <!-- Challenge 1: Security -->
+  <g transform="translate(50, 60)">
+    <rect x="0" y="0" width="200" height="120" fill="#fef2f2" rx="8" stroke="#ef4444" stroke-width="2"/>
+    <circle cx="100" cy="30" r="15" fill="#ef4444"/>
+    <text x="100" y="35" text-anchor="middle" fill="white" font-size="12" font-weight="bold">1</text>
+    <text x="100" y="55" text-anchor="middle" fill="#dc2626" font-size="12" font-weight="bold">Security Attacks</text>
+    <text x="100" y="75" text-anchor="middle" fill="#7f1d1d" font-size="10">• Adversarial attacks</text>
+    <text x="100" y="90" text-anchor="middle" fill="#7f1d1d" font-size="10">• Watermark removal</text>
+    <text x="100" y="105" text-anchor="middle" fill="#7f1d1d" font-size="10">• Re-watermarking</text>
+  </g>
+  
+  <!-- Challenge 2: Scalability -->
+  <g transform="translate(275, 60)">
+    <rect x="0" y="0" width="200" height="120" fill="#fef3c7" rx="8" stroke="#f59e0b" stroke-width="2"/>
+    <circle cx="100" cy="30" r="15" fill="#f59e0b"/>
+    <text x="100" y="35" text-anchor="middle" fill="white" font-size="12" font-weight="bold">2</text>
+    <text x="100" y="55" text-anchor="middle" fill="#d97706" font-size="12" font-weight="bold">Scalability</text>
+    <text x="100" y="75" text-anchor="middle" fill="#92400e" font-size="10">• Billions of assets</text>
+    <text x="100" y="90" text-anchor="middle" fill="#92400e" font-size="10">• Real-time processing</text>
+    <text x="100" y="105" text-anchor="middle" fill="#92400e" font-size="10">• Global infrastructure</text>
+  </g>
+  
+  <!-- Challenge 3: Standardization -->
+  <g transform="translate(500, 60)">
+    <rect x="0" y="0" width="200" height="120" fill="#f0f9ff" rx="8" stroke="#0ea5e9" stroke-width="2"/>
+    <circle cx="100" cy="30" r="15" fill="#0ea5e9"/>
+    <text x="100" y="35" text-anchor="middle" fill="white" font-size="12" font-weight="bold">3</text>
+    <text x="100" y="55" text-anchor="middle" fill="#0284c7" font-size="12" font-weight="bold">Standardization</text>
+    <text x="100" y="75" text-anchor="middle" fill="#0c4a6e" font-size="10">• Industry adoption</text>
+    <text x="100" y="90" text-anchor="middle" fill="#0c4a6e" font-size="10">• Interoperability</text>
+    <text x="100" y="105" text-anchor="middle" fill="#0c4a6e" font-size="10">• Global standards</text>
+  </g>
+  
+  <!-- Challenge 4: Privacy -->
+  <g transform="translate(50, 210)">
+    <rect x="0" y="0" width="200" height="120" fill="#f3e8ff" rx="8" stroke="#8b5cf6" stroke-width="2"/>
+    <circle cx="100" cy="30" r="15" fill="#8b5cf6"/>
+    <text x="100" y="35" text-anchor="middle" fill="white" font-size="12" font-weight="bold">4</text>
+    <text x="100" y="55" text-anchor="middle" fill="#7c3aed" font-size="12" font-weight="bold">Privacy & Governance</text>
+    <text x="100" y="75" text-anchor="middle" fill="#5b21b6" font-size="10">• Data protection</text>
+    <text x="100" y="90" text-anchor="middle" fill="#5b21b6" font-size="10">• Access controls</text>
+    <text x="100" y="105" text-anchor="middle" fill="#5b21b6" font-size="10">• Ethical balance</text>
+  </g>
+  
+  <!-- Challenge 5: Performance -->
+  <g transform="translate(275, 210)">
+    <rect x="0" y="0" width="200" height="120" fill="#ecfdf5" rx="8" stroke="#10b981" stroke-width="2"/>
+    <circle cx="100" cy="30" r="15" fill="#10b981"/>
+    <text x="100" y="35" text-anchor="middle" fill="white" font-size="12" font-weight="bold">5</text>
+    <text x="100" y="55" text-anchor="middle" fill="#059669" font-size="12" font-weight="bold">Performance</text>
+    <text x="100" y="75" text-anchor="middle" fill="#065f46" font-size="10">• Computational overhead</text>
+    <text x="100" y="90" text-anchor="middle" fill="#065f46" font-size="10">• Device constraints</text>
+    <text x="100" y="105" text-anchor="middle" fill="#065f46" font-size="10">• User experience</text>
+  </g>
+  
+  <!-- Challenge 6: AI Evolution -->
+  <g transform="translate(500, 210)">
+    <rect x="0" y="0" width="200" height="120" fill="#fdf2f8" rx="8" stroke="#ec4899" stroke-width="2"/>
+    <circle cx="100" cy="30" r="15" fill="#ec4899"/>
+    <text x="100" y="35" text-anchor="middle" fill="white" font-size="12" font-weight="bold">6</text>
+    <text x="100" y="55" text-anchor="middle" fill="#db2777" font-size="12" font-weight="bold">Evolving AI Threats</text>
+    <text x="100" y="75" text-anchor="middle" fill="#be185d" font-size="10">• Deepfake evolution</text>
+    <text x="100" y="90" text-anchor="middle" fill="#be185d" font-size="10">• Model updates</text>
+    <text x="100" y="105" text-anchor="middle" fill="#be185d" font-size="10">• Adaptive defense</text>
+  </g>
+  
+  <!-- Central Solution -->
+  <g transform="translate(325, 350)">
+    <rect x="0" y="0" width="100" height="30" fill="#1f2937" rx="6"/>
+    <text x="50" y="20" text-anchor="middle" fill="white" font-size="11" font-weight="bold">UMPTS Solution</text>
+  </g>
+  
+  <!-- Connection lines from challenges to solution -->
+  <path d="M 150 330 L 350 350" stroke="#6b7280" stroke-width="1" stroke-dasharray="3,3"/>
+  <path d="M 375 330 L 375 350" stroke="#6b7280" stroke-width="1" stroke-dasharray="3,3"/>
+  <path d="M 600 330 L 400 350" stroke="#6b7280" stroke-width="1" stroke-dasharray="3,3"/>
+</svg>
 
 Implementing a system like UMPTS is technically feasible, supported by ongoing advancements in deep learning, cryptography, and blockchain technologies (Singhi et al., 2025). However, several significant challenges must be addressed:
 
@@ -366,6 +639,7 @@ Nakamoto, S. (2008). *Bitcoin: A peer-to-peer electronic cash system*. Decentral
 **Figure Sources:**
 - Figure 3-9: UMPTS System Interface Screenshots (2024)
 - Figures 1-2: Technical diagrams based on referenced research papers
+- Figures 10-14: System architecture and process flow diagrams (2024)
 
 ---
 
