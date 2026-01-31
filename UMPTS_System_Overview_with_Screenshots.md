@@ -549,6 +549,11 @@ While blockchain offers immutability, vulnerabilities in smart contracts, consen
 
 ## 6. Technical Implementation
 
+**Figure 15: Decision Option A Flow - System Architecture (SVG)**
+![Decision Option A Flow Architecture](images_used_in_document/Decision Option A Flow-2026-01-31-083008.svg)
+
+*This architectural flow diagram illustrates the specific implementation pathway for Decision Option A, showing the integration points between system components and the data flow through the UMPTS infrastructure. The SVG provides a detailed technical view of how media assets flow through the system architecture.*
+
 ### Core Technologies
 - **AI Engine**: Neural network-based media analysis
 - **Blockchain Integration**: Immutable ledger for provenance records
@@ -639,7 +644,7 @@ Nakamoto, S. (2008). *Bitcoin: A peer-to-peer electronic cash system*. Decentral
 **Figure Sources:**
 - Figure 3-9: UMPTS System Interface Screenshots (2024)
 - Figures 1-2: Technical diagrams based on referenced research papers
-- Figures 10-14: System architecture and process flow diagrams (2024)
+- Figures 10-15: System architecture and process flow diagrams (2024)
 
 ---
 
