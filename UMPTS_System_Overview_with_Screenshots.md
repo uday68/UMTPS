@@ -35,7 +35,61 @@ Invisible watermarking and steganography are critical for embedding persistent i
 
 Advanced neural network architectures enable the embedding of highly robust watermarks that maintain imperceptibility and bit accuracy even after common transformations such as compression, filtering, and screenshots, which are typical during online sharing (Xu et al., 2024). For example, InvisMark achieves a Peak Signal-to-Noise Ratio (PSNR) of approximately 51 and a Structural Similarity Index Measure (SSIM) of about 0.998, while maintaining over 97% bit accuracy across various manipulations (Xu et al., 2024). The goal is to make the embedded provenance information an intrinsic part of the file, resilient against extraction or removal without damaging the media content (Xu et al., 2024)(Singhi et al., 2025). Physical Unclonable Functions (PUFs) can further enhance this by integrating device-specific "fingerprints" into the watermark, linking media to its originating hardware (Xue et al., 2024).
 
-**Figure 1: Invisible Watermarking Process** *(Insert watermarking diagram here)*
+**Figure 1: Invisible Watermarking Process**
+
+<svg width="600" height="300" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="600" height="300" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+  
+  <!-- Original Media -->
+  <rect x="20" y="50" width="100" height="80" fill="#3b82f6" rx="8"/>
+  <text x="70" y="85" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Original</text>
+  <text x="70" y="100" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Media</text>
+  
+  <!-- Arrow 1 -->
+  <path d="M 130 90 L 170 90" stroke="#374151" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Watermarking Process -->
+  <rect x="180" y="30" width="120" height="120" fill="#10b981" rx="8"/>
+  <text x="240" y="55" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Neural Network</text>
+  <text x="240" y="70" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Watermarking</text>
+  
+  <!-- Provenance Data Input -->
+  <rect x="180" y="170" width="120" height="60" fill="#f59e0b" rx="8"/>
+  <text x="240" y="190" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Provenance Data</text>
+  <text x="240" y="205" text-anchor="middle" fill="white" font-size="9">• Hash</text>
+  <text x="240" y="218" text-anchor="middle" fill="white" font-size="9">• Timestamp</text>
+  
+  <!-- Arrow from provenance to watermarking -->
+  <path d="M 240 170 L 240 150" stroke="#374151" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Arrow 2 -->
+  <path d="M 310 90 L 350 90" stroke="#374151" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Watermarked Media -->
+  <rect x="360" y="50" width="100" height="80" fill="#8b5cf6" rx="8"/>
+  <text x="410" y="85" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Watermarked</text>
+  <text x="410" y="100" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Media</text>
+  
+  <!-- Arrow 3 -->
+  <path d="M 470 90 L 510 90" stroke="#374151" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Blockchain Registry -->
+  <rect x="520" y="50" width="60" height="80" fill="#ef4444" rx="8"/>
+  <text x="550" y="85" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Blockchain</text>
+  <text x="550" y="100" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Registry</text>
+  
+  <!-- Performance Metrics -->
+  <text x="300" y="270" text-anchor="middle" fill="#374151" font-size="11" font-weight="bold">Performance: PSNR ~51dB, SSIM ~0.998, 97% Bit Accuracy</text>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+    </marker>
+  </defs>
+</svg>
+
 *Source: (Xu et al., 2024)*
 
 ### 3.3. Perceptual and Semantic AI Fingerprints
@@ -46,12 +100,213 @@ To address the challenges posed by transformations and AI re-generation, UMPTS i
 
 A global provenance registry, leveraging blockchain technology and Non-Fungible Tokens (NFTs), provides an immutable and decentralized record of media origin and evolution (Xue et al., 2024)(Singhi et al., 2025). Once the cryptographic hash and embedded provenance data are secured within the media file, they can be registered on a blockchain as an NFT (Xue et al., 2024)(Singhi et al., 2025). This creates a unique digital certificate of authenticity and ownership, ensuring that the record cannot be altered or deleted (Xue et al., 2024)(Singhi et al., 2025). The blockchain's inherent immutability provides a publicly verifiable and tamper-proof history of the media asset, crucial for proving its original state and attribution (Xue et al., 2024)(Singhi et al., 2025).
 
-**Figure 2: Blockchain Registry Architecture** *(Insert blockchain diagram here)*
+**Figure 2: Blockchain Registry Architecture**
+
+<svg width="700" height="400" viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="700" height="400" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+  
+  <!-- Title -->
+  <text x="350" y="25" text-anchor="middle" fill="#1f2937" font-size="16" font-weight="bold">UMPTS Blockchain Registry Architecture</text>
+  
+  <!-- Media Input -->
+  <rect x="50" y="80" width="80" height="60" fill="#3b82f6" rx="6"/>
+  <text x="90" y="105" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Media</text>
+  <text x="90" y="120" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Asset</text>
+  
+  <!-- Hash Generation -->
+  <rect x="180" y="80" width="80" height="60" fill="#10b981" rx="6"/>
+  <text x="220" y="105" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Hash</text>
+  <text x="220" y="120" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Generation</text>
+  
+  <!-- NFT Creation -->
+  <rect x="310" y="80" width="80" height="60" fill="#f59e0b" rx="6"/>
+  <text x="350" y="105" text-anchor="middle" fill="white" font-size="11" font-weight="bold">NFT</text>
+  <text x="350" y="120" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Creation</text>
+  
+  <!-- Blockchain Network -->
+  <g transform="translate(450, 60)">
+    <!-- Main blockchain -->
+    <rect x="0" y="0" width="200" height="100" fill="#8b5cf6" rx="8" stroke="#6d28d9" stroke-width="2"/>
+    <text x="100" y="25" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Blockchain Network</text>
+    
+    <!-- Block 1 -->
+    <rect x="20" y="35" width="40" height="25" fill="#a855f7" rx="3"/>
+    <text x="40" y="50" text-anchor="middle" fill="white" font-size="8">Block N</text>
+    
+    <!-- Block 2 -->
+    <rect x="70" y="35" width="40" height="25" fill="#a855f7" rx="3"/>
+    <text x="90" y="50" text-anchor="middle" fill="white" font-size="8">Block N+1</text>
+    
+    <!-- Block 3 -->
+    <rect x="120" y="35" width="40" height="25" fill="#c084fc" rx="3"/>
+    <text x="140" y="50" text-anchor="middle" fill="white" font-size="8">New Block</text>
+    
+    <!-- Chain connections -->
+    <path d="M 60 47.5 L 70 47.5" stroke="white" stroke-width="2"/>
+    <path d="M 110 47.5 L 120 47.5" stroke="white" stroke-width="2"/>
+    
+    <!-- Immutability indicator -->
+    <text x="100" y="80" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Immutable Record</text>
+  </g>
+  
+  <!-- Arrows -->
+  <path d="M 130 110 L 170 110" stroke="#374151" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M 260 110 L 300 110" stroke="#374151" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M 390 110 L 440 110" stroke="#374151" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Verification Process -->
+  <g transform="translate(50, 200)">
+    <rect x="0" y="0" width="600" height="120" fill="#f3f4f6" rx="8" stroke="#d1d5db" stroke-width="1"/>
+    <text x="300" y="25" text-anchor="middle" fill="#374151" font-size="14" font-weight="bold">Verification Process</text>
+    
+    <!-- Public Verification -->
+    <rect x="30" y="40" width="100" height="60" fill="#06b6d4" rx="6"/>
+    <text x="80" y="65" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Public</text>
+    <text x="80" y="80" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Verification</text>
+    
+    <!-- Query Blockchain -->
+    <rect x="180" y="40" width="100" height="60" fill="#8b5cf6" rx="6"/>
+    <text x="230" y="65" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Query</text>
+    <text x="230" y="80" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Blockchain</text>
+    
+    <!-- Authenticity Result -->
+    <rect x="330" y="40" width="100" height="60" fill="#10b981" rx="6"/>
+    <text x="380" y="65" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Authenticity</text>
+    <text x="380" y="80" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Verified</text>
+    
+    <!-- Provenance Timeline -->
+    <rect x="480" y="40" width="100" height="60" fill="#f59e0b" rx="6"/>
+    <text x="530" y="65" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Provenance</text>
+    <text x="530" y="80" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Timeline</text>
+    
+    <!-- Verification arrows -->
+    <path d="M 130 70 L 170 70" stroke="#374151" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <path d="M 280 70 L 320 70" stroke="#374151" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <path d="M 430 70 L 470 70" stroke="#374151" stroke-width="2" marker-end="url(#arrowhead)"/>
+  </g>
+  
+  <!-- Key Features -->
+  <g transform="translate(50, 350)">
+    <text x="0" y="0" fill="#374151" font-size="12" font-weight="bold">Key Features:</text>
+    <text x="0" y="20" fill="#6b7280" font-size="10">• Immutable provenance records • Decentralized verification • NFT-based ownership • C2PA/IPTC compliance</text>
+  </g>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+    </marker>
+  </defs>
+</svg>
+
 *Source: (Xue et al., 2024)(Singhi et al., 2025)*
 
 This registry aligns with initiatives like the Coalition for Content Provenance and Authenticity (C2PA) and the International Press Telecommunications Council (IPTC), which aim to establish international standards for media provenance and annotations related to creation and modification history. The JPEG Universal Metadata Box Format (JUMBF) also provides a framework for embedding metadata-based extensions to support media authenticity annotations.
 
 ### 3.5. Dual Operational Mode
+
+**Figure 11: UMPTS Dual Operational Mode**
+
+<svg width="700" height="350" viewBox="0 0 700 350" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="700" height="350" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+  
+  <!-- Title -->
+  <text x="350" y="25" text-anchor="middle" fill="#1f2937" font-size="16" font-weight="bold">UMPTS Dual Operational Mode</text>
+  
+  <!-- Mode 1: Platform-Integrated Add-on -->
+  <g transform="translate(50, 60)">
+    <rect x="0" y="0" width="280" height="220" fill="#dbeafe" rx="12" stroke="#3b82f6" stroke-width="2"/>
+    <text x="140" y="25" text-anchor="middle" fill="#1e40af" font-size="14" font-weight="bold">Mode 1: Platform-Integrated Add-on</text>
+    
+    <!-- Social Media Platforms -->
+    <rect x="20" y="40" width="80" height="40" fill="#3b82f6" rx="6"/>
+    <text x="60" y="65" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Social Media</text>
+    
+    <rect x="120" y="40" width="80" height="40" fill="#3b82f6" rx="6"/>
+    <text x="160" y="65" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Content Platforms</text>
+    
+    <!-- Upload Process -->
+    <path d="M 60 80 L 60 110" stroke="#374151" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <path d="M 160 80 L 160 110" stroke="#374151" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- UMPTS Processing -->
+    <rect x="40" y="110" width="160" height="50" fill="#10b981" rx="6"/>
+    <text x="120" y="130" text-anchor="middle" fill="white" font-size="11" font-weight="bold">UMPTS Processing</text>
+    <text x="120" y="145" text-anchor="middle" fill="white" font-size="9">Embed Provenance + Register</text>
+    
+    <!-- Registry -->
+    <path d="M 120 160 L 120 180" stroke="#374151" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <rect x="60" y="180" width="120" height="30" fill="#f59e0b" rx="4"/>
+    <text x="120" y="200" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Global Registry</text>
+  </g>
+  
+  <!-- Mode 2: Independent Detection Engine -->
+  <g transform="translate(370, 60)">
+    <rect x="0" y="0" width="280" height="220" fill="#dcfce7" rx="12" stroke="#10b981" stroke-width="2"/>
+    <text x="140" y="25" text-anchor="middle" fill="#166534" font-size="14" font-weight="bold">Mode 2: Independent Detection Engine</text>
+    
+    <!-- Web Sources -->
+    <rect x="20" y="40" width="60" height="30" fill="#10b981" rx="4"/>
+    <text x="50" y="58" text-anchor="middle" fill="white" font-size="9" font-weight="bold">Twitter/X</text>
+    
+    <rect x="90" y="40" width="60" height="30" fill="#10b981" rx="4"/>
+    <text x="120" y="58" text-anchor="middle" fill="white" font-size="9" font-weight="bold">YouTube</text>
+    
+    <rect x="160" y="40" width="60" height="30" fill="#10b981" rx="4"/>
+    <text x="190" y="58" text-anchor="middle" fill="white" font-size="9" font-weight="bold">News Sites</text>
+    
+    <rect x="230" y="40" width="40" height="30" fill="#10b981" rx="4"/>
+    <text x="250" y="58" text-anchor="middle" fill="white" font-size="9" font-weight="bold">Web</text>
+    
+    <!-- Crawlers -->
+    <path d="M 50 70 L 50 90" stroke="#374151" stroke-width="1" marker-end="url(#arrowhead)"/>
+    <path d="M 120 70 L 120 90" stroke="#374151" stroke-width="1" marker-end="url(#arrowhead)"/>
+    <path d="M 190 70 L 190 90" stroke="#374151" stroke-width="1" marker-end="url(#arrowhead)"/>
+    <path d="M 250 70 L 250 90" stroke="#374151" stroke-width="1" marker-end="url(#arrowhead)"/>
+    
+    <!-- Crawler Network -->
+    <rect x="30" y="90" width="220" height="40" fill="#059669" rx="6"/>
+    <text x="140" y="110" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Autonomous Crawler Network</text>
+    <text x="140" y="125" text-anchor="middle" fill="white" font-size="9">12 Active Crawlers • Real-time Monitoring</text>
+    
+    <!-- Detection Process -->
+    <path d="M 140 130 L 140 150" stroke="#374151" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <rect x="60" y="150" width="160" height="30" fill="#047857" rx="4"/>
+    <text x="140" y="170" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Extract & Compare Provenance</text>
+    
+    <!-- Results -->
+    <path d="M 140 180 L 140 200" stroke="#374151" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <rect x="80" y="200" width="120" height="15" fill="#ef4444" rx="3"/>
+    <text x="140" y="210" text-anchor="middle" fill="white" font-size="8" font-weight="bold">Unauthorized Usage Alert</text>
+  </g>
+  
+  <!-- Central Connection -->
+  <g transform="translate(300, 150)">
+    <circle cx="50" cy="20" r="30" fill="#8b5cf6" stroke="#7c3aed" stroke-width="2"/>
+    <text x="50" y="15" text-anchor="middle" fill="white" font-size="10" font-weight="bold">UMPTS</text>
+    <text x="50" y="28" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Core</text>
+  </g>
+  
+  <!-- Connection Lines -->
+  <path d="M 330 170 L 370 170" stroke="#8b5cf6" stroke-width="3"/>
+  <path d="M 330 170 L 290 170" stroke="#8b5cf6" stroke-width="3"/>
+  
+  <!-- Key Benefits -->
+  <g transform="translate(50, 300)">
+    <text x="0" y="0" fill="#374151" font-size="12" font-weight="bold">Key Benefits:</text>
+    <text x="0" y="20" fill="#6b7280" font-size="10">Mode 1: Seamless integration • Real-time processing • Platform compliance</text>
+    <text x="0" y="35" fill="#6b7280" font-size="10">Mode 2: Internet-wide monitoring • Unauthorized usage detection • Continuous tracking</text>
+  </g>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#374151"/>
+    </marker>
+  </defs>
+</svg>
 
 UMPTS operates in two complementary modes:
 - **Platform-Integrated Add-on**: It integrates seamlessly with social media and content platforms, processing media files upon upload to embed provenance data and register them with the global registry (Singhi et al., 2025).
@@ -249,6 +504,93 @@ The forensic dashboard provides comprehensive audit trails for legal and complia
 
 ## 5. Feasibility and Challenges
 
+**Figure 12: UMPTS Implementation Challenges**
+
+<svg width="750" height="400" viewBox="0 0 750 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="750" height="400" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+  
+  <!-- Title -->
+  <text x="375" y="25" text-anchor="middle" fill="#1f2937" font-size="16" font-weight="bold">Key Implementation Challenges</text>
+  
+  <!-- Challenge 1: Security -->
+  <g transform="translate(50, 60)">
+    <rect x="0" y="0" width="200" height="120" fill="#fef2f2" rx="8" stroke="#ef4444" stroke-width="2"/>
+    <circle cx="100" cy="30" r="15" fill="#ef4444"/>
+    <text x="100" y="35" text-anchor="middle" fill="white" font-size="12" font-weight="bold">1</text>
+    <text x="100" y="55" text-anchor="middle" fill="#dc2626" font-size="12" font-weight="bold">Security Attacks</text>
+    <text x="100" y="75" text-anchor="middle" fill="#7f1d1d" font-size="10">• Adversarial attacks</text>
+    <text x="100" y="90" text-anchor="middle" fill="#7f1d1d" font-size="10">• Watermark removal</text>
+    <text x="100" y="105" text-anchor="middle" fill="#7f1d1d" font-size="10">• Re-watermarking</text>
+  </g>
+  
+  <!-- Challenge 2: Scalability -->
+  <g transform="translate(275, 60)">
+    <rect x="0" y="0" width="200" height="120" fill="#fef3c7" rx="8" stroke="#f59e0b" stroke-width="2"/>
+    <circle cx="100" cy="30" r="15" fill="#f59e0b"/>
+    <text x="100" y="35" text-anchor="middle" fill="white" font-size="12" font-weight="bold">2</text>
+    <text x="100" y="55" text-anchor="middle" fill="#d97706" font-size="12" font-weight="bold">Scalability</text>
+    <text x="100" y="75" text-anchor="middle" fill="#92400e" font-size="10">• Billions of assets</text>
+    <text x="100" y="90" text-anchor="middle" fill="#92400e" font-size="10">• Real-time processing</text>
+    <text x="100" y="105" text-anchor="middle" fill="#92400e" font-size="10">• Global infrastructure</text>
+  </g>
+  
+  <!-- Challenge 3: Standardization -->
+  <g transform="translate(500, 60)">
+    <rect x="0" y="0" width="200" height="120" fill="#f0f9ff" rx="8" stroke="#0ea5e9" stroke-width="2"/>
+    <circle cx="100" cy="30" r="15" fill="#0ea5e9"/>
+    <text x="100" y="35" text-anchor="middle" fill="white" font-size="12" font-weight="bold">3</text>
+    <text x="100" y="55" text-anchor="middle" fill="#0284c7" font-size="12" font-weight="bold">Standardization</text>
+    <text x="100" y="75" text-anchor="middle" fill="#0c4a6e" font-size="10">• Industry adoption</text>
+    <text x="100" y="90" text-anchor="middle" fill="#0c4a6e" font-size="10">• Interoperability</text>
+    <text x="100" y="105" text-anchor="middle" fill="#0c4a6e" font-size="10">• Global standards</text>
+  </g>
+  
+  <!-- Challenge 4: Privacy -->
+  <g transform="translate(50, 210)">
+    <rect x="0" y="0" width="200" height="120" fill="#f3e8ff" rx="8" stroke="#8b5cf6" stroke-width="2"/>
+    <circle cx="100" cy="30" r="15" fill="#8b5cf6"/>
+    <text x="100" y="35" text-anchor="middle" fill="white" font-size="12" font-weight="bold">4</text>
+    <text x="100" y="55" text-anchor="middle" fill="#7c3aed" font-size="12" font-weight="bold">Privacy & Governance</text>
+    <text x="100" y="75" text-anchor="middle" fill="#5b21b6" font-size="10">• Data protection</text>
+    <text x="100" y="90" text-anchor="middle" fill="#5b21b6" font-size="10">• Access controls</text>
+    <text x="100" y="105" text-anchor="middle" fill="#5b21b6" font-size="10">• Ethical balance</text>
+  </g>
+  
+  <!-- Challenge 5: Performance -->
+  <g transform="translate(275, 210)">
+    <rect x="0" y="0" width="200" height="120" fill="#ecfdf5" rx="8" stroke="#10b981" stroke-width="2"/>
+    <circle cx="100" cy="30" r="15" fill="#10b981"/>
+    <text x="100" y="35" text-anchor="middle" fill="white" font-size="12" font-weight="bold">5</text>
+    <text x="100" y="55" text-anchor="middle" fill="#059669" font-size="12" font-weight="bold">Performance</text>
+    <text x="100" y="75" text-anchor="middle" fill="#065f46" font-size="10">• Computational overhead</text>
+    <text x="100" y="90" text-anchor="middle" fill="#065f46" font-size="10">• Device constraints</text>
+    <text x="100" y="105" text-anchor="middle" fill="#065f46" font-size="10">• User experience</text>
+  </g>
+  
+  <!-- Challenge 6: AI Evolution -->
+  <g transform="translate(500, 210)">
+    <rect x="0" y="0" width="200" height="120" fill="#fdf2f8" rx="8" stroke="#ec4899" stroke-width="2"/>
+    <circle cx="100" cy="30" r="15" fill="#ec4899"/>
+    <text x="100" y="35" text-anchor="middle" fill="white" font-size="12" font-weight="bold">6</text>
+    <text x="100" y="55" text-anchor="middle" fill="#db2777" font-size="12" font-weight="bold">Evolving AI Threats</text>
+    <text x="100" y="75" text-anchor="middle" fill="#be185d" font-size="10">• Deepfake evolution</text>
+    <text x="100" y="90" text-anchor="middle" fill="#be185d" font-size="10">• Model updates</text>
+    <text x="100" y="105" text-anchor="middle" fill="#be185d" font-size="10">• Adaptive defense</text>
+  </g>
+  
+  <!-- Central Solution -->
+  <g transform="translate(325, 350)">
+    <rect x="0" y="0" width="100" height="30" fill="#1f2937" rx="6"/>
+    <text x="50" y="20" text-anchor="middle" fill="white" font-size="11" font-weight="bold">UMPTS Solution</text>
+  </g>
+  
+  <!-- Connection lines from challenges to solution -->
+  <path d="M 150 330 L 350 350" stroke="#6b7280" stroke-width="1" stroke-dasharray="3,3"/>
+  <path d="M 375 330 L 375 350" stroke="#6b7280" stroke-width="1" stroke-dasharray="3,3"/>
+  <path d="M 600 330 L 400 350" stroke="#6b7280" stroke-width="1" stroke-dasharray="3,3"/>
+</svg>
+
 Implementing a system like UMPTS is technically feasible, supported by ongoing advancements in deep learning, cryptography, and blockchain technologies (Singhi et al., 2025). However, several significant challenges must be addressed:
 
 ### 5.1. Robustness Against Advanced Attacks
@@ -275,6 +617,126 @@ While blockchain offers immutability, vulnerabilities in smart contracts, consen
 ---
 
 ## 6. Technical Implementation
+
+**Figure 10: UMPTS System Architecture Overview**
+
+<svg width="800" height="500" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+  
+  <!-- Title -->
+  <text x="400" y="25" text-anchor="middle" fill="#1f2937" font-size="18" font-weight="bold">UMPTS Technical Architecture</text>
+  
+  <!-- Input Layer -->
+  <g transform="translate(50, 60)">
+    <rect x="0" y="0" width="700" height="80" fill="#dbeafe" rx="8" stroke="#3b82f6" stroke-width="2"/>
+    <text x="350" y="25" text-anchor="middle" fill="#1e40af" font-size="14" font-weight="bold">Input Layer</text>
+    
+    <!-- Media Sources -->
+    <rect x="50" y="35" width="80" height="35" fill="#3b82f6" rx="4"/>
+    <text x="90" y="55" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Cameras</text>
+    
+    <rect x="150" y="35" width="80" height="35" fill="#3b82f6" rx="4"/>
+    <text x="190" y="55" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Social Media</text>
+    
+    <rect x="250" y="35" width="80" height="35" fill="#3b82f6" rx="4"/>
+    <text x="290" y="55" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Web Content</text>
+    
+    <rect x="570" y="35" width="80" height="35" fill="#3b82f6" rx="4"/>
+    <text x="610" y="55" text-anchor="middle" fill="white" font-size="10" font-weight="bold">User Upload</text>
+  </g>
+  
+  <!-- Processing Layer -->
+  <g transform="translate(50, 170)">
+    <rect x="0" y="0" width="700" height="120" fill="#dcfce7" rx="8" stroke="#10b981" stroke-width="2"/>
+    <text x="350" y="25" text-anchor="middle" fill="#166534" font-size="14" font-weight="bold">AI Processing Layer</text>
+    
+    <!-- Cryptographic Hashing -->
+    <rect x="30" y="40" width="120" height="60" fill="#10b981" rx="6"/>
+    <text x="90" y="65" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Cryptographic</text>
+    <text x="90" y="80" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Hashing</text>
+    
+    <!-- Invisible Watermarking -->
+    <rect x="170" y="40" width="120" height="60" fill="#059669" rx="6"/>
+    <text x="230" y="65" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Invisible</text>
+    <text x="230" y="80" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Watermarking</text>
+    
+    <!-- AI Fingerprinting -->
+    <rect x="310" y="40" width="120" height="60" fill="#047857" rx="6"/>
+    <text x="370" y="65" text-anchor="middle" fill="white" font-size="11" font-weight="bold">AI Fingerprinting</text>
+    <text x="370" y="80" text-anchor="middle" fill="white" font-size="11" font-weight="bold">& Detection</text>
+    
+    <!-- Semantic Analysis -->
+    <rect x="450" y="40" width="120" height="60" fill="#065f46" rx="6"/>
+    <text x="510" y="65" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Semantic</text>
+    <text x="510" y="80" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Analysis</text>
+  </g>
+  
+  <!-- Storage Layer -->
+  <g transform="translate(50, 320)">
+    <rect x="0" y="0" width="700" height="80" fill="#fef3c7" rx="8" stroke="#f59e0b" stroke-width="2"/>
+    <text x="350" y="25" text-anchor="middle" fill="#92400e" font-size="14" font-weight="bold">Storage & Registry Layer</text>
+    
+    <!-- Blockchain Registry -->
+    <rect x="100" y="35" width="150" height="35" fill="#f59e0b" rx="4"/>
+    <text x="175" y="55" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Blockchain Registry</text>
+    
+    <!-- Global Database -->
+    <rect x="275" y="35" width="150" height="35" fill="#d97706" rx="4"/>
+    <text x="350" y="55" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Global Database</text>
+    
+    <!-- NFT Storage -->
+    <rect x="450" y="35" width="150" height="35" fill="#b45309" rx="4"/>
+    <text x="525" y="55" text-anchor="middle" fill="white" font-size="11" font-weight="bold">NFT Storage</text>
+  </g>
+  
+  <!-- Output Layer -->
+  <g transform="translate(50, 430)">
+    <rect x="0" y="0" width="700" height="50" fill="#fce7f3" rx="8" stroke="#ec4899" stroke-width="2"/>
+    <text x="350" y="20" text-anchor="middle" fill="#be185d" font-size="14" font-weight="bold">Access Layer</text>
+    
+    <!-- User Interfaces -->
+    <rect x="50" y="25" width="100" height="20" fill="#ec4899" rx="3"/>
+    <text x="100" y="37" text-anchor="middle" fill="white" font-size="9" font-weight="bold">Creator Dashboard</text>
+    
+    <rect x="170" y="25" width="100" height="20" fill="#ec4899" rx="3"/>
+    <text x="220" y="37" text-anchor="middle" fill="white" font-size="9" font-weight="bold">Public Verification</text>
+    
+    <rect x="290" y="25" width="100" height="20" fill="#ec4899" rx="3"/>
+    <text x="340" y="37" text-anchor="middle" fill="white" font-size="9" font-weight="bold">Moderator Tools</text>
+    
+    <rect x="410" y="25" width="100" height="20" fill="#ec4899" rx="3"/>
+    <text x="460" y="37" text-anchor="middle" fill="white" font-size="9" font-weight="bold">Forensic Audit</text>
+    
+    <rect x="530" y="25" width="100" height="20" fill="#ec4899" rx="3"/>
+    <text x="580" y="37" text-anchor="middle" fill="white" font-size="9" font-weight="bold">API Access</text>
+  </g>
+  
+  <!-- Data Flow Arrows -->
+  <path d="M 400 140 L 400 170" stroke="#374151" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <path d="M 400 290 L 400 320" stroke="#374151" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <path d="M 400 400 L 400 430" stroke="#374151" stroke-width="3" marker-end="url(#arrowhead)"/>
+  
+  <!-- Side Components -->
+  <!-- Role-Based Access Control -->
+  <g transform="translate(20, 200)">
+    <rect x="0" y="0" width="25" height="100" fill="#8b5cf6" rx="4"/>
+    <text x="12.5" y="55" text-anchor="middle" fill="white" font-size="8" font-weight="bold" transform="rotate(-90, 12.5, 55)">RBAC</text>
+  </g>
+  
+  <!-- Security Layer -->
+  <g transform="translate(755, 200)">
+    <rect x="0" y="0" width="25" height="100" fill="#ef4444" rx="4"/>
+    <text x="12.5" y="55" text-anchor="middle" fill="white" font-size="8" font-weight="bold" transform="rotate(90, 12.5, 55)">Security</text>
+  </g>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+    </marker>
+  </defs>
+</svg>
 
 ### Core Technologies
 - **AI Engine**: Neural network-based media analysis
